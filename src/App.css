@@ -1,0 +1,64 @@
+/* App-specific styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive breakpoints helper */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Admin specific styles */
+.admin-sidebar button {
+  font-weight: 600;
+  color: #1f2937; /* gray-800 */
+}
+
+.admin-card { 
+  min-height: 96px; 
+}
+
+.admin-table thead th {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 0.85rem;
+  color: #374151; /* gray-700 */
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-table tbody tr:hover {
+  background: #fbfdff;
+}
+
+/* Tighter, professional buttons */
+.btn-secondary {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .admin-sidebar { display: none; }
+}

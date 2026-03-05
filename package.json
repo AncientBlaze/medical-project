@@ -1,0 +1,44 @@
+{
+  "name": "medical-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "server": "node server.js",
+    "all": "concurrently \"npm run ./server.js\" \"npm run dev\""
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "axios": "^1.13.6",
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.576.0",
+    "mongoose": "^7.5.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-modal": "^3.16.3",
+    "react-router-dom": "^7.13.1",
+    "tailwindcss": "^4.2.1",
+    "zustand": "^5.0.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^10.0.2",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "tailwindcss-motion": "^1.1.1",
+    "vite": "^7.3.1",
+    "vite-plugin-biome": "^1.1.3"
+  }
+}

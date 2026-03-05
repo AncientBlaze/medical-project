@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+.header {
+    background-color: red;
+}
+
+#root {
+    background-color: black;
+}
+
+*::selection {
+    background-color: #F9B406;
+    color: white;
+}
