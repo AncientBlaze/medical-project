@@ -16,12 +16,12 @@ const Admin = () => {
   const user    = useAuthStore((s) => s.user);
   const loading = useAuthStore((s) => s.loading);
 
-  const [leads,   setLeads]   = useState([]);
+  const [leads,    setLeads]    = useState([]);
   const [fetching, setFetching] = useState(true);
-  const [error,   setError]   = useState('');
-  const [section, setSection] = useState('overview');
-  const [stats,   setStats]   = useState({ total: 0, users: 0, today: 0, growth: 0 });
-  const [modal,   setModal]   = useState({ open: false, colleges: [] });
+  const [error,    setError]    = useState('');
+  const [section,  setSection]  = useState('overview');
+  const [stats,    setStats]    = useState({ total: 0, users: 0, today: 0, growth: 0 });
+  const [modal,    setModal]    = useState({ open: false, colleges: [] });
 
   useEffect(() => {
     if (loading || !user?.isAdmin) return;
@@ -52,8 +52,8 @@ const Admin = () => {
   const Section  = sections[section];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <AdminHeader user={user} />
+    <div className={`min-h-screen transition-colors duration-300 dark:bg-slate-950 dark:text-white bg-slate-50 text-slate-900`}>
+      <AdminHeader />
 
       <CollegesModal
         isOpen={modal.open}

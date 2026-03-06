@@ -1,11 +1,24 @@
 @import "tailwindcss";
 
-.header {
-    background-color: red;
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg:         #0f172a;
+  --card:       rgba(44,46,105,0.3);
+  --border:     #2C2E69;
+  --text:       #ffffff;
+  --muted:      rgba(255,255,255,0.4);
 }
 
+.light {
+  --bg:         #f1f5f9;
+  --card:       #ffffff;
+  --border:     #e2e8f0;
+  --text:       #1e293b;
+  --muted:      #64748b;
+}
 #root {
-    background-color: black;
+    background-color: white;
 }
 
 *::selection {
