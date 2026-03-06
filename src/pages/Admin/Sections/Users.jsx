@@ -8,43 +8,41 @@ const Users = ({ leads, stats }) => {
 
   return (
     <div
-      className="dark:bg-teal-950/20 dark:border dark:shadow-sm rounded-2xl overflow-hidden p-2 bg-white border-slate-200 shadow-sm"
+      className="rounded-2xl overflow-hidden p-2 bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none"
     >
       {/* Header */}
-      <div className="dark:border-b pb-4 dark:flex dark:items-center dark:justify-between  flex items-center justify-between p-4 border-b border-slate-200">
-        <h2 className="dark:text-sm dark:font-semibold dark:text-white text-sm font-semibold text-slate-900">
+      <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-800">
+        <h2 className="text-sm font-semibold text-slate-900 dark:text-white">
           Unique Users
         </h2>
 
-        <p className="dark:text-xs dark:mt-0.5 dark:text-slate-400 text-xs text-slate-500">
+        <p className="text-xs text-slate-500 dark:text-slate-400">
           {stats.users} users have made at least one prediction
         </p>
       </div>
 
       {/* List */}
-      <div className="dark:divide-y dark:divide-slate-800/60 divide-y divide-slate-200">
+      <div className="divide-y divide-slate-200 dark:divide-slate-800">
         {uniqueUsers.map((l, i) => (
-          <div key={i} className="dark:flex dark:items-center dark:gap-4  dark:py-3.5 dark:transition-colors dark:hover:bg-slate-800/40 flex items-center gap-4 p-4 transition-colors hover:bg-slate-200">
+          <div key={i} className="flex items-center gap-4 p-4 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
             {/* Avatar */}
-            <div className="dark:w-8 dark:h-8 dark:rounded-lg dark:border w-8 h-8 rounded-lg bg-amber-50 border-amber-200 dark:bg-[#F9B406]/10 dark:border-[#F9B406]/20">
-              <div className="dark:flex dark:items-center dark:justify-center dark:text-xs dark:font-bold dark:text-[#F9B406] flex items-center justify-center text-xs font-bold text-[#F9B406] mt-2">
-                {l.user.name?.charAt(0)}
-              </div>
+            <div className="w-8 h-8 rounded-lg border flex items-center justify-center text-xs font-bold bg-amber-50 dark:bg-teal-400/20 border-amber-200 dark:border-teal-400/30 text-[#F9B406] dark:text-teal-400">
+              {l.user.name?.charAt(0)}
             </div>
 
             {/* Info */}
-            <div className="dark:flex-1 dark:min-w-0 flex-1 min-w-0">
-              <p className="dark:text-sm dark:font-medium dark:text-white text-sm font-medium text-slate-900">
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-slate-900 dark:text-white">
                 {l.user.name}
               </p>
 
-              <p className="dark:text-xs dark:text-slate-400 text-xs text-slate-500">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 {l.user.email}
               </p>
             </div>
 
             {/* Predictions */}
-            <span className="dark:text-xs dark:text-slate-500 text-xs text-slate-500">
+            <span className="text-xs text-slate-500 dark:text-slate-400">
               {
                 leads.filter((x) => x.user?._id === l.user._id).length
               } prediction(s)
@@ -53,7 +51,7 @@ const Users = ({ leads, stats }) => {
         ))}
 
         {stats.users === 0 && (
-          <p className="dark:text-center dark:text-sm dark:py-10 dark:text-slate-500 text-center text-sm py-10 text-slate-500">
+          <p className="text-center text-sm py-10 text-slate-500 dark:text-slate-400">
             No registered users yet
           </p>
         )}
@@ -63,4 +61,3 @@ const Users = ({ leads, stats }) => {
 };
 
 export default Users;
-

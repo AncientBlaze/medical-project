@@ -26,18 +26,18 @@ const Export = ({ leads, stats }) => {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-xl">
       {cards.map(({ type, label, desc, icon: Icon }) => (
         <div key={type}
-          className={`rounded-2xl p-6 border transition-colors dark:bg-[#2C2E69]/30 dark:border-[#2C2E69] dark:hover:border-[#F9B406]/30 bg-white border-slate-200 hover:border-amber-300 shadow-sm`}>
-          <div className={`w-9 h-9 rounded-xl border flex items-center justify-center mb-4 dark:bg-[#F9B406]/10 dark:border-[#F9B406]/20 bg-amber-50 border-amber-200`}>
-            <Icon className="w-4 h-4 text-[#F9B406]" />
+          className="rounded-2xl p-6 border transition-colors bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800 hover:border-amber-300 dark:hover:border-teal-400/30 shadow-sm dark:shadow-none">
+          <div className="w-9 h-9 rounded-xl border flex items-center justify-center mb-4 bg-amber-50 dark:bg-teal-400/20 border-amber-200 dark:border-teal-400/30">
+            <Icon className="w-4 h-4 text-[#F9B406] dark:text-teal-400" />
           </div>
-          <p className={`font-semibold text-sm mb-1 dark:text-white text-slate-900`}>
+          <p className="font-semibold text-sm mb-1 text-slate-900 dark:text-white">
             {label}
           </p>
-          <p className={`text-xs mb-5 dark:text-white/30 text-slate-400`}>
+          <p className="text-xs mb-5 text-slate-400">
             {desc}
           </p>
           <button onClick={() => exportCSV(type)}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#F9B406] hover:bg-[#F9B406]/90 text-[#2C2E69] text-sm font-semibold transition-colors w-full justify-center">
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors w-full justify-center bg-[#F9B406] hover:bg-[#F9B406]/90 dark:bg-teal-400 dark:hover:bg-teal-500 text-white dark:text-slate-900">
             <Download className="w-4 h-4" /> Download
           </button>
         </div>

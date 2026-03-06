@@ -251,7 +251,7 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
   <button
     onClick={onSwitchToSignup}
     type="button"
-    className="text-[#F9B406] font-semibold hover:text-[#F9B406]/80 transition-colors underline underline-offset-2"
+    className="text-[#F9B406] dark:text-teal-400 font-semibold hover:text-[#F9B406]/80 transition-colors underline underline-offset-2"
   >
     Create a free account
   </button>
@@ -261,7 +261,7 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
 <div className="mt-6 p-4 rounded-xl border bg-slate-100 border-slate-200 dark:bg-[#2C2E69]/30 dark:border-[#2C2E69]">
   
   <p className="flex items-center gap-2 text-xs font-semibold mb-2.5 uppercase tracking-wide text-slate-600 dark:text-white/60">
-    <span className="w-1.5 h-1.5 rounded-full bg-[#F9B406] animate-pulse" />
+    <span className="w-1.5 h-1.5 rounded-full bg-[#F9B406] dark:bg-teal-400 animate-pulse" />
     Demo Credentials (Admin)
   </p>
 

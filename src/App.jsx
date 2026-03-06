@@ -12,6 +12,7 @@ import LoadingSkeleton from './components/LoadingSkeleton';
 import useAuthStore from './store/authStore';
 import { useLocation } from 'react-router-dom';
 import useThemeStore from './store/themeStore';
+import PreviewPage from './pages/PreviewPage';
 
 function AuthRoute({ children }) {
   const user = useAuthStore((s) => s.user);
@@ -94,7 +95,7 @@ function AppRoutes() {
 
       {/* Predictor is public — results are gated inside the component */}
       <Route path="/predictor" element={<Layout><Predictor /></Layout>} />
-
+      <Route path="/preview/:collegeId" element={<PreviewPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "node server.js",
-    "all": "concurrently \"npm run ./server.js\" \"npm run dev\""
+    "all": "concurrently \"bun run ./backend/server.js\" \"bun dev\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",

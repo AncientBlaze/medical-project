@@ -60,7 +60,7 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
   const [serverError, setServerError] = useState('');
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirm, setShowConfirm] = useState(false);
+  // const [showConfirm, setShowConfirm] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -252,7 +252,7 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
                   : null
               }
             />
-            <InputField label="Phone (Optional)" icon={Phone}
+            <InputField label="Phone Number" icon={Phone}
               type="tel" name="phone"
               value={formData.phone}
               onChange={handleChange}
@@ -299,7 +299,7 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
               )}
             </div>
             <InputField label="Confirm Password" icon={Lock}
-              type={showConfirm ? 'text' : 'password'}
+              type={showPassword ? 'text' : 'password'}
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
@@ -307,21 +307,8 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
               placeholder="Re-enter your password"
               error={fieldErrors.confirmPassword}
               rightElement={
-                formData.confirmPassword
-                  ? formData.password === formData.confirmPassword
-                    ? <CheckCircle className="w-4 h-4 text-[#F9B406] dark:text-teal-400" />
-                    : <button
-                      type="button"
-                      onClick={() => setShowConfirm(v => !v)}
-                      tabIndex={-1}
-                      className="text-slate-400 hover:text-slate-700
-                        dark:text-white/30 dark:hover:text-white"
-                    >
-                      {showConfirm
-                        ? <EyeOff className="w-4 h-4" />
-                        : <Eye className="w-4 h-4" />
-                      }
-                    </button>
+                formData.password === formData.confirmPassword && formData.confirmPassword
+                  ? <CheckCircle className="w-4 h-4 text-[#F9B406] dark:text-teal-400" />
                   : null
               }
             />
