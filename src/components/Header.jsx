@@ -35,7 +35,7 @@ const Header = ({ user, onLogout }) => {
       <nav className="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between">
 
         {/* Logo */}
-        <NavLink to="/" className="flex items-center shrink-0 bg-white hover:bg-white/80 border border-white/10 rounded-full overflow-hidden">
+        <NavLink to="/" className="flex items-center shrink-0 bg-white hover:bg-white/80 border border-white/10 rounded-lg overflow-hidden">
           <img src="/logo.png" className="h-10 w-auto" />
         </NavLink>
 

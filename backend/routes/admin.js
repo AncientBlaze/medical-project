@@ -7,8 +7,25 @@ const router = express.Router();
 
 router.get('/predictions', requireAdmin, async (req, res) => {
   try {
-    const preds = await Prediction.find().populate('user', 'name email phone');
-    res.json({ count: preds.length, predictions: preds });
+    const predictions = await Prediction.find()
+      .populate('user', 'name email phone')
+      .select('user category rank quota state course phone matchedColleges createdAt')
+      .sort({ createdAt: -1 });
+    res.json({ 
+      count: predictions.length, 
+      predictions: predictions.map(p => ({
+        _id: p._id,
+        user: p.user,
+        category: p.category,
+        rank: p.rank,
+        quota: p.quota,
+        state: p.state,
+        course: p.course,
+        phone: p.phone,
+        matchedColleges: p.matchedColleges,
+        createdAt: p.createdAt
+      }))
+    });
   } catch (err) {
     console.error('Admin predictions error', err);
     res.status(500).json({ message: 'Server error' });

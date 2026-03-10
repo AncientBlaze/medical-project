@@ -30,11 +30,25 @@ const Admin = () => {
         const { data } = await api.get('/admin/predictions');
         const p = data.predictions || [];
         setLeads(p);
-        const today = new Date().toDateString();
+        
+        // Optimize stats calculation
+        const todayStr = new Date().toDateString();
+        let userIds = new Set();
+        let todayCount = 0;
+        
+        for (const prediction of p) {
+          if (prediction.user?._id) {
+            userIds.add(prediction.user._id);
+          }
+          if (new Date(prediction.createdAt).toDateString() === todayStr) {
+            todayCount++;
+          }
+        }
+        
         setStats({
           total:  p.length,
-          users:  new Set(p.map(x => x.user?._id).filter(Boolean)).size,
-          today:  p.filter(x => new Date(x.createdAt).toDateString() === today).length,
+          users:  userIds.size,
+          today:  todayCount,
           growth: p.length > 0 ? 12.5 : 0,
         });
       } catch (e) {

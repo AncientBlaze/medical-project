@@ -18,11 +18,12 @@ router.post('/', async (req, res) => {
       }
     }
 
-    const { course, category, rank, phone, matchedColleges } = req.body;
-    if (!course || !category || rank == null)
+    const { category, rank, quota, state, course, phone, matchedColleges } = req.body;
+    if (!category || rank == null)
       return res.status(400).json({ message: 'Missing prediction parameters' });
 
-    const query = { course, category, rank };
+    const query = { category, rank, quota: quota || 'allIndia' };
+    if (state && quota === 'state') query.state = state;
     if (userId) query.user = userId;
 
     const existing = await Prediction.findOne(query);
@@ -30,6 +31,8 @@ router.post('/', async (req, res) => {
     if (existing) {
       existing.matchedColleges = Array.isArray(matchedColleges) ? matchedColleges : [];
       existing.phone = phone || existing.phone;
+      existing.state = state || existing.state;
+      existing.course = course || existing.course;
       existing.createdAt = new Date();
       await existing.save();
       return res.status(200).json({ message: 'Prediction updated' });
@@ -37,9 +40,11 @@ router.post('/', async (req, res) => {
 
     await new Prediction({
       user: userId,
-      course,
       category,
       rank,
+      quota: quota || 'allIndia',
+      state: state || '',
+      course: course || '',
       phone: phone || '',
       matchedColleges: Array.isArray(matchedColleges) ? matchedColleges : []
     }).save();

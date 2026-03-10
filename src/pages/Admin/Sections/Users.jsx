@@ -1,10 +1,25 @@
-const Users = ({ leads, stats }) => {
+import { useMemo } from 'react';
 
-  const uniqueUsers = [
-    ...new Map(
-      leads.filter((l) => l.user?._id).map((l) => [l.user._id, l])
-    ).values(),
-  ];
+const Users = ({ leads, stats }) => {
+  // Memoize unique users and prediction counts for performance
+  const { uniqueUsers, predictionCounts } = useMemo(() => {
+    const userMap = new Map();
+    const counts = new Map();
+    
+    leads.filter((l) => l.user?._id).forEach((l) => {
+      const userId = l.user._id;
+      if (!userMap.has(userId)) {
+        userMap.set(userId, l);
+        counts.set(userId, 0);
+      }
+      counts.set(userId, (counts.get(userId) || 0) + 1);
+    });
+    
+    return {
+      uniqueUsers: Array.from(userMap.values()),
+      predictionCounts: counts
+    };
+  }, [leads]);
 
   return (
     <div
@@ -23,8 +38,8 @@ const Users = ({ leads, stats }) => {
 
       {/* List */}
       <div className="divide-y divide-slate-200 dark:divide-slate-800">
-        {uniqueUsers.map((l, i) => (
-          <div key={i} className="flex items-center gap-4 p-4 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+        {uniqueUsers.map((l) => (
+          <div key={l.user._id} className="flex items-center gap-4 p-4 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
             {/* Avatar */}
             <div className="w-8 h-8 rounded-lg border flex items-center justify-center text-xs font-bold bg-amber-50 dark:bg-teal-400/20 border-amber-200 dark:border-teal-400/30 text-[#F9B406] dark:text-teal-400">
               {l.user.name?.charAt(0)}
@@ -43,9 +58,7 @@ const Users = ({ leads, stats }) => {
 
             {/* Predictions */}
             <span className="text-xs text-slate-500 dark:text-slate-400">
-              {
-                leads.filter((x) => x.user?._id === l.user._id).length
-              } prediction(s)
+              {predictionCounts.get(l.user._id)} prediction(s)
             </span>
           </div>
         ))}
