@@ -12,6 +12,13 @@ import LoadingSkeleton from './components/LoadingSkeleton';
 import useAuthStore from './store/authStore';
 import { useLocation } from 'react-router-dom';
 import useThemeStore from './store/themeStore';
+import TermsAndConditions from './pages/TermsAndConditions';
+import RefundPolicy from './pages/RefundPolicy';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Disclaimer from './pages/Disclaimer';
+import Footer from './components/Footer';
+import PackagesGrid from './pages/Packages/components/PackagesGrid';
+import PackageDetail from './pages/Packages/components/PackageDetails';
 
 function AuthRoute({ children }) {
   const user = useAuthStore((s) => s.user);
@@ -46,6 +53,7 @@ function Layout({ children }) {
     <>
       <Header user={user} onLogout={handleLogout} />
       {children}
+      <Footer />
     </>
   );
 }
@@ -95,18 +103,25 @@ function AppRoutes() {
       {/* Predictor is public — results are gated inside the component */}
       <Route path="/predictor" element={<Layout><Predictor /></Layout>} />
       <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="/terms-and-conditions" element={<Layout><TermsAndConditions /></Layout>} />
+      <Route path="/refund-policy" element={<Layout><RefundPolicy /></Layout>} />
+      <Route path="/privacy-policy" element={<Layout><PrivacyPolicy /></Layout>} />
+      <Route path="/disclaimer" element={<Layout><Disclaimer /></Layout>} />
+      <Route path="/packages" element={<Layout><PackagesGrid /></Layout>} />
+      <Route path="/packages/:id" element={<Layout><PackageDetail /></Layout>} />
     </Routes>
   );
 }
 
 export default function App() {
-  
+
   const init = useAuthStore((s) => s.init);
   const initTheme = useThemeStore((s) => s.init);
-  
+
+  {/*so the server can set the theme and stays upto date with state changes */ }
   useEffect(() => { init(); }, [init]);
   useEffect(() => { initTheme(); }, [initTheme]);
-  
+
   return (
     <BrowserRouter>
       <AppRoutes />

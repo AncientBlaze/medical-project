@@ -67,7 +67,7 @@ function predictColleges({ rank, category, quota, state }) {
       }
 
       const cutoff = getEffectiveCutoff(cutoffs || {});
-      if (!cutoff) return false;
+      if (!cutoff) return false; 
 
       // User gets in if their rank <= cutoff (rank numbers: lower = better)
       // We also show colleges slightly above their rank (safety buffer 10%)
@@ -336,7 +336,7 @@ const Predictor = () => {
     if (isNaN(rank) || rank < 1) { setFormError('Enter a valid positive NEET rank.'); return; }
 
     setLoading(true);
-    await new Promise(r => setTimeout(r, 400)); // brief UX delay
+    await new Promise(r => setTimeout(r, 400));
 
     const matched = predictColleges({ rank, category: formData.category, quota: formData.quota, state: formData.state });
     const stateObj = { rank, category: formData.category, quota: formData.quota, state: formData.state, matchedColleges: matched };

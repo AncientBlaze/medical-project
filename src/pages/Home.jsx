@@ -40,7 +40,7 @@ const CollegeCard = ({ name, state, management, seats, fees, id, image, index, o
 
     {/* Body */}
     <div className="p-5 flex flex-col grow">
-      <h3 className="text-base font-semibold leading-snug mb-2 line-clamp-2 group-hover:text-[#F9B406] transition-colors duration-200 text-slate-900 dark:text-white">
+      <h3 className="text-base font-semibold leading-snug mb-2 line-clamp-2 dark:group-hover:text-teal-400 group-hover:text-[#F9B406] transition-colors duration-200 text-slate-900 dark:text-white">
         {name}
       </h3>
 
@@ -64,7 +64,7 @@ const CollegeCard = ({ name, state, management, seats, fees, id, image, index, o
         onClick={(e) => { e.stopPropagation(); onOpen(id); }}
         className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-medium transition-all duration-200 bg-[#F9B406]/10 dark:bg-teal-500/10 border border-[#F9B406]/20 dark:border-teal-500/20 text-[#F9B406] dark:text-teal-400 hover:bg-[#F9B406] dark:hover:bg-teal-400 hover:text-slate-950 dark:hover:text-slate-950 hover:border-[#F9B406] dark:hover:border-teal-400"
       >
-        View Details <ExternalLink className="w-3.5 h-3.5" />
+        Apply <ExternalLink className="w-3.5 h-3.5" />
       </button>
     </div>
   </div>
