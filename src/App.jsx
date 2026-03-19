@@ -19,6 +19,7 @@ import Disclaimer from './pages/Disclaimer';
 import Footer from './components/Footer';
 import PackagesGrid from './pages/Packages/components/PackagesGrid';
 import PackageDetail from './pages/Packages/components/PackageDetails';
+import PreferencesList from './pages/PreferencesList';
 
 function AuthRoute({ children }) {
   const user = useAuthStore((s) => s.user);
@@ -99,6 +100,7 @@ function AppRoutes() {
       <Route path="/" element={<PrivateRoute><Layout><Home /></Layout></PrivateRoute>} />
       <Route path="/about" element={<PrivateRoute><Layout><About /></Layout></PrivateRoute>} />
       <Route path="/contact" element={<PrivateRoute><Layout><Contact /></Layout></PrivateRoute>} />
+      <Route path="/preferences-list" element={<PrivateRoute><Layout><PreferencesList /></Layout></PrivateRoute>} />
 
       {/* Predictor is public — results are gated inside the component */}
       <Route path="/predictor" element={<Layout><Predictor /></Layout>} />
