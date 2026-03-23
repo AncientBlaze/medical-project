@@ -1,4 +1,5 @@
-export const PACKAGES = [
+// ── Counselling Packages (PackagesGrid page) ──────────────────────────────────
+export const COUNSELLING_PACKAGES = [
   {
     id: 'rank-analysis',
     emoji: '🔍',
@@ -12,6 +13,7 @@ export const PACKAGES = [
     isFree: true,
     highlight: false,
     badge: null,
+    refundable: false,
     features: [
       'MBBS admission insights — AIQ, State Quota, Deemed & Private',
       'Category-wise and round-wise cutoff trends',
@@ -34,6 +36,7 @@ export const PACKAGES = [
     isFree: false,
     highlight: false,
     badge: null,
+    refundable: false,
     features: [
       '2 personalised 1-on-1 mentor sessions (Zoom / Google Meet)',
       'Strategic guidance based on score, category & state eligibility',
@@ -61,6 +64,7 @@ export const PACKAGES = [
     isFree: false,
     highlight: true,
     badge: 'Most Popular',
+    refundable: false,
     features: [
       '4 personalised mentor sessions',
       'Dedicated counsellor throughout the entire cycle',
@@ -76,6 +80,10 @@ export const PACKAGES = [
       'Post-admission reporting checklist',
     ],
   },
+];
+
+// ── Admission & Support Packages (AdmissionSupport page) ─────────────────────
+export const ADMISSION_PACKAGES = [
   {
     id: 'seat-secure',
     emoji: '🔒',
@@ -90,13 +98,13 @@ export const PACKAGES = [
     highlight: false,
     badge: 'WB Exclusive',
     refundable: true,
+    scope: 'india',
     features: [
       'Everything in MedChoice Navigator',
-      'Admission assurance support for WB private management quota',
+      'Admission assurance for WB private management quota',
       'Priority counselling monitoring',
       'Admission probability evaluation',
       'Private college admission coordination support',
-      '⭐ Refundable if no seat allotted (conditions apply)',
     ],
   },
   {
@@ -110,8 +118,10 @@ export const PACKAGES = [
     originalPrice: null,
     discount: null,
     isFree: false,
-    highlight: false,
-    badge: null,
+    highlight: true,
+    badge: 'Best Value',
+    refundable: false,
+    scope: 'india',
     features: [
       'Everything in MedChoice Navigator',
       'Dedicated admission counsellor till final admission',
@@ -137,6 +147,8 @@ export const PACKAGES = [
     isFree: false,
     highlight: false,
     badge: null,
+    refundable: false,
+    scope: 'abroad',
     features: [
       'Everything in MedChoice Navigator',
       'University selection based on budget, recognition & exposure',
@@ -161,6 +173,8 @@ export const PACKAGES = [
     isFree: false,
     highlight: false,
     badge: 'Premium',
+    refundable: false,
+    scope: 'abroad',
     features: [
       'Everything in MedSankalp Global',
       'Premium university selection with accreditation guidance',
@@ -174,6 +188,7 @@ export const PACKAGES = [
   },
 ];
 
+// ── Policy text (shared across both pages) ────────────────────────────────────
 export const TERMS = `
 **Terms & Conditions**
 

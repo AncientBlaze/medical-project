@@ -74,7 +74,7 @@ const CollegesModal = ({ isOpen, colleges = [], onClose }) => {
               <GraduationCap className="w-4.5 h-4.5 text-[#F9B406] dark:text-teal-400" />
             </div>
             <div>
-              <h2 className="text-sm font-bold text-slate-900 dark:text-white leading-tight">
+              <h2 className="text-sm font-bold text-[#2d409c] dark:text-white leading-tight">
                 Matched Colleges
               </h2>
               <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
@@ -103,19 +103,19 @@ const CollegesModal = ({ isOpen, colleges = [], onClose }) => {
                 value={query}
                 onChange={e => setQuery(e.target.value)}
                 placeholder="Search colleges…"
-                className="w-full pl-9 pr-4 py-2.5 text-sm rounded-xl border bg-slate-50 dark:bg-slate-900/60 border-slate-200 dark:border-slate-700/60 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-[#F9B406]/20 dark:focus:ring-teal-500/20 focus:border-[#F9B406]/50 dark:focus:border-teal-500/50 transition-colors"
+                className="w-full pl-9 pr-4 py-2.5 text-sm rounded-xl border bg-slate-50 dark:bg-slate-900/60 border-slate-200 dark:border-slate-700/60 text-[#2d409c] dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-[#F9B406]/20 dark:focus:ring-teal-500/20 focus:border-[#F9B406]/50 dark:focus:border-teal-500/50 transition-colors"
               />
               {query && (
                 <button
                   onClick={() => setQuery('')}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#2d409c] dark:hover:text-slate-300 transition-colors"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
               )}
             </div>
             {query && (
-              <p className="text-xs mt-2 text-slate-400 dark:text-slate-600">
+              <p className="text-xs mt-2 text-slate-400 dark:text-[#2d409c]">
                 {filtered.length} match{filtered.length !== 1 ? 'es' : ''} for "{query}"
               </p>
             )}
@@ -157,14 +157,14 @@ const CollegesModal = ({ isOpen, colleges = [], onClose }) => {
           ) : (
             <div className="flex flex-col items-center gap-2 py-10 text-center">
               <GraduationCap className="w-8 h-8 text-slate-200 dark:text-slate-700 mb-1" />
-              <p className="text-sm text-slate-400 dark:text-slate-600">No colleges matched your criteria</p>
+              <p className="text-sm text-slate-400 dark:text-[#2d409c]">No colleges matched your criteria</p>
             </div>
           )}
         </div>
 
         {/* Footer */}
         <div className="px-5 py-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between gap-3 bg-slate-50/60 dark:bg-slate-900/40">
-          <p className="text-xs text-slate-400 dark:text-slate-600">
+          <p className="text-xs text-slate-400 dark:text-[#2d409c]">
             Based on NEET 2024 cutoff data
           </p>
           <button

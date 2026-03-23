@@ -132,7 +132,7 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
           </div>
         </div>
 
-        <p className="relative z-10 text-[#9A7A35] dark:text-slate-600 text-xs">
+        <p className="relative z-10 text-[#9A7A35] dark:text-[#2d409c] text-xs">
           © 2025 MedPredictAI · Data sourced from MCC, State DME & NEET official records
         </p>
       </div>
@@ -141,7 +141,7 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
       <div className="flex-1 flex items-center justify-center p-6 lg:p-12 bg-[#fffdf7] dark:bg-slate-950 transition-colors">
         <div className="w-full max-w-md">
 
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-1 tracking-tight">
+          <h1 className="text-2xl font-bold text-[#2d409c] dark:text-white mb-1 tracking-tight">
             Sign in to your account
           </h1>
 
@@ -179,7 +179,7 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
                   onChange={handleChange}
                   required
                   placeholder="you@example.com"
-                  className="w-full pl-10 pr-10 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-white/20 focus:outline-none focus:border-[#F9B406] dark:focus:border-teal-500 focus:ring-1 focus:ring-[#F9B406]/30 dark:focus:ring-teal-500/30 transition-colors"
+                  className="w-full pl-10 pr-10 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#2d409c] dark:text-white text-sm placeholder-slate-400 dark:placeholder-white/20 focus:outline-none focus:border-[#F9B406] dark:focus:border-teal-500 focus:ring-1 focus:ring-[#F9B406]/30 dark:focus:ring-teal-500/30 transition-colors"
                 />
 
                 {formData.email && isValidEmail && (
@@ -213,7 +213,7 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
                   onChange={handleChange}
                   required
                   placeholder="••••••••"
-                  className="w-full pl-10 pr-10 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-white/20 focus:outline-none focus:border-[#F9B406] dark:focus:border-teal-500 focus:ring-1 focus:ring-[#F9B406]/30 dark:focus:ring-teal-500/30 transition-colors"
+                  className="w-full pl-10 pr-10 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#2d409c] dark:text-white text-sm placeholder-slate-400 dark:placeholder-white/20 focus:outline-none focus:border-[#F9B406] dark:focus:border-teal-500 focus:ring-1 focus:ring-[#F9B406]/30 dark:focus:ring-teal-500/30 transition-colors"
                 />
 
                 <button
@@ -260,7 +260,7 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
 {/* Demo Credentials */}
 <div className="mt-6 p-4 rounded-xl border bg-slate-100 border-slate-200 dark:bg-[#2C2E69]/30 dark:border-[#2C2E69]">
   
-  <p className="flex items-center gap-2 text-xs font-semibold mb-2.5 uppercase tracking-wide text-slate-600 dark:text-white/60">
+  <p className="flex items-center gap-2 text-xs font-semibold mb-2.5 uppercase tracking-wide text-[#2d409c] dark:text-white/60">
     <span className="w-1.5 h-1.5 rounded-full bg-[#F9B406] dark:bg-teal-400 animate-pulse" />
     Demo Credentials (Admin)
   </p>

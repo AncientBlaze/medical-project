@@ -10,10 +10,10 @@ const ErrorState = ({ message }) => {
         <div className="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto mb-4">
           <AlertCircle className="w-6 h-6 text-red-400" />
         </div>
-        <h2 className="font-bold text-lg mb-2 text-slate-900 dark:text-white">
+        <h2 className="font-bold text-lg mb-2 text-[#2d409c] dark:text-white">
           Access Denied
         </h2>
-        <p className="text-sm mb-6 text-slate-600 dark:text-slate-400">{message}</p>
+        <p className="text-sm mb-6 text-[#2d409c] dark:text-slate-400">{message}</p>
         <button
           onClick={() => navigate('/')}
           className="px-5 py-2.5 rounded-xl font-semibold text-sm transition-colors bg-[#F9B406] dark:bg-teal-400 hover:bg-[#e0a205] dark:hover:bg-teal-300 text-slate-950"

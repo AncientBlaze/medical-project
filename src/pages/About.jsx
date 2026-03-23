@@ -19,13 +19,13 @@ const CardHeader = ({ icon: Icon, title }) => (
     <div className="w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 bg-amber-50 dark:bg-teal-500/10 border-amber-200 dark:border-teal-500/20">
       <Icon className="w-4 h-4 text-[#F9B406] dark:text-teal-400" />
     </div>
-    <h2 className="text-lg font-semibold text-slate-900 dark:text-white">{title}</h2>
+    <h2 className="text-lg font-semibold text-[#2d409c] dark:text-white">{title}</h2>
   </div>
 );
 
 const About = () => {
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-slate-900 dark:text-white">
+    <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-[#2d409c] dark:text-white">
 
       {/* Hero */}
       <div className="relative border-b border-amber-200 dark:border-slate-800 bg-amber-50 dark:bg-slate-900/40">
@@ -34,7 +34,7 @@ const About = () => {
           <h1 className="text-4xl font-bold tracking-tight">
             About <span className="text-[#F9B406] dark:text-teal-400">Us</span>
           </h1>
-          <p className="text-base max-w-md mx-auto text-slate-600 dark:text-slate-400">
+          <p className="text-base max-w-md mx-auto text-[#2d409c] dark:text-slate-400">
             Connecting aspiring medical students with the right institutions through data and transparency.
           </p>
         </div>
@@ -45,7 +45,7 @@ const About = () => {
         {/* Mission */}
         <Card>
           <CardHeader icon={HeartPulse} title="Our Mission" />
-          <p className="leading-relaxed text-slate-600 dark:text-slate-400">
+          <p className="leading-relaxed text-[#2d409c] dark:text-slate-400">
             MedSankalp is dedicated to connecting aspiring medical students with the finest
             institutions and healthcare programs. We believe in making quality medical education
             accessible and transparent for everyone — from MBBS to nursing and beyond.
@@ -58,7 +58,7 @@ const About = () => {
             <div className="w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 bg-amber-50 dark:bg-teal-500/10 border-amber-200 dark:border-teal-500/20">
               <ShieldCheck className="w-4 h-4 text-[#F9B406] dark:text-teal-400" />
             </div>
-            <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Why Choose Us?</h2>
+            <h2 className="text-lg font-semibold text-[#2d409c] dark:text-white">Why Choose Us?</h2>
           </div>
           <div className="space-y-4">
             {WHY_ITEMS.map(({ icon: Icon, text }) => (
@@ -66,7 +66,7 @@ const About = () => {
                 <div className="w-7 h-7 rounded-lg border flex items-center justify-center shrink-0 mt-0.5 bg-amber-50 dark:bg-teal-500/10 border-amber-200 dark:border-teal-500/20">
                   <Icon className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
                 </div>
-                <span className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">{text}</span>
+                <span className="text-sm leading-relaxed text-[#2d409c] dark:text-slate-300">{text}</span>
               </div>
             ))}
           </div>
@@ -75,7 +75,7 @@ const About = () => {
         {/* Vision */}
         <Card>
           <CardHeader icon={Lightbulb} title="Our Vision" />
-          <p className="leading-relaxed text-slate-600 dark:text-slate-400">
+          <p className="leading-relaxed text-[#2d409c] dark:text-slate-400">
             To create a world where every NEET aspirant can make an informed decision about
             their medical education. We strive to bridge the gap between students and institutions
             through AI-driven predictions, live cutoff data, and complete transparency.

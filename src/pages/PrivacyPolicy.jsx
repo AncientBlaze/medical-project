@@ -83,7 +83,7 @@ const SECTIONS = [
 ];
 
 const PrivacyPolicy = () => (
-  <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300">
+  <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-[#2d409c] dark:text-white transition-colors duration-300">
 
     {/* Hero */}
     <div className="relative border-b border-amber-200 dark:border-[#2C2E69]/60 bg-amber-50 dark:bg-[#2C2E69]/20">
@@ -110,7 +110,7 @@ const PrivacyPolicy = () => (
             <div className="w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 bg-amber-50 border-amber-200 dark:bg-[#F9B406]/10 dark:border-[#F9B406]/20">
               <Icon className="w-4 h-4 text-[#F9B406]" />
             </div>
-            <h2 className="text-base font-semibold text-slate-900 dark:text-white">{title}</h2>
+            <h2 className="text-base font-semibold text-[#2d409c] dark:text-white">{title}</h2>
           </div>
           <div className="text-sm leading-relaxed text-slate-500 dark:text-white/50">
             {content}

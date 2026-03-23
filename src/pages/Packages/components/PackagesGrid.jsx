@@ -4,7 +4,7 @@ import {
   ArrowRight, Download, CheckCircle2, Check, X,
   ChevronDown, ChevronUp, Shield, FileText, Lock, Info
 } from 'lucide-react';
-import { PACKAGES, TERMS, REFUND_POLICY, PRIVACY_POLICY, DISCLAIMER } from '../data/packages.js';
+import { COUNSELLING_PACKAGES as PACKAGES, TERMS, REFUND_POLICY, PRIVACY_POLICY, DISCLAIMER } from '../data/packages.js';
 import EnquiryModal from './EnquiryModal.jsx';
 
 // ── Hero illustration ─────────────────────────────────────────────────────────
@@ -291,38 +291,24 @@ const PackagesGrid = () => {
           ))}
         </div>
 
-        {/* Row 2: MedChoice (full width, highlighted) */}
+        {/* Row 2: MedChoice — full width, highlighted */}
         <div className="mb-5">
           <div className="max-w-2xl mx-auto">
             <PackageCard pkg={PACKAGES[2]} onEnquire={setEnquiry} onDetails={(id) => navigate(`/packages/${id}`)} />
           </div>
         </div>
 
-        {/* Row 3: Seat Secure + National Elite */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
-          {PACKAGES.slice(3, 5).map((pkg) => (
-            <PackageCard key={pkg.id} pkg={pkg} onEnquire={setEnquiry} onDetails={(id) => navigate(`/packages/${id}`)} />
-          ))}
-        </div>
-
-        {/* Row 4: Global + Global Elite */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
-          {PACKAGES.slice(5, 7).map((pkg) => (
-            <PackageCard key={pkg.id} pkg={pkg} onEnquire={setEnquiry} onDetails={(id) => navigate(`/packages/${id}`)} />
-          ))}
-        </div>
-
-        {/* Quick compare note */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {PACKAGES.map((pkg) => (
-            <div key={pkg.id} className="flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs
-              border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-900/40
-              text-slate-600 dark:text-white/50">
-              <span>{pkg.emoji}</span>
-              <span className="font-medium">{pkg.price}</span>
-              <span className="text-slate-400 dark:text-white/30">— {pkg.tag}</span>
-            </div>
-          ))}
+        {/* Link to Admission Support */}
+        <div className="flex flex-col items-center gap-2 mt-6 mb-10 p-6 rounded-2xl border border-dashed
+          border-slate-300 dark:border-slate-700 text-center">
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            Looking for direct admission support, WB Seat Secure, or MBBS Abroad guidance?
+          </p>
+          <a href="/admission-support"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold transition-colors mt-1
+              bg-[#F9B406] dark:bg-teal-400 hover:bg-[#e0a205] dark:hover:bg-teal-300 text-slate-950">
+            View Admission &amp; Support Plans →
+          </a>
         </div>
       </div>
 

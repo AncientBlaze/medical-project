@@ -12,7 +12,7 @@ const StatCard = memo(({ icon: Icon, label, value, trend }) => {
           <Icon className="w-4 h-4 text-[#F9B406] dark:text-teal-400" />
         </div>
       </div>
-      <p className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+      <p className="text-3xl font-bold tracking-tight text-[#2d409c] dark:text-white">
         {value}
       </p>
       {trend != null && (

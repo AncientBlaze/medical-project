@@ -12,7 +12,7 @@ const INFO = [
 
 const Field = ({ label, children }) => (
   <div>
-    <label className="block text-xs font-semibold uppercase tracking-wider mb-1.5 text-slate-600 dark:text-white/50">
+    <label className="block text-xs font-semibold uppercase tracking-wider mb-1.5 text-[#2d409c] dark:text-white/50">
       {label}
     </label>
     {children}
@@ -24,7 +24,7 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [sending,   setSending]   = useState(false);
 
-  const inputClass = 'w-full px-4 py-2.5 rounded-xl text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-1 transition-colors shadow-sm dark:shadow-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:border-[#F9B406] dark:focus:border-teal-500 focus:ring-[#F9B406]/20 dark:focus:ring-teal-500/20';
+  const inputClass = 'w-full px-4 py-2.5 rounded-xl text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-1 transition-colors shadow-sm dark:shadow-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#2d409c] dark:text-white focus:border-[#F9B406] dark:focus:border-teal-500 focus:ring-[#F9B406]/20 dark:focus:ring-teal-500/20';
 
   const handleChange = (e) =>
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -41,7 +41,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-slate-900 dark:text-white">
+    <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-[#2d409c] dark:text-white">
 
       {/* Hero */}
       <div className="relative border-b border-amber-200 dark:border-slate-800 bg-amber-50 dark:bg-slate-900/40">
@@ -50,7 +50,7 @@ const Contact = () => {
           <h1 className="text-4xl font-bold tracking-tight mb-2">
             Get in <span className="text-[#F9B406] dark:text-teal-400">Touch</span>
           </h1>
-          <p className="text-base text-slate-600 dark:text-slate-400">
+          <p className="text-base text-[#2d409c] dark:text-slate-400">
             We're here to help. Reach out anytime.
           </p>
         </div>
@@ -80,7 +80,7 @@ const Contact = () => {
 
         {/* Form */}
         <div className="md:col-span-3 rounded-2xl border p-7 bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none">
-          <h2 className="text-sm font-semibold mb-6 text-slate-900 dark:text-white">
+          <h2 className="text-sm font-semibold mb-6 text-[#2d409c] dark:text-white">
             Send us a message
           </h2>
 

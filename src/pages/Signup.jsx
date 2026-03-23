@@ -29,7 +29,7 @@ const InputField = ({ label, icon: Icon, rightElement, error, hint, ...props }) 
         className={`w-full pl-10 pr-10 py-3 rounded-xl text-sm focus:outline-none focus:ring-1 transition-colors border
         ${error
             ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
-            : 'bg-white border-slate-200 text-slate-900 placeholder-slate-400 focus:border-amber-400 focus:ring-amber-400/20 shadow-sm dark:bg-slate-900 dark:border-slate-800 dark:text-white dark:placeholder-white/20 dark:focus:border-teal-400 dark:focus:ring-teal-400/20'
+            : 'bg-white border-slate-200 text-[#2d409c] placeholder-slate-400 focus:border-amber-400 focus:ring-amber-400/20 shadow-sm dark:bg-slate-900 dark:border-slate-800 dark:text-white dark:placeholder-white/20 dark:focus:border-teal-400 dark:focus:ring-teal-400/20'
           }`}
       />
 
@@ -219,7 +219,7 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
       bg-slate-50 dark:bg-slate-950">
         <div className="w-full max-w-md py-6">
           <h1 className="text-2xl font-bold mb-1 tracking-tight
-          text-slate-900 dark:text-white">
+          text-[#2d409c] dark:text-white">
             Create your account
           </h1>
           <p className="text-sm mb-8

@@ -71,17 +71,17 @@ const CollegeDrawer = ({ college, onClose }) => {
                   {college.management}
                 </span>
                 {college.established && (
-                  <span className="text-[10px] text-slate-400 dark:text-slate-600 flex items-center gap-1">
+                  <span className="text-[10px] text-slate-400 dark:text-[#2d409c] flex items-center gap-1">
                     <CalendarDays className="w-3 h-3" /> Est. {college.established}
                   </span>
                 )}
               </div>
-              <h2 className="text-base font-bold leading-snug text-slate-900 dark:text-white">{college.name}</h2>
+              <h2 className="text-base font-bold leading-snug text-[#2d409c] dark:text-white">{college.name}</h2>
               <div className="flex items-center gap-1 mt-1">
                 <MapPin className="w-3 h-3 text-slate-400" />
                 <span className="text-xs text-slate-500 dark:text-slate-500">{college.state}</span>
                 {college.university && (
-                  <span className="text-xs text-slate-400 dark:text-slate-600 ml-1">· {college.university}</span>
+                  <span className="text-xs text-slate-400 dark:text-[#2d409c] ml-1">· {college.university}</span>
                 )}
               </div>
             </div>
@@ -102,7 +102,7 @@ const CollegeDrawer = ({ college, onClose }) => {
         <div className="overflow-y-auto overscroll-contain flex-1 px-5 py-4 space-y-5">
           {/* Fees */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-600 mb-3">Fee Structure</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-[#2d409c] mb-3">Fee Structure</h3>
             <div className="grid grid-cols-3 gap-2">
               {[
                 { label: 'State Quota', val: college.fees?.stateQuota },
@@ -110,8 +110,8 @@ const CollegeDrawer = ({ college, onClose }) => {
                 { label: 'NRI Quota', val: college.fees?.nriQuota },
               ].map(({ label, val }) => (
                 <div key={label} className="flex flex-col gap-0.5 p-3 rounded-xl border bg-slate-50 dark:bg-slate-900/40 border-slate-100 dark:border-slate-800">
-                  <span className="text-[10px] text-slate-400 dark:text-slate-600">{label}</span>
-                  <span className="text-sm font-bold text-slate-900 dark:text-white">{val ?? 'NA'}</span>
+                  <span className="text-[10px] text-slate-400 dark:text-[#2d409c]">{label}</span>
+                  <span className="text-sm font-bold text-[#2d409c] dark:text-white">{val ?? 'NA'}</span>
                 </div>
               ))}
             </div>
@@ -120,13 +120,13 @@ const CollegeDrawer = ({ college, onClose }) => {
           {/* AIQ cutoffs */}
           {college.cutoffs?.allIndiaQuota && (
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-600 mb-3">All India Quota Cutoffs</h3>
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-[#2d409c] mb-3">All India Quota Cutoffs</h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-xs">
                   <thead>
                     <tr className="text-left">
-                      <th className="pb-2 pr-3 text-slate-400 dark:text-slate-600 font-medium">Category</th>
-                      {Object.values(ROUND_LABELS).map(r => <th key={r} className="pb-2 px-2 text-slate-400 dark:text-slate-600 font-medium text-center">{r}</th>)}
+                      <th className="pb-2 pr-3 text-slate-400 dark:text-[#2d409c] font-medium">Category</th>
+                      {Object.values(ROUND_LABELS).map(r => <th key={r} className="pb-2 px-2 text-slate-400 dark:text-[#2d409c] font-medium text-center">{r}</th>)}
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
@@ -134,7 +134,7 @@ const CollegeDrawer = ({ college, onClose }) => {
                       <tr key={cat}>
                         <td className="py-2 pr-3 font-semibold text-slate-700 dark:text-slate-300">{cat}</td>
                         {Object.keys(ROUND_LABELS).map(r => (
-                          <td key={r} className="py-2 px-2 text-center text-slate-600 dark:text-slate-400">
+                          <td key={r} className="py-2 px-2 text-center text-[#2d409c] dark:text-slate-400">
                             {rounds?.[r]?.toLocaleString('en-IN') ?? '—'}
                           </td>
                         ))}
@@ -149,13 +149,13 @@ const CollegeDrawer = ({ college, onClose }) => {
           {/* State Quota cutoffs */}
           {college.cutoffs?.stateQuota && (
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-600 mb-3">WB State Quota Cutoffs</h3>
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-[#2d409c] mb-3">WB State Quota Cutoffs</h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-xs">
                   <thead>
                     <tr className="text-left">
-                      <th className="pb-2 pr-3 text-slate-400 dark:text-slate-600 font-medium">Category</th>
-                      {Object.values(ROUND_LABELS).map(r => <th key={r} className="pb-2 px-2 text-slate-400 dark:text-slate-600 font-medium text-center">{r}</th>)}
+                      <th className="pb-2 pr-3 text-slate-400 dark:text-[#2d409c] font-medium">Category</th>
+                      {Object.values(ROUND_LABELS).map(r => <th key={r} className="pb-2 px-2 text-slate-400 dark:text-[#2d409c] font-medium text-center">{r}</th>)}
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
@@ -163,7 +163,7 @@ const CollegeDrawer = ({ college, onClose }) => {
                       <tr key={cat}>
                         <td className="py-2 pr-3 font-semibold text-slate-700 dark:text-slate-300">{cat}</td>
                         {Object.keys(ROUND_LABELS).map(r => (
-                          <td key={r} className="py-2 px-2 text-center text-slate-600 dark:text-slate-400">
+                          <td key={r} className="py-2 px-2 text-center text-[#2d409c] dark:text-slate-400">
                             {rounds?.[r]?.toLocaleString('en-IN') ?? '—'}
                           </td>
                         ))}
@@ -178,12 +178,12 @@ const CollegeDrawer = ({ college, onClose }) => {
           {/* Private Management */}
           {college.cutoffs?.privateManagement && (
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-600 mb-3">Private Management Cutoffs</h3>
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-[#2d409c] mb-3">Private Management Cutoffs</h3>
               <div className="grid grid-cols-4 gap-2">
                 {Object.entries(ROUND_LABELS).map(([key, label]) => (
                   <div key={key} className="flex flex-col gap-0.5 p-3 rounded-xl border bg-slate-50 dark:bg-slate-900/40 border-slate-100 dark:border-slate-800">
-                    <span className="text-[10px] text-slate-400 dark:text-slate-600">{label}</span>
-                    <span className="text-sm font-bold text-slate-900 dark:text-white">
+                    <span className="text-[10px] text-slate-400 dark:text-[#2d409c]">{label}</span>
+                    <span className="text-sm font-bold text-[#2d409c] dark:text-white">
                       {college.cutoffs.privateManagement?.[key]?.toLocaleString('en-IN') ?? '—'}
                     </span>
                   </div>
@@ -248,11 +248,11 @@ const ExploreSearchBar = () => {
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder="Explore colleges…"
-            className="flex-1 px-5 py-4 text-sm bg-transparent outline-none text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600"
+            className="flex-1 px-5 py-4 text-sm bg-transparent outline-none text-[#2d409c] dark:text-white placeholder-slate-400 dark:placeholder-slate-600"
           />
           {q && (
             <button onClick={() => { setQ(''); setResults([]); setOpen(false); }}
-              className="px-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">
+              className="px-2 text-slate-400 hover:text-[#2d409c] dark:hover:text-slate-300">
               <X className="w-4 h-4" />
             </button>
           )}
@@ -272,7 +272,7 @@ const ExploreSearchBar = () => {
                   hover:bg-slate-50 dark:hover:bg-slate-800
                   border-b border-slate-100 dark:border-slate-800 last:border-0
                   text-slate-700 dark:text-white/80">
-                <Building2 className="w-3.5 h-3.5 shrink-0 text-slate-400 dark:text-slate-600" />
+                <Building2 className="w-3.5 h-3.5 shrink-0 text-slate-400 dark:text-[#2d409c]" />
                 <span className="flex-1 truncate">{c?.name}</span>
                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border shrink-0
                   ${c.management !== 'Private'
@@ -304,7 +304,7 @@ const WHY_CHOOSE = [
 ];
 
 const Home = () => (
-  <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-slate-900 dark:text-white">
+  <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-[#2d409c] dark:text-white">
 
     {/* ── Hero ──────────────────────────────────────────────────────────── */}
     <div className="relative border-b border-slate-200 dark:border-slate-800">
@@ -337,19 +337,19 @@ const Home = () => (
       <div className="rounded-2xl border p-10 flex flex-col lg:flex-row items-center gap-10
         bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
         <div className="flex-1">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-slate-900 dark:text-white">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#2d409c] dark:text-white">
             The Ultimate{' '}
             <span className="text-[#F9B406] dark:text-teal-400">College Guidance</span> and{' '}
             <span className="text-[#F9B406] dark:text-teal-400">Counselling</span> Platform for NEET
           </h2>
           <ul className="space-y-3">
             {[
-              'Get personalized One-O-One counselling from experts.',
+              'Get personalized 1-On-1 counselling from experts.',
               'Predict college using our advanced college predictor.',
               'Get an eBook to help you with your college selection.',
               'Get honest insights about medical colleges directly from current students',
             ].map((feature, idx) => (
-              <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+              <li key={idx} className="flex items-start gap-3 text-[#2d409c] dark:text-slate-300">
                 <span className="text-[#F9B406] dark:text-teal-400 font-bold mt-1">✓</span>
                 <span>{feature}</span>
               </li>
@@ -375,12 +375,12 @@ const Home = () => (
           </div>
         </div>
         <div>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-slate-900 dark:text-white">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-[#2d409c] dark:text-white">
             Our <span className="text-[#F9B406] dark:text-teal-400">Counselling Services</span>
           </h2>
           <div className="space-y-4">
             {[
-              'Personalized One-on-One expert counselling',
+              'Personalized 1-on-1 expert counselling',
               'Affordable & Transparent Pricing',
               'Registration & Form Filling Support',
               'Assistance in both AIQ + State Counselling',
@@ -392,7 +392,7 @@ const Home = () => (
                   bg-[#F9B406] dark:bg-teal-400">
                   <span className="text-slate-950 text-xs font-bold">✓</span>
                 </div>
-                <p className="text-slate-600 dark:text-slate-300">{service}</p>
+                <p className="text-[#2d409c] dark:text-slate-300">{service}</p>
               </div>
             ))}
           </div>
@@ -410,8 +410,8 @@ const Home = () => (
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 px-8 border rounded-2xl bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
           <div>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-slate-900 dark:text-white">
-              NEET College <span className="text-[#F9B406] dark:text-teal-400">Predictor</span>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-[#2d409c] dark:text-white">
+              NEET UG College <span className="text-[#F9B406] dark:text-teal-400">Predictor</span>
             </h2>
             <div className="space-y-4">
               {[
@@ -427,7 +427,7 @@ const Home = () => (
                     bg-[#F9B406] dark:bg-teal-400">
                     <span className="text-slate-950 text-xs font-bold">✓</span>
                   </div>
-                  <p className="text-slate-600 dark:text-slate-300">{feature}</p>
+                  <p className="text-[#2d409c] dark:text-slate-300">{feature}</p>
                 </div>
               ))}
             </div>
@@ -446,12 +446,51 @@ const Home = () => (
         </div>
       </div>
     </div>
+    
+    <div className="max-w-6xl mx-auto px-6 pb-16 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 px-8 border rounded-2xl bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
+        <div className="hidden lg:flex items-center justify-center">
+          <div className="w-full h-80 rounded-xl border flex items-center justify-center
+            bg-slate-50 dark:bg-slate-900/40 border-slate-200 dark:border-slate-700">
+            <p className="text-sm text-slate-400 dark:text-slate-500">Counselling Services Illustration</p>
+          </div>
+        </div>
+        <div>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-[#2d409c] dark:text-white">
+            Our <span className="text-[#F9B406] dark:text-teal-400">Admission Support</span>
+          </h2>
+          <div className="space-y-4">
+            {[
+              'Personalized 1-on-1 expert counselling',
+              'Affordable & Transparent Pricing',
+              'Registration & Form Filling Support',
+              'Assistance in both AIQ + State Counselling',
+              'Documentation & Scholarship Guidance',
+              'Deep Analysis of Cutoff Trends, Seat Matrix, Bond & Fees',
+            ].map((service, idx) => (
+              <div key={idx} className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5
+                  bg-[#F9B406] dark:bg-teal-400">
+                  <span className="text-slate-950 text-xs font-bold">✓</span>
+                </div>
+                <p className="text-[#2d409c] dark:text-slate-300">{service}</p>
+              </div>
+            ))}
+          </div>
+          <Link to="/packages"
+            className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full font-bold transition-all hover:scale-105
+              bg-[#F9B406] dark:bg-teal-400 hover:bg-[#e0a205] dark:hover:bg-teal-300 text-slate-950">
+            View Plans →
+          </Link>
+        </div>
+      </div>
+    </div>
 
     {/* ── Why Choose Us ─────────────────────────────────────────────────── */}
     <div className="border-t border-slate-200 dark:border-slate-800">
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-3 text-slate-900 dark:text-white">
+          <h2 className="text-4xl font-bold mb-3 text-[#2d409c] dark:text-white">
             Why Choose <span className="text-[#F9B406] dark:text-teal-400">Us?</span>
           </h2>
           <p className="text-lg text-slate-500 dark:text-slate-400">
@@ -470,7 +509,7 @@ const Home = () => (
                 group-hover:bg-[#F9B406]/10 dark:group-hover:bg-teal-500/10">
                 <Icon className="w-6 h-6 text-[#F9B406] dark:text-teal-400" />
               </div>
-              <h3 className="font-semibold text-slate-900 dark:text-white mb-2">{title}</h3>
+              <h3 className="font-semibold text-[#2d409c] dark:text-white mb-2">{title}</h3>
               <p className="text-sm text-slate-500 dark:text-slate-400">{desc}</p>
             </div>
           ))}

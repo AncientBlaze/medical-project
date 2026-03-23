@@ -40,7 +40,7 @@ const MANAGEMENT_FILTERS = [
   { value: 'private', label: 'Private' },
 ];
 
-const ROUND_LABELS = { round1: 'Rnd 1', round2: 'Rnd 2', round3: 'Mop-Up', round4: 'Stray' };
+const ROUND_LABELS = { round1: 'Round 1', round2: 'Round 2', round3: 'Mop-Up', round4: 'Stray' };
 
 const FEATURES = [
   { icon: BarChart2, title: 'NEET 2025 Cutoffs', desc: 'Real WB counselling data — 4 rounds, all categories' },
@@ -92,10 +92,10 @@ const InfoTooltip = ({ text }) => {
   const [show, setShow] = useState(false);
   return (
     <span className="relative inline-block">
-      <Info className="w-3.5 h-3.5 text-slate-400 cursor-pointer hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+      <Info className="w-3.5 h-3.5 text-slate-400 cursor-pointer hover:text-[#2d409c] dark:hover:text-slate-300 transition-colors"
         onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} />
       {show && (
-        <span className="absolute left-5 top-0 z-50 w-56 p-2.5 text-xs rounded-lg shadow-lg bg-slate-900 text-slate-200 dark:bg-white dark:text-slate-900 pointer-events-none">
+        <span className="absolute left-5 top-0 z-50 w-56 p-2.5 text-xs rounded-lg shadow-lg bg-slate-900 text-slate-200 dark:bg-white dark:text-[#2d409c] pointer-events-none">
           {text}
         </span>
       )}
@@ -109,16 +109,16 @@ const SelectField = ({ label, name, value, onChange, options, icon: Icon, toolti
       {label} {tooltip && <InfoTooltip text={tooltip} />}
     </label>
     <div className="relative">
-      {Icon && <Icon className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none text-slate-400 dark:text-slate-600 z-10" />}
+      {Icon && <Icon className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none text-slate-400 dark:text-[#2d409c] z-10" />}
       <select name={name} value={value} onChange={onChange}
-        className={`w-full appearance-none ${Icon ? 'pl-10' : 'pl-4'} pr-10 py-3 rounded-xl text-sm focus:outline-none focus:ring-2 transition-colors cursor-pointer border bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700/60 text-slate-900 dark:text-white focus:border-[#F9B406] dark:focus:border-teal-500 focus:ring-[#F9B406]/15 dark:focus:ring-teal-500/15 shadow-sm`}>
+        className={`w-full appearance-none ${Icon ? 'pl-10' : 'pl-4'} pr-10 py-3 rounded-xl text-sm focus:outline-none focus:ring-2 transition-colors cursor-pointer border bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700/60 text-[#2d409c] dark:text-white focus:border-[#F9B406] dark:focus:border-teal-500 focus:ring-[#F9B406]/15 dark:focus:ring-teal-500/15 shadow-sm`}>
         {options.map((o) => (
           <option key={typeof o === 'string' ? o : o.value} value={typeof o === 'string' ? o : o.value}>
             {typeof o === 'string' ? o : o.label}
           </option>
         ))}
       </select>
-      <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none text-slate-400 dark:text-slate-600" />
+      <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none text-slate-400 dark:text-[#2d409c]" />
     </div>
   </div>
 );
@@ -148,17 +148,17 @@ const CollegeCard = ({ college, index, quota, round }) => {
             {meta.label}
           </span>
         </div>
-        <h4 className="font-bold text-sm leading-snug line-clamp-2 text-slate-900 dark:text-white group-hover:text-[#c8920a] dark:group-hover:text-teal-400 transition-colors">
+        <h4 className="font-bold text-sm leading-snug line-clamp-2 text-[#2d409c] dark:text-white group-hover:text-[#c8920a] dark:group-hover:text-teal-400 transition-colors">
           {college.name}
         </h4>
         <div className="flex items-center gap-1.5 mt-2 flex-wrap">
           <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${isGovt ? 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/20' : 'bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-200 dark:border-purple-500/20'}`}>
             {college.management}
           </span>
-          <span className="text-[10px] text-slate-400 dark:text-slate-600 flex items-center gap-0.5">
+          <span className="text-[10px] text-slate-400 dark:text-[#2d409c] flex items-center gap-0.5">
             <MapPin className="w-3 h-3" /> West Bengal
           </span>
-          {college.established && <span className="text-[10px] text-slate-400 dark:text-slate-600">Est. {college.established}</span>}
+          {college.established && <span className="text-[10px] text-slate-400 dark:text-[#2d409c]">Est. {college.established}</span>}
         </div>
       </div>
 
@@ -175,8 +175,8 @@ const CollegeCard = ({ college, index, quota, round }) => {
             const isActive = r === round;
             return (
               <div key={r} className={`flex flex-col gap-0.5 px-2.5 py-2 rounded-lg border transition-colors ${isActive ? 'bg-[#F9B406]/8 dark:bg-teal-500/10 border-[#F9B406]/30 dark:border-teal-500/30' : val ? 'bg-slate-50 dark:bg-slate-800/60 border-transparent' : 'bg-slate-50/50 dark:bg-slate-800/20 border-transparent opacity-40'}`}>
-                <span className={`text-[10px] font-semibold uppercase tracking-wider ${isActive ? 'text-[#c8920a] dark:text-teal-400' : 'text-slate-400 dark:text-slate-600'}`}>{label}</span>
-                <span className={`text-xs font-bold ${val ? 'text-slate-900 dark:text-white' : 'text-slate-300 dark:text-slate-700'}`}>
+                <span className={`text-[10px] font-semibold uppercase tracking-wider ${isActive ? 'text-[#c8920a] dark:text-teal-400' : 'text-slate-400 dark:text-[#2d409c]'}`}>{label}</span>
+                <span className={`text-xs font-bold ${val ? 'text-[#2d409c] dark:text-white' : 'text-slate-300 dark:text-slate-700'}`}>
                   {val ? val.toLocaleString('en-IN') : '—'}
                 </span>
               </div>
@@ -186,12 +186,12 @@ const CollegeCard = ({ college, index, quota, round }) => {
 
         {/* Fee + Seats row */}
         <div className="flex items-center justify-between text-xs pt-1">
-          <div className="flex items-center gap-1.5 text-slate-600 dark:text-slate-400">
+          <div className="flex items-center gap-1.5 text-[#2d409c] dark:text-slate-400">
             <IndianRupee className="w-3.5 h-3.5" />
             <span>{feeShow ?? '—'}</span>
           </div>
           {college.seats && (
-            <div className="flex items-center gap-1.5 text-slate-600 dark:text-slate-400">
+            <div className="flex items-center gap-1.5 text-[#2d409c] dark:text-slate-400">
               <Users className="w-3.5 h-3.5" />
               <span>{college.seats} seats</span>
             </div>
@@ -210,8 +210,8 @@ const LoginGate = ({ pendingPrediction }) => {
       <div className="flex items-center justify-center w-12 h-12 rounded-2xl border mx-auto mb-4 bg-amber-100 dark:bg-teal-500/10 border-amber-300 dark:border-teal-500/20">
         <Lock className="w-5 h-5 text-[#F9B406] dark:text-teal-400" />
       </div>
-      <h3 className="font-bold text-base mb-1 text-slate-900 dark:text-white">Sign in to unlock your results</h3>
-      <p className="text-sm mb-6 max-w-xs mx-auto text-slate-600 dark:text-slate-400">
+      <h3 className="font-bold text-base mb-1 text-[#2d409c] dark:text-white">Sign in to unlock your results</h3>
+      <p className="text-sm mb-6 max-w-xs mx-auto text-[#2d409c] dark:text-slate-400">
         Your college matches are ready — log in or create a free account to see them.
       </p>
       <div className="flex items-center justify-center gap-3">
@@ -236,7 +236,7 @@ const SummaryBar = ({ predictions }) => {
     <div className="flex flex-wrap items-center gap-3 p-4 rounded-2xl border mb-6 bg-amber-50/80 dark:bg-teal-500/5 border-amber-200 dark:border-teal-500/20">
       <div className="flex items-center gap-2">
         <Award className="w-4 h-4 text-[#F9B406] dark:text-teal-400" />
-        <span className="text-sm font-semibold text-slate-900 dark:text-white">Prediction Summary</span>
+        <span className="text-sm font-semibold text-[#2d409c] dark:text-white">Prediction Summary</span>
       </div>
       <div className="flex flex-wrap gap-2 ml-auto">
         {[
@@ -260,9 +260,9 @@ const SummaryBar = ({ predictions }) => {
 const EmptyResults = ({ quota }) => (
   <div className="flex flex-col items-center gap-3 py-16 text-center">
     <div className="w-14 h-14 rounded-2xl border flex items-center justify-center mb-2 bg-slate-50 dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
-      <Search className="w-6 h-6 text-slate-300 dark:text-slate-600" />
+      <Search className="w-6 h-6 text-slate-300 dark:text-[#2d409c]" />
     </div>
-    <p className="font-bold text-slate-900 dark:text-white">No matching colleges found</p>
+    <p className="font-bold text-[#2d409c] dark:text-white">No matching colleges found</p>
     <p className="text-sm max-w-sm text-slate-500 dark:text-slate-500">
       {quota === 'allIndia'
         ? 'AIQ is only at Govt colleges — try a different round or category.'
@@ -332,7 +332,7 @@ const Predictor = () => {
   const quotaHint = QUOTA_TYPES.find((q) => q.value === formData.quota)?.desc;
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-slate-900 dark:text-white">
+    <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-[#2d409c] dark:text-white">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 py-10 sm:py-12">
 
         {/* Page header */}
@@ -347,7 +347,7 @@ const Predictor = () => {
               WB Medical College
             </span>
           </h1>
-          <p className="text-sm sm:text-base max-w-xl mx-auto text-slate-600 dark:text-slate-400">
+          <p className="text-sm sm:text-base max-w-xl mx-auto text-[#2d409c] dark:text-slate-400">
             Enter your rank and category to get matched against real 2025 cutoff data for all 39 West Bengal medical colleges — government and private.
           </p>
         </div>
@@ -358,7 +358,7 @@ const Predictor = () => {
 
           <div className="flex items-center gap-2 mb-6">
             <Filter className="w-4 h-4 text-[#F9B406] dark:text-teal-400" />
-            <h2 className="text-sm font-semibold text-slate-900 dark:text-white">Prediction Criteria</h2>
+            <h2 className="text-sm font-semibold text-[#2d409c] dark:text-white">Prediction Criteria</h2>
           </div>
 
           {formError && (
@@ -373,7 +373,7 @@ const Predictor = () => {
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-wider mb-2 text-slate-500 dark:text-white/40">NEET Rank (AIR)</label>
                 <input type="number" name="rank" value={formData.rank} onChange={handleChange} min="1" placeholder="e.g. 25000" required
-                  className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none focus:ring-2 transition-colors border [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700/60 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:border-[#F9B406] dark:focus:border-teal-500 focus:ring-[#F9B406]/15 dark:focus:ring-teal-500/15 shadow-sm" />
+                  className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none focus:ring-2 transition-colors border [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700/60 text-[#2d409c] dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:border-[#F9B406] dark:focus:border-teal-500 focus:ring-[#F9B406]/15 dark:focus:ring-teal-500/15 shadow-sm" />
               </div>
 
               <SelectField label="Category" name="category" value={formData.category} onChange={handleChange}
@@ -390,7 +390,7 @@ const Predictor = () => {
             </div>
 
             {/* Quota hint */}
-            <p className="text-xs text-slate-400 dark:text-slate-600 mb-4">{quotaHint}</p>
+            <p className="text-xs text-slate-400 dark:text-[#2d409c] mb-4">{quotaHint}</p>
 
             {/* Contextual info banners */}
             {formData.quota === 'allIndia' && (
@@ -419,7 +419,7 @@ const Predictor = () => {
               </button>
               {showResults && (
                 <button type="button" onClick={resetForm}
-                  className="flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm border transition-colors text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/40 hover:bg-slate-200 dark:hover:bg-slate-800/60 border-slate-200 dark:border-slate-800">
+                  className="flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm border transition-colors text-[#2d409c] dark:text-slate-300 bg-slate-100 dark:bg-slate-900/40 hover:bg-slate-200 dark:hover:bg-slate-800/60 border-slate-200 dark:border-slate-800">
                   <RotateCcw className="w-4 h-4" /> Reset
                 </button>
               )}
@@ -436,7 +436,7 @@ const Predictor = () => {
                 predictions.matchedColleges.length > 0 ? (
                   <>
                     <div className="flex items-center justify-between mb-5">
-                      <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                      <h3 className="text-lg font-bold text-[#2d409c] dark:text-white">
                         {predictions.matchedColleges.length} Matched College{predictions.matchedColleges.length !== 1 ? 's' : ''}
                       </h3>
                       <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-500">
@@ -470,7 +470,7 @@ const Predictor = () => {
                   <Icon className="w-4 h-4 text-[#F9B406] dark:text-teal-400" />
                 </div>
                 <div>
-                  <p className="font-semibold text-sm mb-1 text-slate-900 dark:text-white">{title}</p>
+                  <p className="font-semibold text-sm mb-1 text-[#2d409c] dark:text-white">{title}</p>
                   <p className="text-xs leading-relaxed text-slate-500 dark:text-slate-500">{desc}</p>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 import { RefreshCw, CheckCircle, XCircle, Globe, Clock } from 'lucide-react';
 
 const RefundPolicy = () => (
-  <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300">
+  <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-[#2d409c] dark:text-white transition-colors duration-300">
 
     {/* Hero */}
     <div className="relative border-b border-amber-200 dark:border-[#2C2E69]/60 bg-amber-50 dark:bg-[#2C2E69]/20">
@@ -28,7 +28,7 @@ const RefundPolicy = () => (
           <div className="w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 bg-amber-50 border-amber-200 dark:bg-[#F9B406]/10 dark:border-[#F9B406]/20">
             <XCircle className="w-4 h-4 text-[#F9B406]" />
           </div>
-          <h2 className="text-base font-semibold text-slate-900 dark:text-white">Non-Refundable Programs</h2>
+          <h2 className="text-base font-semibold text-[#2d409c] dark:text-white">Non-Refundable Programs</h2>
         </div>
         <p className="text-sm text-slate-500 dark:text-white/50 mb-4">
           The following programs are <strong>non-refundable once services have started</strong> as they involve personalised counselling support and access to proprietary tools:
@@ -48,7 +48,7 @@ const RefundPolicy = () => (
           <div className="w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 bg-amber-50 border-amber-200 dark:bg-[#F9B406]/10 dark:border-[#F9B406]/20">
             <CheckCircle className="w-4 h-4 text-[#F9B406]" />
           </div>
-          <h2 className="text-base font-semibold text-slate-900 dark:text-white">Refundable Program</h2>
+          <h2 className="text-base font-semibold text-[#2d409c] dark:text-white">Refundable Program</h2>
         </div>
         <p className="text-sm text-slate-500 dark:text-white/50 mb-4">
           Refund eligibility currently applies only to <strong>MedSankalp Seat Secure (WB)</strong>. Refund may be granted if:
@@ -86,7 +86,7 @@ const RefundPolicy = () => (
           <div className="w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 bg-amber-50 border-amber-200 dark:bg-[#F9B406]/10 dark:border-[#F9B406]/20">
             <Globe className="w-4 h-4 text-[#F9B406]" />
           </div>
-          <h2 className="text-base font-semibold text-slate-900 dark:text-white">Overseas & Deemed Programs</h2>
+          <h2 className="text-base font-semibold text-[#2d409c] dark:text-white">Overseas & Deemed Programs</h2>
         </div>
         <p className="text-sm text-slate-500 dark:text-white/50 mb-4">
           The following programs are generally <strong>non-refundable once admission processing begins</strong>:
@@ -106,7 +106,7 @@ const RefundPolicy = () => (
           <div className="w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 bg-amber-50 border-amber-200 dark:bg-[#F9B406]/10 dark:border-[#F9B406]/20">
             <Clock className="w-4 h-4 text-[#F9B406]" />
           </div>
-          <h2 className="text-base font-semibold text-slate-900 dark:text-white">Refund Processing</h2>
+          <h2 className="text-base font-semibold text-[#2d409c] dark:text-white">Refund Processing</h2>
         </div>
         <p className="text-sm leading-relaxed text-slate-500 dark:text-white/50">
           Approved refunds will be processed within <strong>15–30 working days</strong> through the original payment method or bank transfer.

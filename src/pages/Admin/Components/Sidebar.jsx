@@ -30,11 +30,11 @@ const Sidebar = memo(({ section, setSection, stats, leadsCount }) => {
 
         <div className="pt-4 mt-4 border-t space-y-2.5 px-1 border-slate-200 dark:border-slate-800">
           <div className="flex justify-between text-xs">
-            <span className="text-slate-600 dark:text-slate-500">Today</span>
-            <span className="font-semibold text-slate-900 dark:text-white">{stats.today}</span>
+            <span className="text-[#2d409c] dark:text-slate-500">Today</span>
+            <span className="font-semibold text-[#2d409c] dark:text-white">{stats.today}</span>
           </div>
           <div className="flex justify-between text-xs">
-            <span className="text-slate-600 dark:text-slate-500">Conversion</span>
+            <span className="text-[#2d409c] dark:text-slate-500">Conversion</span>
             <span className="font-semibold text-[#F9B406] dark:text-teal-400">68%</span>
           </div>
           <div className="h-1.5 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-900/40">

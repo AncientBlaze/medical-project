@@ -13,7 +13,7 @@ const Overview = ({ leads, stats, setSection }) => (
 
     <div className="rounded-2xl overflow-hidden border">
       <div className="flex items-center justify-between px-6 py-4 border-b transition-colors bg-slate-50 dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
-        <h2 className="text-sm font-semibold text-slate-900 dark:text-white">Recent Predictions</h2>
+        <h2 className="text-sm font-semibold text-[#2d409c] dark:text-white">Recent Predictions</h2>
         <button onClick={() => setSection('predictions')}
           className="flex items-center gap-1 text-xs transition-colors text-[#F9B406]/70 hover:text-[#F9B406] dark:text-teal-400/70 dark:hover:text-teal-400">
           View all <ChevronRight className="w-3.5 h-3.5" />
@@ -26,7 +26,7 @@ const Overview = ({ leads, stats, setSection }) => (
               {l.user?.name?.charAt(0) || 'G'}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium truncate text-slate-900 dark:text-white">{l.user?.name || 'Guest'}</p>
+              <p className="text-sm font-medium truncate text-[#2d409c] dark:text-white">{l.user?.name || 'Guest'}</p>
               <p className="text-xs text-slate-500 dark:text-slate-400">{l.course} · Rank {l.rank?.toLocaleString()}</p>
             </div>
             <span className="text-xs text-slate-500 dark:text-slate-400">{fmt(l.createdAt)}</span>

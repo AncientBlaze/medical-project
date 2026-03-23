@@ -66,7 +66,7 @@ const Admin = () => {
   const Section  = sections[section];
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-slate-900 dark:text-white">
+    <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-[#2d409c] dark:text-white">
       <AdminHeader />
 
       <CollegesModal

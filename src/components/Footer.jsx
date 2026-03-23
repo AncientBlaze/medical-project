@@ -82,22 +82,19 @@ const Footer = () => {
                 <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-100 dark:bg-teal-500/10 border border-amber-200 dark:border-teal-500/30">
                   <GraduationCap className="w-5 h-5 text-[#F9B406] dark:text-teal-400" />
                 </div>
-                <span className="font-bold text-lg tracking-tight text-slate-900 dark:text-white">
+                <span className="font-bold text-lg tracking-tight text-[#2d409c] dark:text-white">
                   Med<span className="text-[#F9B406] dark:text-teal-400">Sankalp</span>
                 </span>
               </div>
-              <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 mb-3">
+              <p className="text-sm leading-relaxed text-[#2d409c] dark:text-slate-400 mb-3">
                 AI-powered NEET college predictions powered by real data. Helping students find their perfect medical college.
-              </p>
-              <p className="text-xs text-slate-500 dark:text-slate-500 italic">
-                Not affiliated with MCC, NMC, or any government counselling body.
               </p>
             </div>
 
             {/* Navigate */}
             <div>
               <h4 className="text-sm font-semibold uppercase tracking-wider mb-4
-                text-slate-900 dark:text-white">
+                text-[#2d409c] dark:text-white">
                 Navigate
               </h4>
               <ul className="space-y-2.5">
@@ -106,7 +103,7 @@ const Footer = () => {
                     <NavLink to={to}
                       onClick={smoothScrollToTop}
                       className="text-sm transition-colors
-                        text-slate-600 dark:text-slate-400
+                        text-[#2d409c] dark:text-slate-400
                         hover:text-[#F9B406] dark:hover:text-teal-400 font-medium">
                       {label}
                     </NavLink>
@@ -118,7 +115,7 @@ const Footer = () => {
             {/* Legal */}
             <div>
               <h4 className="text-sm font-semibold uppercase tracking-wider mb-4
-                text-slate-900 dark:text-white">
+                text-[#2d409c] dark:text-white">
                 Legal
               </h4>
               <ul className="space-y-2.5">
@@ -127,7 +124,7 @@ const Footer = () => {
                     <NavLink to={to}
                       onClick={smoothScrollToTop}
                       className="text-sm transition-colors
-                        text-slate-600 dark:text-slate-400
+                        text-[#2d409c] dark:text-slate-400
                         hover:text-[#F9B406] dark:hover:text-teal-400 font-medium">
                       {label}
                     </NavLink>
@@ -139,26 +136,26 @@ const Footer = () => {
             {/* Contact Info */}
             <div>
               <h4 className="text-sm font-semibold uppercase tracking-wider mb-4
-                text-slate-900 dark:text-white">
+                text-[#2d409c] dark:text-white">
                 Get In Touch
               </h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <Mail className="w-4 h-4 text-[#F9B406] dark:text-teal-400 mt-0.5
                     shrink-0" />
-                  <a href="mailto:support@medsankalp.com" className="text-sm text-slate-600 dark:text-slate-400 hover:text-[#F9B406] dark:hover:text-teal-400 transition-colors">
+                  <a href="mailto:support@medsankalp.com" className="text-sm text-[#2d409c] dark:text-slate-400 hover:text-[#F9B406] dark:hover:text-teal-400 transition-colors">
                     support@medsankalp.com
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
                   <Phone className="w-4 h-4 text-[#F9B406] dark:text-teal-400 mt-0.5 shrink-0" />
-                  <a href="tel:+919876543210" className="text-sm text-slate-600 dark:text-slate-400 hover:text-[#F9B406] dark:hover:text-teal-400 transition-colors">
+                  <a href="tel:+919876543210" className="text-sm text-[#2d409c] dark:text-slate-400 hover:text-[#F9B406] dark:hover:text-teal-400 transition-colors">
                     +91 9876 543 210
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-[#F9B406] dark:text-teal-400 mt-0.5 shrink-0" />
-                  <span className="text-sm text-slate-600 dark:text-slate-400">
+                  <span className="text-sm text-[#2d409c] dark:text-slate-400">
                     India
                   </span>
                 </li>
@@ -171,7 +168,7 @@ const Footer = () => {
 
           {/* Bottom bar */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-slate-600 dark:text-slate-400">
+            <p className="text-sm text-[#2d409c] dark:text-slate-400">
               © 2025 MedSankalp · All rights reserved
             </p>
           </div>

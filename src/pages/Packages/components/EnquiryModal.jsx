@@ -28,7 +28,7 @@ const EnquiryModal = ({ pkg, onClose }) => {
   const input = `w-full px-4 py-2.5 rounded-xl border text-sm outline-none transition-colors
     bg-slate-50 dark:bg-white/5
     border-slate-200 dark:border-white/10
-    text-slate-900 dark:text-white
+    text-[#2d409c] dark:text-white
     placeholder-slate-400 dark:placeholder-white/20
     focus:border-amber-400 dark:focus:border-[#F9B406]/60`;
 
@@ -49,7 +49,7 @@ const EnquiryModal = ({ pkg, onClose }) => {
         <div className="flex items-start justify-between p-6 border-b border-slate-100 dark:border-white/10">
           <div>
             <p className="text-xs font-medium text-[#F9B406] mb-1">{pkg.tag}</p>
-            <h2 className="text-base font-bold text-slate-900 dark:text-white">{pkg.name}</h2>
+            <h2 className="text-base font-bold text-[#2d409c] dark:text-white">{pkg.name}</h2>
             <p className="text-sm text-slate-500 dark:text-white/40 mt-0.5">
               {pkg.price} <span className="text-xs">+ GST</span>
             </p>

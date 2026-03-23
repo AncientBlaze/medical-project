@@ -58,7 +58,7 @@ const Header = ({ user, onLogout }) => {
                   `px-3.5 py-1.5 rounded-lg text-sm font-medium transition-colors border ${
                     isActive
                       ? 'bg-[#F9B406]/10 text-[#F9B406] dark:text-teal-400 border-[#F9B406]/30 dark:border-teal-500/30 dark:bg-teal-500/10'
-                      : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-amber-50 dark:hover:bg-slate-900/40'
+                      : 'border-transparent text-[#2d409c] dark:text-slate-400 hover:text-[#2d409c] dark:hover:text-white hover:bg-amber-50 dark:hover:bg-slate-900/40'
                   }`
                 }
               >
@@ -74,7 +74,7 @@ const Header = ({ user, onLogout }) => {
             <>
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border
                 bg-amber-50 dark:bg-slate-900/40 border-amber-200 dark:border-slate-700">
-                <div className="w-5 h-5 rounded-full bg-[#F9B406] dark:bg-teal-400 flex items-center justify-center text-slate-900 dark:text-slate-950 text-xs font-bold shrink-0">
+                <div className="w-5 h-5 rounded-full bg-[#F9B406] dark:bg-teal-400 flex items-center justify-center text-[#2d409c] dark:text-slate-950 text-xs font-bold shrink-0">
                   {user.name?.charAt(0).toUpperCase()}
                 </div>
                 <span className="text-sm font-medium text-slate-700 dark:text-white max-w-30 truncate">
@@ -85,7 +85,7 @@ const Header = ({ user, onLogout }) => {
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-sm font-medium transition-colors
                   bg-amber-50 dark:bg-slate-900/40 hover:bg-amber-100 dark:hover:bg-slate-800/50
                   border-amber-200 dark:border-slate-700
-                  text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+                  text-[#2d409c] dark:text-slate-400 hover:text-[#2d409c] dark:hover:text-white">
                 <LogOut className="w-3.5 h-3.5" /> Logout
               </button>
             </>
@@ -98,8 +98,8 @@ const Header = ({ user, onLogout }) => {
           <ThemeToggle theme={theme} toggle={toggle} />
           <button
             className="p-1.5 rounded-lg transition-colors
-              text-slate-600 dark:text-slate-400
-              hover:text-slate-900 dark:hover:text-white
+              text-[#2d409c] dark:text-slate-400
+              hover:text-[#2d409c] dark:hover:text-white
               hover:bg-amber-50 dark:hover:bg-slate-900/40"
             onClick={() => setIsOpen(o => !o)}
             aria-label="Toggle menu"
@@ -122,7 +122,7 @@ const Header = ({ user, onLogout }) => {
                   `flex w-full px-3 py-2.5 rounded-xl text-sm font-medium transition-colors border ${
                     isActive
                       ? 'bg-[#F9B406]/10 text-[#F9B406] dark:text-teal-400 border-[#F9B406]/30 dark:border-teal-500/30 dark:bg-teal-500/10'
-                      : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-amber-50 dark:hover:bg-slate-900/40'
+                      : 'border-transparent text-[#2d409c] dark:text-slate-400 hover:text-[#2d409c] dark:hover:text-white hover:bg-amber-50 dark:hover:bg-slate-900/40'
                   }`
                 }
               >
@@ -133,7 +133,7 @@ const Header = ({ user, onLogout }) => {
             {user && (
               <div className="pt-3 mt-2 border-t space-y-2 border-amber-200 dark:border-slate-800">
                 <div className="flex items-center gap-2.5 px-3 py-1.5">
-                  <div className="w-7 h-7 rounded-full bg-[#F9B406] dark:bg-teal-400 flex items-center justify-center text-slate-900 dark:text-slate-950 text-xs font-bold shrink-0">
+                  <div className="w-7 h-7 rounded-full bg-[#F9B406] dark:bg-teal-400 flex items-center justify-center text-[#2d409c] dark:text-slate-950 text-xs font-bold shrink-0">
                     {user.name?.charAt(0).toUpperCase()}
                   </div>
                   <span className="text-sm font-medium text-slate-700 dark:text-white truncate">
@@ -144,7 +144,7 @@ const Header = ({ user, onLogout }) => {
                   className="flex items-center gap-2 w-full px-3 py-2.5 rounded-xl border text-sm font-medium transition-colors
                     bg-amber-50 dark:bg-slate-900/40 hover:bg-amber-100 dark:hover:bg-slate-800/50
                     border-amber-200 dark:border-slate-700
-                    text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+                    text-[#2d409c] dark:text-slate-400 hover:text-[#2d409c] dark:hover:text-white">
                   <LogOut className="w-4 h-4" /> Logout
                 </button>
               </div>

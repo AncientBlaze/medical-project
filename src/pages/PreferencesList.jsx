@@ -87,16 +87,16 @@ const PreferencesList = () => {
   };
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-slate-900 dark:text-white">
+    <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-[#2d409c] dark:text-white">
 
       {/* Hero Section */}
       <div className="relative border-b border-amber-200 dark:border-slate-800 bg-linear-to-br from-amber-50 to-amber-100 dark:from-slate-900/60 dark:to-slate-950">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(249,180,6,0.15),transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(20,184,166,0.1),transparent)]" />
         <div className="relative max-w-6xl mx-auto px-6 py-16 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4 text-slate-900 dark:text-white">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4 text-[#2d409c] dark:text-white">
             Find Your <span className="text-[#F9B406] dark:text-teal-400">Colleges</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-[#2d409c] dark:text-slate-400 max-w-3xl mx-auto">
             Build and organize your medical college preferences. Add colleges, reorder them, and download your final list for counselling
           </p>
         </div>
@@ -108,7 +108,7 @@ const PreferencesList = () => {
           {/* Left: Filter & Search */}
           <div className="lg:col-span-1">
             <div className="rounded-2xl bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 p-6 sticky top-20 h-fit">
-              <h2 className="text-xl font-bold mb-6 text-slate-900 dark:text-white">Filter Colleges</h2>
+              <h2 className="text-xl font-bold mb-6 text-[#2d409c] dark:text-white">Filter Colleges</h2>
 
               <div className="space-y-5">
                 {/* State Filter */}
@@ -119,7 +119,7 @@ const PreferencesList = () => {
                   <select
                     value={filterState}
                     onChange={(e) => setFilterState(e.target.value)}
-                    className="w-full px-3 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#F9B406] dark:focus:ring-teal-400 text-sm"
+                    className="w-full px-3 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-[#2d409c] dark:text-white focus:outline-none focus:ring-2 focus:ring-[#F9B406] dark:focus:ring-teal-400 text-sm"
                   >
                     <option value="">All States</option>
                     {STATES.map(state => (
@@ -139,10 +139,10 @@ const PreferencesList = () => {
 
               {/* Stats */}
               <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700">
-                <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
-                  <span className="font-semibold text-slate-900 dark:text-white">{filteredColleges.length}</span> colleges available
+                <p className="text-sm text-[#2d409c] dark:text-slate-400 mb-3">
+                  <span className="font-semibold text-[#2d409c] dark:text-white">{filteredColleges.length}</span> colleges available
                 </p>
-                <p className="text-sm text-slate-600 dark:text-slate-400">
+                <p className="text-sm text-[#2d409c] dark:text-slate-400">
                   <span className="font-semibold text-[#F9B406] dark:text-teal-400">{preferences.length}</span> colleges added to list
                 </p>
               </div>
@@ -154,7 +154,7 @@ const PreferencesList = () => {
             {/* Preference List */}
             <div className="rounded-2xl bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 p-6">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white">Your Preferences</h2>
+                <h2 className="text-xl font-bold text-[#2d409c] dark:text-white">Your Preferences</h2>
                 {preferences.length > 0 && (
                   <button
                     onClick={handleDownloadPDF}
@@ -175,9 +175,9 @@ const PreferencesList = () => {
                         {index + 1}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-semibold text-slate-900 dark:text-white truncate">{college.name}</p>
+                        <p className="text-sm font-semibold text-[#2d409c] dark:text-white truncate">{college.name}</p>
                         <div className="flex items-center gap-2 mt-1">
-                          <p className="text-xs text-slate-600 dark:text-slate-400">{college.state}</p>
+                          <p className="text-xs text-[#2d409c] dark:text-slate-400">{college.state}</p>
                           <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
                             college.management?.toLowerCase() === 'government'
                               ? 'bg-blue-100 dark:bg-blue-500/10 text-blue-700 dark:text-blue-300'
@@ -234,7 +234,7 @@ const PreferencesList = () => {
 
             {/* Available Colleges - Vertical */}
             <div className="rounded-2xl bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 p-6">
-              <h2 className="text-xl font-bold mb-6 text-slate-900 dark:text-white">Available Colleges</h2>
+              <h2 className="text-xl font-bold mb-6 text-[#2d409c] dark:text-white">Available Colleges</h2>
               <div className="overflow-y-auto max-h-96">
                 <div className="flex flex-col gap-3 scroll-auto">
                   {filteredColleges.length > 0 ? (
@@ -244,7 +244,7 @@ const PreferencesList = () => {
                         <div key={college.id} className="flex flex-col p-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-amber-200 dark:hover:border-teal-500/30 transition-colors bg-slate-50 dark:bg-slate-800/50">
                           <div className="flex items-start justify-between gap-2 mb-3">
                             <div className="flex-1 min-w-0">
-                              <p className="text-sm font-semibold text-slate-900 dark:text-white">{college.name}</p>
+                              <p className="text-sm font-semibold text-[#2d409c] dark:text-white">{college.name}</p>
                             </div>
                             {!isAdded ? (
                               <button
@@ -265,7 +265,7 @@ const PreferencesList = () => {
                             )}
                           </div>
                           <div className="flex flex-col gap-2">
-                            <p className="text-xs text-slate-600 dark:text-slate-400">{college.state}</p>
+                            <p className="text-xs text-[#2d409c] dark:text-slate-400">{college.state}</p>
                             <span className={`text-xs font-medium px-2 py-1 rounded-full inline-block w-fit ${
                               college.management?.toLowerCase() === 'government'
                                 ? 'bg-blue-100 dark:bg-blue-500/10 text-blue-700 dark:text-blue-300'

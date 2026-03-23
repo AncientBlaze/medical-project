@@ -20,6 +20,9 @@ import Footer from './components/Footer';
 import PackagesGrid from './pages/Packages/components/PackagesGrid';
 import PackageDetail from './pages/Packages/components/PackageDetails';
 import PreferencesList from './pages/PreferencesList';
+import AdmissionSupport from './pages/AdmissionSupport';
+import StudentProfile from './pages/StudentProfile';
+import DoctorProfile from './pages/DoctorProfile';
 
 function AuthRoute({ children }) {
   const user = useAuthStore((s) => s.user);
@@ -33,6 +36,7 @@ function AuthRoute({ children }) {
   }
   return children;
 }
+
 function PrivateRoute({ children, adminOnly = false }) {
   const user = useAuthStore((s) => s.user);
   const loading = useAuthStore((s) => s.loading);
@@ -91,36 +95,43 @@ function SignupPage() {
 function AppRoutes() {
   return (
     <Routes>
+      {/* Auth */}
       <Route path="/login" element={<AuthRoute><LoginPage /></AuthRoute>} />
       <Route path="/signup" element={<AuthRoute><SignupPage /></AuthRoute>} />
 
+      {/* Admin */}
       <Route path="/admin" element={<PrivateRoute adminOnly><Admin /></PrivateRoute>} />
 
-      {/* Authenticated routes */}
+      {/* Private */}
       <Route path="/" element={<PrivateRoute><Layout><Home /></Layout></PrivateRoute>} />
       <Route path="/about" element={<PrivateRoute><Layout><About /></Layout></PrivateRoute>} />
       <Route path="/contact" element={<PrivateRoute><Layout><Contact /></Layout></PrivateRoute>} />
       <Route path="/preferences-list" element={<PrivateRoute><Layout><PreferencesList /></Layout></PrivateRoute>} />
+      <Route path="/profile" element={<PrivateRoute><Layout><StudentProfile /></Layout></PrivateRoute>} />
 
-      {/* Predictor is public — results are gated inside the component */}
+      {/* Public — results/actions gated inside the components */}
       <Route path="/predictor" element={<Layout><Predictor /></Layout>} />
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="/packages" element={<Layout><PackagesGrid /></Layout>} />
+      <Route path="/packages/:id" element={<Layout><PackageDetail /></Layout>} />
+      <Route path="/admission-support" element={<Layout><AdmissionSupport /></Layout>} />
+      <Route path="/doctors" element={<Layout><DoctorProfile /></Layout>} />
+
+      {/* Legal */}
       <Route path="/terms-and-conditions" element={<Layout><TermsAndConditions /></Layout>} />
       <Route path="/refund-policy" element={<Layout><RefundPolicy /></Layout>} />
       <Route path="/privacy-policy" element={<Layout><PrivacyPolicy /></Layout>} />
       <Route path="/disclaimer" element={<Layout><Disclaimer /></Layout>} />
-      <Route path="/packages" element={<Layout><PackagesGrid /></Layout>} />
-      <Route path="/packages/:id" element={<Layout><PackageDetail /></Layout>} />
+
+      {/* Fallback */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
 
 export default function App() {
-
   const init = useAuthStore((s) => s.init);
   const initTheme = useThemeStore((s) => s.init);
 
-  {/*so the server can set the theme and stays upto date with state changes */ }
   useEffect(() => { init(); }, [init]);
   useEffect(() => { initTheme(); }, [initTheme]);
 

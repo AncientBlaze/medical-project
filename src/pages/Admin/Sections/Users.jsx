@@ -27,7 +27,7 @@ const Users = ({ leads, stats }) => {
     >
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-800">
-        <h2 className="text-sm font-semibold text-slate-900 dark:text-white">
+        <h2 className="text-sm font-semibold text-[#2d409c] dark:text-white">
           Unique Users
         </h2>
 
@@ -47,7 +47,7 @@ const Users = ({ leads, stats }) => {
 
             {/* Info */}
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-slate-900 dark:text-white">
+              <p className="text-sm font-medium text-[#2d409c] dark:text-white">
                 {l.user.name}
               </p>
 

@@ -13,7 +13,7 @@ const Settings = () => {
     <div className="relative">
       <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none text-slate-500 dark:text-slate-400" />
       <input type="password" name={name} placeholder={placeholder} required
-        className="w-full pl-10 pr-4 py-3 rounded-xl border outline-none focus:ring-1 transition-colors bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:border-amber-400 dark:focus:border-teal-400 focus:ring-amber-400/20 dark:focus:ring-teal-400/20" />
+        className="w-full pl-10 pr-4 py-3 rounded-xl border outline-none focus:ring-1 transition-colors bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-[#2d409c] dark:text-white placeholder-slate-400 focus:border-amber-400 dark:focus:border-teal-400 focus:ring-amber-400/20 dark:focus:ring-teal-400/20" />
     </div>
   );
   const handlePasswordChange = useCallback(async (e) => {
@@ -66,13 +66,13 @@ const Settings = () => {
         <PasswordInput name="confirmPassword" placeholder="Confirm new password" />
         <div className="flex gap-3 pt-2">
           <button type="submit" disabled={changing}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold disabled:opacity-50 transition-colors bg-[#F9B406] hover:bg-[#F9B406]/80 dark:bg-teal-400 dark:hover:bg-teal-500 text-white dark:text-slate-900">
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold disabled:opacity-50 transition-colors bg-[#F9B406] hover:bg-[#F9B406]/80 dark:bg-teal-400 dark:hover:bg-teal-500 text-white dark:text-[#2d409c]">
             {changing
               ? <><RefreshCw className="w-4 h-4 animate-spin" /> Updating…</>
               : <><Save className="w-4 h-4" /> Update Password</>}
           </button>
           <button type="reset"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl border text-sm font-semibold disabled:opacity-50 transition-colors bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl border text-sm font-semibold disabled:opacity-50 transition-colors bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-[#2d409c] dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700"
             >
             Cancel
           </button>

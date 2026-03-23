@@ -71,26 +71,26 @@ const CollegeModal = ({ college, isOpen, onClose }) => {
           onClick={onClose}
           className="sticky top-0 right-0 z-10 p-3 -mr-2 -mt-2 rounded-full bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700"
         >
-          <X className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+          <X className="w-5 h-5 text-[#2d409c] dark:text-slate-400" />
         </button>
 
         <div className="p-8">
           {/* College Header */}
           <div className="mb-8 pb-8 border-b border-slate-200 dark:border-slate-800">
-            <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">{college.name}</h2>
+            <h2 className="text-3xl font-bold mb-4 text-[#2d409c] dark:text-white">{college.name}</h2>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-[#F9B406] dark:text-teal-400 shrink-0" />
-                <span className="text-sm text-slate-600 dark:text-slate-400">{college.state}</span>
+                <span className="text-sm text-[#2d409c] dark:text-slate-400">{college.state}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Building2 className="w-4 h-4 text-[#F9B406] dark:text-teal-400 shrink-0" />
-                <span className="text-sm text-slate-600 dark:text-slate-400">{college.management}</span>
+                <span className="text-sm text-[#2d409c] dark:text-slate-400">{college.management}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-[#F9B406] dark:text-teal-400 shrink-0" />
-                <span className="text-sm text-slate-600 dark:text-slate-400">{college.seats} seats</span>
+                <span className="text-sm text-[#2d409c] dark:text-slate-400">{college.seats} seats</span>
               </div>
               <div className="flex items-center gap-2">
                 <Globe className="w-4 h-4 text-[#F9B406] dark:text-teal-400 shrink-0" />
@@ -110,13 +110,13 @@ const CollegeModal = ({ college, isOpen, onClose }) => {
               <div className="grid grid-cols-2 gap-3">
                 {college.fees.managementQuota && (
                   <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800">
-                    <p className="text-xs text-slate-600 dark:text-slate-400">Management Quota</p>
+                    <p className="text-xs text-[#2d409c] dark:text-slate-400">Management Quota</p>
                     <p className="font-bold text-[#F9B406] dark:text-teal-400">{formatFee(college.fees.managementQuota)}</p>
                   </div>
                 )}
                 {college.fees.nriQuota && (
                   <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800">
-                    <p className="text-xs text-slate-600 dark:text-slate-400">NRI Quota</p>
+                    <p className="text-xs text-[#2d409c] dark:text-slate-400">NRI Quota</p>
                     <p className="font-bold text-[#F9B406] dark:text-teal-400">{formatFee(college.fees.nriQuota)}</p>
                   </div>
                 )}
@@ -127,7 +127,7 @@ const CollegeModal = ({ college, isOpen, onClose }) => {
           {/* Cutoffs */}
           {college.cutoffs && (
             <div className="mb-8 pb-8 border-b border-slate-200 dark:border-slate-800">
-              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 text-slate-900 dark:text-white">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 text-[#2d409c] dark:text-white">
                 <TrendingDown className="w-5 h-5 text-[#F9B406] dark:text-teal-400" />
                 NEET Cutoff Ranks (2024)
               </h3>
@@ -138,7 +138,7 @@ const CollegeModal = ({ college, isOpen, onClose }) => {
 
                   return (
                     <div key={quotaType} className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800">
-                      <p className="text-xs text-slate-600 dark:text-slate-400 mb-1 capitalize">
+                      <p className="text-xs text-[#2d409c] dark:text-slate-400 mb-1 capitalize">
                         {quotaType.replace(/([A-Z])/g, ' $1').trim()}
                       </p>
                       <p className="text-lg font-bold text-[#F9B406] dark:text-teal-400">
@@ -153,7 +153,7 @@ const CollegeModal = ({ college, isOpen, onClose }) => {
 
           {/* Capture Form */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-slate-900 dark:text-white">Save Your Prediction</h3>
+            <h3 className="text-lg font-semibold mb-4 text-[#2d409c] dark:text-white">Save Your Prediction</h3>
 
             {message && (
               <div
@@ -178,7 +178,7 @@ const CollegeModal = ({ college, isOpen, onClose }) => {
                   value={formData.category}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#F9B406] dark:focus:ring-teal-400"
+                  className="w-full px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-[#2d409c] dark:text-white focus:outline-none focus:ring-2 focus:ring-[#F9B406] dark:focus:ring-teal-400"
                 >
                   <option value="">Select Category</option>
                   <option value="General">General</option>
@@ -202,7 +202,7 @@ const CollegeModal = ({ college, isOpen, onClose }) => {
                   onChange={handleChange}
                   placeholder="Enter your NEET rank"
                   required
-                  className="w-full px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#F9B406] dark:focus:ring-teal-400"
+                  className="w-full px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-[#2d409c] dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#F9B406] dark:focus:ring-teal-400"
                 />
               </div>
 
@@ -215,7 +215,7 @@ const CollegeModal = ({ college, isOpen, onClose }) => {
                   name="quota"
                   value={formData.quota}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#F9B406] dark:focus:ring-teal-400"
+                  className="w-full px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-[#2d409c] dark:text-white focus:outline-none focus:ring-2 focus:ring-[#F9B406] dark:focus:ring-teal-400"
                 >
                   <option value="allIndia">All India Quota</option>
                   <option value="state">State Quota</option>
@@ -234,7 +234,7 @@ const CollegeModal = ({ college, isOpen, onClose }) => {
                     value={formData.state}
                     onChange={handleChange}
                     placeholder="Enter your state"
-                    className="w-full px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#F9B406] dark:focus:ring-teal-400"
+                    className="w-full px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-[#2d409c] dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#F9B406] dark:focus:ring-teal-400"
                   />
                 </div>
               )}
@@ -244,7 +244,7 @@ const CollegeModal = ({ college, isOpen, onClose }) => {
                 <button
                   type="button"
                   onClick={onClose}
-                  className="flex-1 px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-medium transition-colors"
+                  className="flex-1 px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-[#2d409c] dark:text-white font-medium transition-colors"
                 >
                   Cancel
                 </button>
