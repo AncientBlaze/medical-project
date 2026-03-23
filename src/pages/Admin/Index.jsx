@@ -8,20 +8,21 @@ import PredictionsTable from './Sections/PredictionsTable';
 import Users from './Sections/Users';
 import Settings from './Sections/Settings';
 import Export from './Sections/Export';
+import DoctorsAdmin from './Sections/DoctorsAdmin';
 import CollegesModal from './Components/CollegesModal';
 import LoadingState from './Components/LoadingState';
 import ErrorState from './Components/ErrorState';
 
 const Admin = () => {
-  const user    = useAuthStore((s) => s.user);
+  const user = useAuthStore((s) => s.user);
   const loading = useAuthStore((s) => s.loading);
 
-  const [leads,    setLeads]    = useState([]);
+  const [leads, setLeads] = useState([]);
   const [fetching, setFetching] = useState(true);
-  const [error,    setError]    = useState('');
-  const [section,  setSection]  = useState('overview');
-  const [stats,    setStats]    = useState({ total: 0, users: 0, today: 0, growth: 0 });
-  const [modal,    setModal]    = useState({ open: false, colleges: [] });
+  const [error, setError] = useState('');
+  const [section, setSection] = useState('overview');
+  const [stats, setStats] = useState({ total: 0, users: 0, today: 0, growth: 0 });
+  const [modal, setModal] = useState({ open: false, colleges: [] });
 
   useEffect(() => {
     if (loading || !user?.isAdmin) return;
@@ -30,25 +31,20 @@ const Admin = () => {
         const { data } = await api.get('/admin/predictions');
         const p = data.predictions || [];
         setLeads(p);
-        
-        // Optimize stats calculation
+
         const todayStr = new Date().toDateString();
         let userIds = new Set();
         let todayCount = 0;
-        
+
         for (const prediction of p) {
-          if (prediction.user?._id) {
-            userIds.add(prediction.user._id);
-          }
-          if (new Date(prediction.createdAt).toDateString() === todayStr) {
-            todayCount++;
-          }
+          if (prediction.user?._id) userIds.add(prediction.user._id);
+          if (new Date(prediction.createdAt).toDateString() === todayStr) todayCount++;
         }
-        
+
         setStats({
-          total:  p.length,
-          users:  userIds.size,
-          today:  todayCount,
+          total: p.length,
+          users: userIds.size,
+          today: todayCount,
           growth: p.length > 0 ? 12.5 : 0,
         });
       } catch (e) {
@@ -60,10 +56,25 @@ const Admin = () => {
   }, [loading, user]);
 
   if (fetching) return <LoadingState />;
-  if (error)    return <ErrorState message={error} />;
+  if (error) return <ErrorState message={error} />;
+
+  // Doctors renders itself — no shared props needed
+  if (section === 'doctors') {
+    return (
+      <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-[#2d409c] dark:text-white">
+        <AdminHeader />
+        <div className="max-w-7xl mx-auto px-6 py-8 flex gap-7">
+          <Sidebar section={section} setSection={setSection} stats={stats} leadsCount={leads.length} />
+          <main className="flex-1 min-w-0">
+            <DoctorsAdmin />
+          </main>
+        </div>
+      </div>
+    );
+  }
 
   const sections = { overview: Overview, predictions: PredictionsTable, users: Users, settings: Settings, export: Export };
-  const Section  = sections[section];
+  const Section = sections[section] ?? Overview;
 
   return (
     <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-[#2d409c] dark:text-white">

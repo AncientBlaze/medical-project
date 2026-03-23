@@ -83,7 +83,7 @@ const PhoneVerifyModal = ({ phone, onVerified, onClose }) => {
       setStep('verify');
       setTimer(30);
     } catch {
-      setError('Failed to send OTP. Please try again.');
+      setError('Feature still being worked on.');
     } finally {
       setLoading(false);
     }
@@ -122,7 +122,7 @@ const PhoneVerifyModal = ({ phone, onVerified, onClose }) => {
               <Phone className="w-6 h-6 text-[#F9B406] dark:text-teal-400" />
             </div>
             <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">We'll send an OTP to</p>
-            <p className="font-bold text-slate-900 dark:text-white mb-5">+91 {phone}</p>
+            <p className="font-bold text-slate-900 dark:text-white mb-5">{phone}</p>
             {error && <p className="text-xs text-red-500 mb-3">{error}</p>}
             <button onClick={sendOtp} disabled={loading}
               className="w-full py-3 rounded-xl font-bold text-sm transition-colors disabled:opacity-60
@@ -135,7 +135,7 @@ const PhoneVerifyModal = ({ phone, onVerified, onClose }) => {
         {step === 'verify' && (
           <div className="text-center">
             <p className="text-sm text-slate-600 dark:text-slate-400 mb-5">
-              Enter the 6-digit OTP sent to <span className="font-semibold text-slate-900 dark:text-white">+91 {phone}</span>
+              Enter the 6-digit OTP sent to <span className="font-semibold text-slate-900 dark:text-white">{phone}</span>
             </p>
             <OTPInput value={otp} onChange={setOtp} />
             {error && <p className="text-xs text-red-500 mt-3">{error}</p>}

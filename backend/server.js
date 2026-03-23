@@ -5,6 +5,7 @@ import { PORT } from './config/constants.js';
 import authRoutes from './routes/auth.js';
 import predictionsRoutes from './routes/predictions.js';
 import adminRoutes from './routes/admin.js';
+import doctorsRoutes from './routes/doctors.js';
 
 const app = express();
 
@@ -19,6 +20,7 @@ await connectDB();
 app.use('/api/auth', authRoutes);
 app.use('/api/predictions', predictionsRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/doctors', doctorsRoutes);
 
 // Start server
 app.listen(PORT, () => {

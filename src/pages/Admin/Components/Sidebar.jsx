@@ -1,13 +1,14 @@
 import { memo } from 'react';
-import { LayoutDashboard, Users, Settings, Download, BarChart3 } from 'lucide-react';
+import { LayoutDashboard, Users, Settings, Download, BarChart3, Stethoscope } from 'lucide-react';
 import NavItem from './NavItem';
 
 const NAV = [
-  { id: 'overview',    icon: LayoutDashboard, label: 'Overview'    },
-  { id: 'predictions', icon: BarChart3,       label: 'Predictions' },
-  { id: 'users',       icon: Users,           label: 'Users'       },
-  { id: 'settings',    icon: Settings,        label: 'Settings'    },
-  { id: 'export',      icon: Download,        label: 'Export'      },
+  { id: 'overview',     icon: LayoutDashboard, label: 'Overview'    },
+  { id: 'predictions',  icon: BarChart3,       label: 'Predictions' },
+  { id: 'users',        icon: Users,           label: 'Users'       },
+  { id: 'doctors',      icon: Stethoscope,     label: 'Doctors'     },
+  { id: 'settings',     icon: Settings,        label: 'Settings'    },
+  { id: 'export',       icon: Download,        label: 'Export'      },
 ];
 
 const Sidebar = memo(({ section, setSection, stats, leadsCount }) => {
@@ -38,7 +39,8 @@ const Sidebar = memo(({ section, setSection, stats, leadsCount }) => {
             <span className="font-semibold text-[#F9B406] dark:text-teal-400">68%</span>
           </div>
           <div className="h-1.5 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-900/40">
-            <div className="h-full rounded-full bg-linear-to-r from-[#F9B406] dark:from-teal-400 to-[#F9B406]/60 dark:to-teal-400/60" style={{ width: '68%' }} />
+            <div className="h-full rounded-full bg-linear-to-r from-[#F9B406] dark:from-teal-400 to-[#F9B406]/60 dark:to-teal-400/60"
+              style={{ width: '68%' }} />
           </div>
         </div>
       </div>

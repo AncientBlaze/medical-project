@@ -1,14 +1,14 @@
 // Header.jsx
 import { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { Menu, X, LogOut, Sun, Moon } from 'lucide-react';
 import useThemeStore from '../store/themeStore';
 
 const NAV_LINKS = [
-  { label: 'Home',       to: '/'                 },
-  { label: 'Predictor',  to: '/predictor'        },
+  { label: 'Home', to: '/' },
+  { label: 'Predictor', to: '/predictor' },
   { label: 'Preferences', to: '/preferences-list' },
-  { label: 'Contact',    to: '/contact'          },
+  { label: 'Contact', to: '/contact' },
 ];
 
 const ThemeToggle = ({ theme, toggle, className = '' }) => (
@@ -55,10 +55,9 @@ const Header = ({ user, onLogout }) => {
             {links.map(({ label, to }) => (
               <NavLink key={to} to={to} end={to === '/'}
                 className={({ isActive }) =>
-                  `px-3.5 py-1.5 rounded-lg text-sm font-medium transition-colors border ${
-                    isActive
-                      ? 'bg-[#F9B406]/10 text-[#F9B406] dark:text-teal-400 border-[#F9B406]/30 dark:border-teal-500/30 dark:bg-teal-500/10'
-                      : 'border-transparent text-[#2d409c] dark:text-slate-400 hover:text-[#2d409c] dark:hover:text-white hover:bg-amber-50 dark:hover:bg-slate-900/40'
+                  `px-3.5 py-1.5 rounded-lg text-sm font-medium transition-colors border ${isActive
+                    ? 'bg-[#F9B406]/10 text-[#F9B406] dark:text-teal-400 border-[#F9B406]/30 dark:border-teal-500/30 dark:bg-teal-500/10'
+                    : 'border-transparent text-[#2d409c] dark:text-slate-400 hover:text-[#2d409c] dark:hover:text-white hover:bg-amber-50 dark:hover:bg-slate-900/40'
                   }`
                 }
               >
@@ -72,15 +71,17 @@ const Header = ({ user, onLogout }) => {
         <div className="hidden md:flex items-center gap-2.5">
           {user && (
             <>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border
+              <Link to="/profile">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border
                 bg-amber-50 dark:bg-slate-900/40 border-amber-200 dark:border-slate-700">
-                <div className="w-5 h-5 rounded-full bg-[#F9B406] dark:bg-teal-400 flex items-center justify-center text-[#2d409c] dark:text-slate-950 text-xs font-bold shrink-0">
-                  {user.name?.charAt(0).toUpperCase()}
+                  <div className="w-5 h-5 rounded-full bg-[#F9B406] dark:bg-teal-400 flex items-center justify-center text-[#2d409c] dark:text-slate-950 text-xs font-bold shrink-0">
+                    {user.name?.charAt(0).toUpperCase()}
+                  </div>
+                  <span className="text-sm font-medium text-slate-700 dark:text-white max-w-30 truncate">
+                    {user.name}
+                  </span>
                 </div>
-                <span className="text-sm font-medium text-slate-700 dark:text-white max-w-30 truncate">
-                  {user.name}
-                </span>
-              </div>
+              </Link>
               <button onClick={handleLogout}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-sm font-medium transition-colors
                   bg-amber-50 dark:bg-slate-900/40 hover:bg-amber-100 dark:hover:bg-slate-800/50
@@ -119,10 +120,9 @@ const Header = ({ user, onLogout }) => {
               <NavLink key={to} to={to} end={to === '/'}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `flex w-full px-3 py-2.5 rounded-xl text-sm font-medium transition-colors border ${
-                    isActive
-                      ? 'bg-[#F9B406]/10 text-[#F9B406] dark:text-teal-400 border-[#F9B406]/30 dark:border-teal-500/30 dark:bg-teal-500/10'
-                      : 'border-transparent text-[#2d409c] dark:text-slate-400 hover:text-[#2d409c] dark:hover:text-white hover:bg-amber-50 dark:hover:bg-slate-900/40'
+                  `flex w-full px-3 py-2.5 rounded-xl text-sm font-medium transition-colors border ${isActive
+                    ? 'bg-[#F9B406]/10 text-[#F9B406] dark:text-teal-400 border-[#F9B406]/30 dark:border-teal-500/30 dark:bg-teal-500/10'
+                    : 'border-transparent text-[#2d409c] dark:text-slate-400 hover:text-[#2d409c] dark:hover:text-white hover:bg-amber-50 dark:hover:bg-slate-900/40'
                   }`
                 }
               >
@@ -132,14 +132,16 @@ const Header = ({ user, onLogout }) => {
 
             {user && (
               <div className="pt-3 mt-2 border-t space-y-2 border-amber-200 dark:border-slate-800">
-                <div className="flex items-center gap-2.5 px-3 py-1.5">
-                  <div className="w-7 h-7 rounded-full bg-[#F9B406] dark:bg-teal-400 flex items-center justify-center text-[#2d409c] dark:text-slate-950 text-xs font-bold shrink-0">
-                    {user.name?.charAt(0).toUpperCase()}
+                <Link to="/profile">
+                  <div className="flex items-center gap-2.5 px-3 py-1.5">
+                    <div className="w-7 h-7 rounded-full bg-[#F9B406] dark:bg-teal-400 flex items-center justify-center text-[#2d409c] dark:text-slate-950 text-xs font-bold shrink-0">
+                      {user.name?.charAt(0).toUpperCase()}
+                    </div>
+                    <span className="text-sm font-medium text-slate-700 dark:text-white truncate">
+                      {user.name}
+                    </span>
                   </div>
-                  <span className="text-sm font-medium text-slate-700 dark:text-white truncate">
-                    {user.name}
-                  </span>
-                </div>
+                </Link>
                 <button onClick={handleLogout}
                   className="flex items-center gap-2 w-full px-3 py-2.5 rounded-xl border text-sm font-medium transition-colors
                     bg-amber-50 dark:bg-slate-900/40 hover:bg-amber-100 dark:hover:bg-slate-800/50
