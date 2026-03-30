@@ -8,11 +8,14 @@ import { requireAdmin } from '../middleware/auth.js';
 const router = express.Router();
 
 // ── Multer ────────────────────────────────────────────────────────────────────
+const UPLOAD_DIR = '/var/www/uploads/doctors';
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    const dir = 'uploads/doctors';
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    cb(null, dir);
+    if (!fs.existsSync(UPLOAD_DIR)) {
+      fs.mkdirSync(UPLOAD_DIR, { recursive: true });
+    }
+    cb(null, UPLOAD_DIR);
   },
   filename: (req, file, cb) => {
     cb(null, `doctor_${Date.now()}${path.extname(file.originalname)}`);
@@ -70,18 +73,50 @@ router.post('/', requireAdmin, upload.single('photo'), async (req, res) => {
 
 router.put('/:id', requireAdmin, upload.single('photo'), async (req, res) => {
   try {
-    const { name, title, specialisations, about, experience, rating, isActive } = req.body;
-    const update = {
-      name, title,
-      specialisations: JSON.parse(specialisations || '[]'),
-      about, experience, rating,
-      isActive: isActive === 'true',
-    };
-    if (req.file) update.photo = `/uploads/doctors/${req.file.filename}`;
-    const doctor = await Doctor.findByIdAndUpdate(req.params.id, update, { new: true });
-    if (!doctor) return res.status(404).json({ success: false, message: 'Doctor not found' });
+    const {
+      name,
+      title,
+      specialisations,
+      about,
+      experience,
+      rating,
+      isActive
+    } = req.body;
+
+    const update = {};
+
+    if (name !== undefined) update.name = name;
+    if (title !== undefined) update.title = title;
+    if (about !== undefined) update.about = about;
+    if (experience !== undefined) update.experience = experience;
+    if (rating !== undefined) update.rating = rating;
+
+    if (specialisations !== undefined) {
+      update.specialisations = JSON.parse(specialisations);
+    }
+
+    if (isActive !== undefined) {
+      update.isActive = isActive === 'true';
+    }
+
+    if (req.file) {
+      update.photo = `/uploads/doctors/${req.file.filename}`;
+    }
+
+    const doctor = await Doctor.findByIdAndUpdate(
+      req.params.id,
+      { $set: update },
+      { new: true }
+    );
+
+    if (!doctor) {
+      return res.status(404).json({ success: false, message: 'Doctor not found' });
+    }
+
     res.json({ success: true, doctor });
+
   } catch (err) {
+    console.error(err);
     res.status(500).json({ success: false, message: err.message });
   }
 });

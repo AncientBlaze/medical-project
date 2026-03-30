@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  server: {
+  server: { 
     allowedHosts: true,
     proxy: {
       '/api': {

@@ -1,10 +1,20 @@
 import { useState, useRef, useEffect } from 'react';
 import {
-  User, Mail, Phone, GraduationCap, Edit2, Check, X,
-  ChevronDown, Loader2, ShieldCheck, LogOut, Camera, AlertCircle
+  User, Mail, Phone, GraduationCap, Edit2, Check, X, Loader2, ShieldCheck, LogOut, Camera, AlertCircle
 } from 'lucide-react';
 import useAuthStore from '../store/authStore.js';
 import api from '../utils/api.js';
+import { useNavigate } from 'react-router-dom';
+
+
+const normalizePhone = (phone) => {
+  let p = phone.replace(/\D/g, '');
+
+  if (p.length === 10) return `+91${p}`;
+  if (!p.startsWith('+')) return `+${p}`;
+
+  return p;
+};
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 const NEET_YEARS = ['2026', '2025', '2024', '2023', '2022', '2021'];
@@ -63,11 +73,11 @@ const OTPInput = ({ value, onChange, length = 6 }) => {
 
 // ── Phone Verify Modal ────────────────────────────────────────────────────────
 const PhoneVerifyModal = ({ phone, onVerified, onClose }) => {
-  const [step, setStep]       = useState('send');   // 'send' | 'verify' | 'success'
-  const [otp, setOtp]         = useState('');
+  const [step, setStep] = useState('send');   // 'send' | 'verify' | 'success'
+  const [otp, setOtp] = useState('');
   const [loading, setLoading] = useState(false);
-  const [error, setError]     = useState('');
-  const [timer, setTimer]     = useState(0);
+  const [error, setError] = useState('');
+  const [timer, setTimer] = useState(0);
 
   useEffect(() => {
     if (timer > 0) {
@@ -79,11 +89,11 @@ const PhoneVerifyModal = ({ phone, onVerified, onClose }) => {
   const sendOtp = async () => {
     setLoading(true); setError('');
     try {
-      await api.post('/auth/send-otp', { phone });
+      await api.post('/auth/send-otp', { phone: normalizePhone(phone) });
       setStep('verify');
       setTimer(30);
-    } catch {
-      setError('Feature still being worked on.');
+    } catch (err) {
+      setError(err?.response?.data?.message || 'Failed to send OTP');
     } finally {
       setLoading(false);
     }
@@ -93,18 +103,19 @@ const PhoneVerifyModal = ({ phone, onVerified, onClose }) => {
     if (otp.length < 6) { setError('Enter the 6-digit OTP.'); return; }
     setLoading(true); setError('');
     try {
-      await api.post('/auth/verify-otp', { phone, otp });
+      await api.post('/auth/verify-otp', { phone: normalizePhone(phone), otp });
       setStep('success');
-      setTimeout(() => { onVerified(phone); onClose(); }, 1200);
-    } catch {
-      setError('Invalid OTP. Please try again.');
-      setOtp('');
+      setTimeout(() => { onVerified(normalizePhone(phone)); onClose(); }, 1200);
+    } catch (err) {
+      setError(err?.response?.data?.message || 'Invalid OTP');
+      setOtp('')
     } finally {
       setLoading(false);
     }
   };
 
   return (
+
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
       onClick={(e) => e.target === e.currentTarget && onClose()}>
       <div className="w-full max-w-sm rounded-2xl border p-6 bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 shadow-2xl">
@@ -170,8 +181,8 @@ const PhoneVerifyModal = ({ phone, onVerified, onClose }) => {
 // ── Editable Field ────────────────────────────────────────────────────────────
 const Field = ({ label, icon: Icon, value, onSave, type = 'text', options, readOnly, verified, onVerify }) => {
   const [editing, setEditing] = useState(false);
-  const [draft, setDraft]     = useState(value ?? '');
-  const [saving, setSaving]   = useState(false);
+  const [draft, setDraft] = useState(value ?? '');
+  const [saving, setSaving] = useState(false);
 
   const save = async () => {
     if (draft === value) { setEditing(false); return; }
@@ -279,16 +290,18 @@ const Avatar = ({ name }) => {
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 const StudentProfile = () => {
+
+  const navigate = useNavigate();
   const { user, setUser, logout } = useAuthStore();
   const [profile, setProfile] = useState({
-    name:      user?.name      ?? '',
-    email:     user?.email     ?? '',
-    phone:     user?.phone     ?? '',
-    neetYear:  user?.neetYear  ?? '',
+    name: user?.name ?? '',
+    email: user?.email ?? '',
+    phone: user?.phone ?? '',
+    neetYear: user?.neetYear ?? '',
     phoneVerified: user?.phoneVerified ?? false,
   });
   const [verifyModal, setVerifyModal] = useState(false);
-  const [saveError,   setSaveError]   = useState('');
+  const [saveError, setSaveError] = useState('');
 
   const updateField = async (field, value) => {
     setSaveError('');
@@ -306,7 +319,7 @@ const StudentProfile = () => {
     const updated = { ...profile, phone, phoneVerified: true };
     setProfile(updated);
     setUser({ ...user, ...updated });
-    api.patch('/profile', { phone, phoneVerified: true }).catch(() => {});
+    api.patch('/profile', { phone, phoneVerified: true }).catch(() => { });
   };
 
   return (
@@ -392,7 +405,10 @@ const StudentProfile = () => {
         {/* Danger zone */}
         <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-900/40">
           <h2 className="text-sm font-bold text-slate-900 dark:text-white mb-3">Account</h2>
-          <button onClick={logout}
+          <button onClick={() => {
+            logout();
+            navigate('/login');
+          }}
             className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors
               text-red-500 border border-red-200 dark:border-red-500/20
               hover:bg-red-50 dark:hover:bg-red-500/10">

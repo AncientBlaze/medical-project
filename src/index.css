@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -38,4 +39,8 @@
 
 *::-webkit-scrollbar {
   display: none;
+}
+
+body {
+  font-family: 'Afacad', sans-serif;
 }

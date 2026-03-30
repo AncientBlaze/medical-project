@@ -295,12 +295,13 @@ const ExploreSearchBar = () => {
 
 // ── Home ──────────────────────────────────────────────────────────────────────
 const WHY_CHOOSE = [
-  { icon: Target, title: 'Accurate Data', desc: 'Real NEET cutoff data from official counselling rounds' },
-  { icon: MessageCircle, title: 'Easy Comparison', desc: 'Compare colleges by fees, seats, location, and cutoffs' },
-  { icon: Lightbulb, title: 'Smart Tools', desc: 'Advanced tools to help you make informed decisions' },
-  { icon: Award, title: 'Verified Info', desc: 'All colleges are verified and officially recognized' },
-  { icon: Zap, title: '24/7 Access', desc: 'Browse colleges and compare data anytime' },
-  { icon: Building2, title: 'Comprehensive', desc: 'Coverage of Govt, Central, Deemed & Private colleges' },
+
+  { icon: Target, title: 'Doctor-Driven, Student-Focused, Result-Oriented', desc: "MedSankalp is built by doctors and MBBS students who’ve been through the same journey — giving you real, practical guidance that actually works." },
+  { icon: MessageCircle, title: 'Personalized MBBS Counselling', desc: 'No generic advice. Get guidance tailored to your NEET rank, category, and career goals.' },
+  { icon: Lightbulb, title: 'End-to-End Admission Support', desc: 'From strategy to seat allotment — we stay with you at every step of your MBBS journey.' },
+  { icon: Award, title: 'Real Data. Real Insights.', desc: 'Accurate cutoffs, college analysis, and counselling strategies based on real experiences, not assumptions.' },
+  { icon: Zap, title: 'Mentorship That Makes a Difference', desc: 'Learn directly from those who cracked NEET and secured MBBS seats — your roadmap is already tested.' },
+  { icon: Building2, title: 'Transparency You Can Trust', desc: 'Clear processes, honest advice, and student-first approach — always.' },
 ];
 
 const Home = () => (
@@ -446,7 +447,7 @@ const Home = () => (
         </div>
       </div>
     </div>
-    
+
     <div className="max-w-6xl mx-auto px-6 pb-16 ">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 px-8 border rounded-2xl bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
         <div className="hidden lg:flex items-center justify-center">
@@ -491,7 +492,7 @@ const Home = () => (
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-3 text-[#2d409c] dark:text-white">
-            Why Choose <span className="text-[#F9B406] dark:text-teal-400">Us?</span>
+            Why Choose <span className="text-[#F9B406] dark:text-teal-400">MedSankalp</span>
           </h2>
           <p className="text-lg text-slate-500 dark:text-slate-400">
             Everything you need to make the right college choice

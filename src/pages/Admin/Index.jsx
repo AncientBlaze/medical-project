@@ -58,22 +58,14 @@ const Admin = () => {
   if (fetching) return <LoadingState />;
   if (error) return <ErrorState message={error} />;
 
-  // Doctors renders itself — no shared props needed
-  if (section === 'doctors') {
-    return (
-      <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-[#2d409c] dark:text-white">
-        <AdminHeader />
-        <div className="max-w-7xl mx-auto px-6 py-8 flex gap-7">
-          <Sidebar section={section} setSection={setSection} stats={stats} leadsCount={leads.length} />
-          <main className="flex-1 min-w-0">
-            <DoctorsAdmin />
-          </main>
-        </div>
-      </div>
-    );
-  }
-
-  const sections = { overview: Overview, predictions: PredictionsTable, users: Users, settings: Settings, export: Export };
+  const sections = {
+    overview: Overview,
+    predictions: PredictionsTable,
+    users: Users,
+    settings: Settings,
+    export: Export,
+    doctors: DoctorsAdmin,
+  };
   const Section = sections[section] ?? Overview;
 
   return (

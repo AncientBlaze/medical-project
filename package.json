@@ -2,14 +2,14 @@
   "name": "medical-project",
   "private": true,
   "version": "0.0.0",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "node server.js",
-    "all": "concurrently \"bun run ./backend/server.js\" \"bun dev\""
+    "server": "nodemon ./backend/server.js",
+    "all": "concurrently \"bun run ./backend/server.js\" \"bun dev --host\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
@@ -18,17 +18,20 @@
     "bcryptjs": "^2.4.3",
     "concurrently": "^9.2.1",
     "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "framer-motion": "^12.38.0",
     "jsonwebtoken": "^9.0.3",
     "lucide-react": "^0.576.0",
     "mongoose": "^7.8.9",
     "multer": "^2.1.1",
+    "nodemon": "^3.1.14",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-modal": "^3.16.3",
     "react-router-dom": "^7.13.1",
     "tailwindcss": "^4.2.1",
+    "twilio": "^5.13.1",
     "zustand": "^5.0.11"
   },
   "devDependencies": {

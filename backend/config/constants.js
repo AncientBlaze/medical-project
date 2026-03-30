@@ -1,5 +1,9 @@
-export const PORT = 5000;
-export const JWT_SECRET = 'your_jwt_secret_key_change_this_in_production';
-export const MONGO_URI = 'mongodb://localhost:27017/medical-project';
-export const DEMO_ADMIN_EMAIL = 'admin@example.com';
-export const DEMO_ADMIN_PASSWORD = 'demo123';
+import dotenv from 'dotenv';
+dotenv.config();
+
+export const PORT = process.env.PORT || 5000;
+export const JWT_SECRET = process.env.JWT_SECRET;
+export const MONGO_URI = process.env.MONGO_URI;
+
+export const DEMO_ADMIN_EMAIL = process.env.DEMO_ADMIN_EMAIL;
+export const DEMO_ADMIN_PASSWORD = process.env.DEMO_ADMIN_PASSWORD;

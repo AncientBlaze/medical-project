@@ -31,6 +31,7 @@ import TermsAndConditions from './pages/TermsAndConditions';
 import RefundPolicy from './pages/RefundPolicy';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Disclaimer from './pages/Disclaimer';
+import StudyAbroad from './pages/StudyAbroad';
 
 // ── Guards ────────────────────────────────────────────────────────────────────
 
@@ -81,7 +82,7 @@ function LoginPage() {
     <Login
       onLoginSuccess={(u) => {
         login(u);
-        navigate(u.isAdmin ? '/admin' : (location.state?.from || '/'), { replace: true });
+        navigate(u?.isAdmin ? '/admin' : (location.state?.from || '/'), { replace: true });
       }}
       onSwitchToSignup={() => navigate('/signup', { state: location.state })}
     />
@@ -103,44 +104,50 @@ function SignupPage() {
   );
 }
 
-// ── Routes ────────────────────────────────────────────────────────────────────
+function ScrollToTop() {
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto', // use 'smooth' if you want animation
+    });
+  }, [pathname]);
+
+  return null;
+}
+
+// ── Routes ────────────────────────────────────────────────────────────────────
 function AppRoutes() {
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
       <Routes>
 
         {/* Auth */}
-        <Route path="/login" element={<AuthRoute><LoginPage /></AuthRoute>} />
+        <Route path="/login"  element={<AuthRoute><LoginPage /></AuthRoute>} />
         <Route path="/signup" element={<AuthRoute><SignupPage /></AuthRoute>} />
 
-        {/* Admin — no Layout (has its own shell) */}
+        {/* Admin — no Layout */}
         <Route path="/admin" element={<PrivateRoute adminOnly><Admin /></PrivateRoute>} />
 
-        {/* Private */}
-        <Route path="/" element={<PrivateRoute><Layout><Home /></Layout></PrivateRoute>} />
-        <Route path="/about" element={<PrivateRoute><Layout><About /></Layout></PrivateRoute>} />
-        <Route path="/contact" element={<PrivateRoute><Layout><Contact /></Layout></PrivateRoute>} />
-        <Route path="/preferences-list" element={<PrivateRoute><Layout><PreferencesList /></Layout></PrivateRoute>} />
-        <Route path="/profile" element={<PrivateRoute><Layout><StudentProfile /></Layout></PrivateRoute>} />
-
-        {/* Public — results gated inside components */}
-        <Route path="/predictor" element={<Layout><Predictor /></Layout>} />
-        <Route path="/admission-support" element={<Layout><AdmissionSupport /></Layout>} />
-
-        {/* Packages */}
-        <Route path="/packages" element={<Layout><PackagesGrid /></Layout>} />
-        <Route path="/packages/:id" element={<Layout><PackageDetail /></Layout>} />
-
-        {/* Doctors */}
-        <Route path="/doctors" element={<Layout><DoctorsPage /></Layout>} />
-        <Route path="/doctors/:id" element={<Layout><DoctorDetail /></Layout>} />
-
-        {/* Legal */}
+        {/* Public — everything else */}
+        <Route path="/"                     element={<Layout><Home /></Layout>} />
+        <Route path="/about"                element={<Layout><About /></Layout>} />
+        <Route path="/contact"              element={<Layout><Contact /></Layout>} />
+        <Route path="/predictor"            element={<Layout><Predictor /></Layout>} />
+        <Route path="/admission-support"    element={<Layout><AdmissionSupport /></Layout>} />
+        <Route path="/preferences-list"     element={<Layout><PreferencesList /></Layout>} />
+        <Route path="/profile"              element={<Layout><StudentProfile /></Layout>} />
+        <Route path="/packages"             element={<Layout><PackagesGrid /></Layout>} />
+        <Route path="/packages/:id"         element={<Layout><PackageDetail /></Layout>} />
+        <Route path="/study-abroad"      element={<Layout><StudyAbroad /></Layout>} />
+        <Route path="/doctors"              element={<Layout><DoctorsPage /></Layout>} />
+        <Route path="/doctors/:id"          element={<Layout><DoctorDetail /></Layout>} />
         <Route path="/terms-and-conditions" element={<Layout><TermsAndConditions /></Layout>} />
-        <Route path="/refund-policy" element={<Layout><RefundPolicy /></Layout>} />
-        <Route path="/privacy-policy" element={<Layout><PrivacyPolicy /></Layout>} />
-        <Route path="/disclaimer" element={<Layout><Disclaimer /></Layout>} />
+        <Route path="/refund-policy"        element={<Layout><RefundPolicy /></Layout>} />
+        <Route path="/privacy-policy"       element={<Layout><PrivacyPolicy /></Layout>} />
+        <Route path="/disclaimer"           element={<Layout><Disclaimer /></Layout>} />
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />

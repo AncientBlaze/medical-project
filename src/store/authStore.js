@@ -27,19 +27,31 @@ const useAuthStore = create(
         }
       },
 
-      login: (userData) => set({ user: userData, isAuthenticated: true }),
+      login: (userData) =>
+        set({ user: userData, isAuthenticated: true }),
 
-      signup: (userData) => set({ user: userData, isAuthenticated: true }),
+      signup: (userData) =>
+        set({ user: userData, isAuthenticated: true }),
+
+      // ✅ ADD THIS
+      setUser: (userData) =>
+        set((state) => ({
+          user: userData,
+          isAuthenticated: !!userData,
+        })),
 
       logout: () => {
         localStorage.removeItem('token');
+        delete api.defaults.headers.common['Authorization'];
         set({ user: null, isAuthenticated: false });
       },
     }),
     {
       name: 'auth-store',
-      partialize: (s) => ({ user: s.user, isAuthenticated: s.isAuthenticated }),
-      // don't persist loading — always start fresh
+      partialize: (s) => ({
+        user: s.user,
+        isAuthenticated: s.isAuthenticated,
+      }),
     }
   )
 );

@@ -45,23 +45,23 @@ const DoctorCard = ({ doctor }) => {
       bg-white dark:bg-slate-900/40
       border-slate-200 dark:border-slate-700/60
       hover:border-[#F9B406]/40 dark:hover:border-teal-500/30
-      hover:shadow-md">
+      hover:shadow-md h-auto justify-between">
 
-      <div className="flex items-start gap-4">
+      <div className="flex flex-col items-center gap-4">
         {/* Avatar */}
-        <div className="w-16 h-16 rounded-2xl shrink-0 overflow-hidden border
+        <div className="w-28 h-28 rounded-full shrink-0 overflow-hidden border-2
           bg-[#F9B406]/10 dark:bg-teal-500/10
-          border-[#F9B406]/20 dark:border-teal-500/20
+          border-[#F9B406] dark:border-teal-500
           flex items-center justify-center">
           {photoUrl
             ? <img src={photoUrl} alt={doctor.name} className="w-full h-full object-cover" />
             : <User className="w-7 h-7 text-[#F9B406] dark:text-teal-400" />
           }
         </div>
-
-        <div className="flex-1 min-w-0">
-          <h3 className="font-bold text-sm text-slate-900 dark:text-white truncate">{doctor.name}</h3>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{doctor.title}</p>
+        
+        <div className="flex-1 min-w-full items-start">
+          <h3 className="font-bold text-lg text-slate-900 dark:text-white truncate">{doctor.name}</h3>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">{doctor.title}</p>
           <div className="flex items-center gap-2 mt-1.5">
             {doctor.rating > 0 && (
               <span className="flex items-center gap-1 text-xs text-amber-500 dark:text-amber-400 font-semibold">
@@ -69,7 +69,7 @@ const DoctorCard = ({ doctor }) => {
               </span>
             )}
             {doctor.experience > 0 && (
-              <span className="text-xs text-slate-400 dark:text-slate-500">
+              <span className="text-md text-slate-400 dark:text-slate-500">
                 {doctor.experience}y exp
               </span>
             )}
@@ -98,7 +98,10 @@ const DoctorCard = ({ doctor }) => {
         </div>
       )}
 
-      <button onClick={() => navigate(`/doctors/${doctor._id}`)}
+      <button onClick={() => {
+        window.scrollTo(0, 0);
+        navigate(`/doctors/${doctor._id}`);
+      }}
         className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border text-sm font-medium transition-colors
           bg-slate-50 dark:bg-slate-800/60
           border-slate-200 dark:border-slate-700/60
@@ -118,9 +121,9 @@ const ALL_SPECIALISATIONS = [
 ];
 
 const DoctorsPage = () => {
-  const [doctors,  setDoctors]  = useState([]);
-  const [loading,  setLoading]  = useState(true);
-  const [filter,   setFilter]   = useState('All');
+  const [doctors, setDoctors] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState('All');
 
   useEffect(() => {
     api.get('/doctors')
@@ -169,21 +172,20 @@ const DoctorsPage = () => {
 
         {/* Stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <StatBox icon={User}          label="Expert Doctors"   value={loading ? '—' : doctors.length} />
-          <StatBox icon={Star}          label="Avg. Rating"      value={loading ? '—' : avgRating}      />
-          <StatBox icon={GraduationCap} label="Specialisations"  value={loading ? '—' : ALL_SPECIALISATIONS.length} />
-          <StatBox icon={Award}         label="Max Experience"   value={loading ? '—' : `${totalExp}y`} />
+          <StatBox icon={User} label="Expert Doctors" value={loading ? '—' : doctors.length} />
+          <StatBox icon={Star} label="Avg. Rating" value={loading ? '—' : avgRating} />
+          <StatBox icon={GraduationCap} label="Specialisations" value={loading ? '—' : ALL_SPECIALISATIONS.length} />
+          <StatBox icon={Award} label="Max Experience" value={loading ? '—' : `${totalExp}y`} />
         </div>
 
         {/* Filter chips */}
         <div className="flex flex-wrap gap-2">
           {['All', ...ALL_SPECIALISATIONS].map((s) => (
             <button key={s} onClick={() => setFilter(s)}
-              className={`px-4 py-2 rounded-xl text-sm font-medium border transition-colors ${
-                filter === s
-                  ? 'bg-[#F9B406] dark:bg-teal-400 text-slate-950 border-[#F9B406] dark:border-teal-400'
-                  : 'bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-700/60 text-slate-600 dark:text-slate-400 hover:border-[#F9B406]/40 dark:hover:border-teal-500/30'
-              }`}>
+              className={`px-4 py-2 rounded-xl text-sm font-medium border transition-colors ${filter === s
+                ? 'bg-[#F9B406] dark:bg-teal-400 text-slate-950 border-[#F9B406] dark:border-teal-400'
+                : 'bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-700/60 text-slate-600 dark:text-slate-400 hover:border-[#F9B406]/40 dark:hover:border-teal-500/30'
+                }`}>
               {s}
             </button>
           ))}
