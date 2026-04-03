@@ -9,6 +9,7 @@ import authRoutes from './routes/auth.js';
 import predictionsRoutes from './routes/predictions.js';
 import adminRoutes from './routes/admin.js';
 import doctorsRoutes from './routes/doctors.js';
+import leadRoutes from './routes/leads.js'
 
 const app = express();
 
@@ -21,7 +22,7 @@ await connectDB();
 
 
 // Routes
-// app.use('/api/leads', )
+app.use('/api/leads', leadRoutes);
 
 app.use('/api/auth', authRoutes);
 app.use('/api/predictions', predictionsRoutes);

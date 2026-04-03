@@ -1,8 +1,6 @@
 import { memo } from 'react';
-import useThemeStore from '../../../store/themeStore';
 
 const NavItem = memo(({ icon: Icon, label, badge, active, onClick }) => {
-  const { theme } = useThemeStore();
 
   return (
     <button onClick={onClick}

@@ -6,8 +6,8 @@ import {
   Filter, Lock, LogIn, UserPlus, IndianRupee, Users, GraduationCap,
   TrendingDown, Globe, Info
 } from 'lucide-react';
-import { wbColleges } from '../../data/wbCollegeData.js';
-import { panIndiaColleges, PAN_INDIA_STATES } from '../../data/panIndiaCollegeData.js';
+import { allColleges } from '../../data/allColleges.js';
+import { PAN_INDIA_STATES } from '../../data/panIndiaCollegeData.js';
 import api from '../utils/api.js';
 import useAuthStore from '../store/authStore.js';
 
@@ -60,8 +60,7 @@ const clearPending = () => sessionStorage.removeItem('pendingPrediction');
 // ── Data helpers ──────────────────────────────────────────────────────────────
 
 function getCollegesForState(state) {
-  if (state === 'West Bengal') return wbColleges;
-  return panIndiaColleges.filter((c) => c.state === state);
+  return allColleges.filter((c) => c.state === state);
 }
 
 // WB uses OBCA for state quota; other states use OBC directly
@@ -162,6 +161,7 @@ const CollegeCard = ({ college, index, quota, round, isWB }) => {
     <div className={`group flex flex-col rounded-2xl overflow-hidden transition-all duration-200 border bg-white dark:bg-slate-900/50 hover:shadow-lg ${meta.card}`}>
       <div className="px-5 pt-5 pb-4 border-b border-slate-100 dark:border-slate-800">
         <div className="flex items-start justify-between gap-2 mb-2">
+          <img src={college?.image} alt={college?.name} />
           <span className="flex items-center justify-center w-7 h-7 rounded-lg text-xs font-bold shrink-0 bg-[#F9B406]/15 dark:bg-teal-500/15 text-[#c8920a] dark:text-teal-400">
             {index + 1}
           </span>
@@ -510,7 +510,7 @@ const Predictor = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                       {predictions.matchedColleges.map((college, i) => (
-                        <CollegeCard key={college.id ?? i} college={college} index={i}
+                        <CollegeCard key={college.uid} college={college} index={i}
                           quota={predictions.quota} round={predictions.round}
                           isWB={predictions.state === 'West Bengal'} />
                       ))}

@@ -1,6 +1,6 @@
 import { MapPin, Download, Heart, X, Trash2, Eye } from "lucide-react";
 import { useState, useEffect } from "react";
-import { wbColleges } from "../../data/wbCollegeData.js";
+import { allColleges } from "../../data/allColleges.js";
 import CollegeModal from "../components/CollegeModal";
 
 const formatFee = (n) => {
@@ -14,17 +14,17 @@ const PreferencesList = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [preferences, setPreferences] = useState([]);
   const [filterState, setFilterState] = useState('');
-  const [filteredColleges, setFilteredColleges] = useState(wbColleges);
+  const [filteredColleges, setFilteredColleges] = useState(allColleges);
 
   const CATEGORIES = ['UR', 'EWS', 'OBC', 'SC', 'ST'];
-  const STATES = [...new Set(wbColleges.map(c => c.state))].sort();
+  const STATES = [...new Set(allColleges.map(c => c.state))].sort();
 
   useEffect(() => {
-    setFilteredColleges(wbColleges);
+    setFilteredColleges(allColleges);
   }, []);
 
   const handleSearch = () => {
-    let filtered = wbColleges;
+    let filtered = allColleges;
 
     if (filterState) {
       filtered = filtered.filter(c => c.state.toLowerCase().includes(filterState.toLowerCase()));

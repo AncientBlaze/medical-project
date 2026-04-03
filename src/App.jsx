@@ -17,6 +17,7 @@ import Signup from './pages/Signup';
 import PreferencesList from './pages/PreferencesList';
 import AdmissionSupport from './pages/AdmissionSupport';
 import StudentProfile from './pages/StudentProfile';
+import Admission from './pages/IndianAdmissions.jsx';
 
 // Packages
 import PackagesGrid from './pages/Packages/components/PackagesGrid';
@@ -125,29 +126,30 @@ function AppRoutes() {
       <Routes>
 
         {/* Auth */}
-        <Route path="/login"  element={<AuthRoute><LoginPage /></AuthRoute>} />
+        <Route path="/login" element={<AuthRoute><LoginPage /></AuthRoute>} />
         <Route path="/signup" element={<AuthRoute><SignupPage /></AuthRoute>} />
 
         {/* Admin — no Layout */}
         <Route path="/admin" element={<PrivateRoute adminOnly><Admin /></PrivateRoute>} />
 
         {/* Public — everything else */}
-        <Route path="/"                     element={<Layout><Home /></Layout>} />
-        <Route path="/about"                element={<Layout><About /></Layout>} />
-        <Route path="/contact"              element={<Layout><Contact /></Layout>} />
-        <Route path="/predictor"            element={<Layout><Predictor /></Layout>} />
-        <Route path="/admission-support"    element={<Layout><AdmissionSupport /></Layout>} />
-        <Route path="/preferences-list"     element={<Layout><PreferencesList /></Layout>} />
-        <Route path="/profile"              element={<Layout><StudentProfile /></Layout>} />
-        <Route path="/packages"             element={<Layout><PackagesGrid /></Layout>} />
-        <Route path="/packages/:id"         element={<Layout><PackageDetail /></Layout>} />
-        <Route path="/study-abroad"      element={<Layout><StudyAbroad /></Layout>} />
-        <Route path="/doctors"              element={<Layout><DoctorsPage /></Layout>} />
-        <Route path="/doctors/:id"          element={<Layout><DoctorDetail /></Layout>} />
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/about" element={<Layout><About /></Layout>} />
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
+        <Route path="/predictor" element={<Layout><Predictor /></Layout>} />
+        <Route path="/admission-support" element={<Layout><AdmissionSupport /></Layout>} />
+        <Route path="/preferences-list" element={<Layout><PreferencesList /></Layout>} />
+        <Route path="/profile" element={<Layout><StudentProfile /></Layout>} />
+        <Route path="/packages" element={<Layout><PackagesGrid /></Layout>} />
+        <Route path="/packages/:id" element={<Layout><PackageDetail /></Layout>} />
+        <Route path="/study-abroad" element={<Layout><StudyAbroad /></Layout>} />
+        <Route path="/doctors" element={<Layout><DoctorsPage /></Layout>} />
+        <Route path="/doctors/:id" element={<Layout><DoctorDetail /></Layout>} />
         <Route path="/terms-and-conditions" element={<Layout><TermsAndConditions /></Layout>} />
-        <Route path="/refund-policy"        element={<Layout><RefundPolicy /></Layout>} />
-        <Route path="/privacy-policy"       element={<Layout><PrivacyPolicy /></Layout>} />
-        <Route path="/disclaimer"           element={<Layout><Disclaimer /></Layout>} />
+        <Route path="/refund-policy" element={<Layout><RefundPolicy /></Layout>} />
+        <Route path="/privacy-policy" element={<Layout><PrivacyPolicy /></Layout>} />
+        <Route path="/disclaimer" element={<Layout><Disclaimer /></Layout>} />
+        <Route path="/admissions" element={<Layout><Admission/></Layout>} />
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />

@@ -12,6 +12,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -32,6 +33,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -52,6 +54,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -72,6 +75,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -92,6 +96,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -112,6 +117,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -132,6 +138,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -152,6 +159,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -170,9 +178,14 @@ export const panIndiaColleges = [
     name: "Army College of Medical Sciences (ACMS)",
     state: "Delhi",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 2008,
+    fees: {
+      stateQuota: "₹3.97 lakh/yr (Army Quota)",
+      managementQuota: null,   // No mgmt quota — Army wards only
+      nriQuota: null
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040662/Army_College_of_Medical_Sciences_New_Delhi_xg6y9e.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -185,6 +198,9 @@ export const panIndiaColleges = [
       privateManagement: null,
     },
   },
+
+  // Maharashtra //
+
   {
     id: "maharashtra_seth-gs-medical-college-kem-ho_10",
     name: "Seth GS Medical College & KEM Hospital, Mumbai",
@@ -192,6 +208,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -212,6 +229,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -232,6 +250,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -252,6 +271,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -272,6 +292,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -292,6 +313,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -312,6 +334,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -332,6 +355,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -352,6 +376,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -372,6 +397,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -392,6 +418,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -412,6 +439,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -432,6 +460,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -452,6 +481,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -472,6 +502,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -492,6 +523,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -512,6 +544,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -532,6 +565,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -552,6 +586,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -572,6 +607,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -592,6 +628,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -612,6 +649,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -632,6 +670,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -652,6 +691,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -672,6 +712,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -692,6 +733,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -712,6 +754,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -732,6 +775,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -752,6 +796,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -772,6 +817,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -792,6 +838,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -812,6 +859,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -832,6 +880,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -852,6 +901,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -872,6 +922,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -892,6 +943,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -912,6 +964,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -932,6 +985,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -952,6 +1006,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -972,6 +1027,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -992,6 +1048,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -1012,6 +1069,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -1030,9 +1088,14 @@ export const panIndiaColleges = [
     name: "KJ Somaiya Medical College, Mumbai",
     state: "Maharashtra",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 1991,
+    image: "",
+    fees: {
+      stateQuota: "₹10.25 lakh/yr",
+      managementQuota: "₹36 lakh/yr",
+      nriQuota: "₹40 lakh/yr (Est.)"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 32428, round2: null, round3: null, round4: null },
@@ -1050,9 +1113,14 @@ export const panIndiaColleges = [
     name: "Vedantaa Institute of Medical Sciences, Palghar",
     state: "Maharashtra",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2017,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040703/Vedantaa_Institute_of_Medical_Sciences_Palghar_Maharashtra_nriuxx.jpg",
+    fees: {
+      stateQuota: "₹15.57 lakh/yr",
+      managementQuota: "₹51.09 lakh/yr",
+      nriQuota: "₹77.85 lakh/yr"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 95521, round2: null, round3: null, round4: null },
@@ -1070,9 +1138,14 @@ export const panIndiaColleges = [
     name: "Smt Kashibai Navale Medical College (Last)",
     state: "Maharashtra",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2007,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040696/Smt._Kashibai_Navale_Medical_College_and_General_Hospital_Pune_oncgio.jpg",
+    fees: {
+      stateQuota: "₹14.23 lakh/yr",
+      managementQuota: "₹42 lakh/yr (Est.)",
+      nriQuota: "₹62 lakh/yr (Est.)"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1085,6 +1158,8 @@ export const panIndiaColleges = [
       privateManagement: null,
     },
   },
+
+  // karnataka //
   {
     id: "karnataka_bangalore-medical-college-and_55",
     name: "Bangalore Medical College and Research Institute",
@@ -1092,6 +1167,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -1112,6 +1188,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -1132,6 +1209,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -1152,6 +1230,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -1172,6 +1251,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -1192,6 +1272,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -1212,6 +1293,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -1232,6 +1314,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -1252,6 +1335,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -1272,6 +1356,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -1290,9 +1375,14 @@ export const panIndiaColleges = [
     name: "St Johns Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1963,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040752/St._Johns_Medical_College_Bangalore_Christian_Minority_j1adoq.jpg",
+    fees: {
+      stateQuota: "₹8.11 lakh/yr",
+      managementQuota: null,   // No separate mgmt quota — minority institution
+      nriQuota: null           // No NRI quota at St. Johns
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1310,9 +1400,14 @@ export const panIndiaColleges = [
     name: "MS Ramaiah Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1979,
+    fees: {
+      stateQuota: "₹1.57 lakh/yr",
+      managementQuota: "₹25.15 lakh/yr",
+      nriQuota: "₹45.15 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040757/MS_Ramaiah_Medical_College_Bangalore_Private_University_t5ulaw.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1330,9 +1425,14 @@ export const panIndiaColleges = [
     name: "Kempegowda Institute of Medical Sciences",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1980,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹43.12 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040748/Kempegowda_Medical_College_Bangalore_enjmp8.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1350,9 +1450,14 @@ export const panIndiaColleges = [
     name: "JSS Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 250,
+    established: 1984,
+    fees: {
+      stateQuota: "₹1.44 lakh/yr",
+      managementQuota: "₹18.5 lakh/yr",
+      nriQuota: "₹33 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040749/JSS_Medical_College_Mysore_Deemed_ppe8ky.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1370,9 +1475,14 @@ export const panIndiaColleges = [
     name: "Vydehi Institute of Medical Sciences",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2000,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹35 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040750/Vydehi_Institute_Of_Medical_Sciences_Research_Centre_Bangalore_Telugu_Minority_utbrzj.png",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1390,9 +1500,14 @@ export const panIndiaColleges = [
     name: "Dr BR Ambedkar Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2001,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹40.12 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040749/Dr_BR_Ambedkar_Medical_College_Bangalore_croxwq.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1410,9 +1525,14 @@ export const panIndiaColleges = [
     name: "MVJ Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2001,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹40.12 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040754/MVJ_Medical_College_and_Research_Hospital_Bangalore_Tamil_Minority_v4cctq.png",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1430,9 +1550,14 @@ export const panIndiaColleges = [
     name: "Sapthagiri Institute of Medical Sciences",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2011,
+    fees: {
+      stateQuota: "₹1.83 lakh/yr",
+      managementQuota: "₹22.41 lakh/yr",
+      nriQuota: "₹45.41 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040759/Sapthagiri_Institute_of_Medical_Sciences_Research_Centre_Bangalore_kodava_Minority_scpjox.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1450,9 +1575,14 @@ export const panIndiaColleges = [
     name: "Akash Institute of Medical Sciences",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2016,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹36.12 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040745/Akash_Institute_of_Medical_Sciences_Research_Centre_Bangalore_Telugu_Minority_shxhk0.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1470,9 +1600,14 @@ export const panIndiaColleges = [
     name: "East Point Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2002,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹36.12 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040748/East_Point_College_of_Medical_Sciences_Research_Centre_Bangalore_gepmjn.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1490,9 +1625,14 @@ export const panIndiaColleges = [
     name: "S Nijalingappa Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2002,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹40.12 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040745/S._Nijalingappa_Medical_College_HSK_Hospital_Research_Centre_Bagalkot_lglgdk.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1510,9 +1650,14 @@ export const panIndiaColleges = [
     name: "S R Patil Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2002,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹40.12 lakh/yr"
+    },
+    image: "",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1530,9 +1675,14 @@ export const panIndiaColleges = [
     name: "Srinivasa Institute of Medical Research",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2011,
+    fees: {
+      stateQuota: "₹1.67 lakh/yr",
+      managementQuota: "₹22.25 lakh/yr",
+      nriQuota: "₹38 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040756/Srinivas_Institute_of_Medical_Research_Centre_Srinivasnagar_Mangalore_Tulu_Minority_wn4lfz.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1550,9 +1700,14 @@ export const panIndiaColleges = [
     name: "Kasturba Medical College Manipal",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 250,
+    established: 1953,
+    fees: {
+      stateQuota: "₹17.7 lakh/yr",   // No separate state/mgmt quota; general merit fee
+      managementQuota: null,           // No management quota at KMC
+      nriQuota: "₹37 lakh/yr (Est.)" // ~$197k total / 4.5 yrs
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040754/Kasturba_Medical_College_Manipal_Deemed_ruthef.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1570,9 +1725,14 @@ export const panIndiaColleges = [
     name: "Kasturba Medical College Mangalore",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 250,
+    established: 1955,
+    fees: {
+      stateQuota: "₹13 lakh/yr",
+      managementQuota: "₹18 lakh/yr",
+      nriQuota: "₹35 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040760/Kasturba_Medical_College_MANGALORE_Deemed_um9b2x.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1590,9 +1750,14 @@ export const panIndiaColleges = [
     name: "AJ Institute of Medical Sciences",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2002,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹40.12 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040751/A_J_Institute_of_Medical_Sciences_Research_Centre_Mangalore_pdzg4f.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1610,9 +1775,14 @@ export const panIndiaColleges = [
     name: "Yenepoya Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1999,
+    fees: {
+      stateQuota: "₹13 lakh/yr (Est.)",
+      managementQuota: "₹18 lakh/yr (Est.)",
+      nriQuota: "₹35 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040750/Yenepoya_Medical_College_Mangalore_Deemed_ekwpt5.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1630,9 +1800,14 @@ export const panIndiaColleges = [
     name: "Father Muller Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1999,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹35.12 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040747/Father_Mullers_Medical_College_Mangalore_Christian_Minority_ln9re7.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1650,9 +1825,14 @@ export const panIndiaColleges = [
     name: "KS Hegde Medical Academy",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1999,
+    fees: {
+      stateQuota: "₹13 lakh/yr (Est.)",
+      managementQuota: "₹20 lakh/yr (Est.)",
+      nriQuota: "₹35 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040750/K.S.Hegde_Medical_Academy_Mangalore_Deemed_hdhhpb.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1670,9 +1850,14 @@ export const panIndiaColleges = [
     name: "JJM Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1965,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹39.12 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040751/JJM_Medical_College_Davangere_qqlwbo.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1690,9 +1875,14 @@ export const panIndiaColleges = [
     name: "SS Institute of Medical Sciences",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2006,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹36.12 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040753/S_S_Institute_of_Medical_Sciences_Research_Centre_Davangere_aabr2z.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1710,9 +1900,14 @@ export const panIndiaColleges = [
     name: "SDM Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2003,
+    fees: {
+      stateQuota: "₹1.57 lakh/yr",
+      managementQuota: "₹20.15 lakh/yr",
+      nriQuota: "₹35.15 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040760/SDM_College_of_Medical_Sciences_Hospital_Sattur_Dharwad_Tulu_Minority_yg2ivp.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1730,9 +1925,14 @@ export const panIndiaColleges = [
     name: "Navodaya Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2002,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹27.37 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040757/Navodaya_Medical_College_Raichur_Telugu_Minority_na2l6n.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1750,9 +1950,14 @@ export const panIndiaColleges = [
     name: "Adichunchanagiri Institute of Medical Sciences",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1986,
+    fees: {
+      stateQuota: "₹1.57 lakh/yr",
+      managementQuota: "₹22.15 lakh/yr",
+      nriQuota: "₹34.15 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040755/Adichunchanagiri_Institute_of_Medical_Sciences_Bellur_m8jgpg.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1770,9 +1975,14 @@ export const panIndiaColleges = [
     name: "Sri Siddhartha Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1988,
+    fees: {
+      stateQuota: "₹14 lakh/yr (Est.)",
+      managementQuota: "₹20 lakh/yr (Est.)",
+      nriQuota: "₹35 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040746/Sri_Siddhartha_Institute_of_Medical_Sciences_Research_Centre_Bangalore_sqsyb4.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1790,9 +2000,14 @@ export const panIndiaColleges = [
     name: "Sri Devaraj Urs Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1986,
+    fees: {
+      stateQuota: "₹12 lakh/yr (Est.)",
+      managementQuota: "₹19 lakh/yr (Est.)",
+      nriQuota: "₹32 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040762/Sri_Devaraj_Urs_Medical_College_Kolar_Deemed_wb0nip.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1810,9 +2025,14 @@ export const panIndiaColleges = [
     name: "KVG Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1999,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹35.13 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040755/K_V_G_Medical_College_Sullia_dll3ua.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1830,9 +2050,14 @@ export const panIndiaColleges = [
     name: "Shridevi Institute of Medical Sciences",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2007,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹38.62 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040752/Shridevi_Institute_of_Medical_Sciences_Research_Hospital_Tumkur_p00kek.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1850,9 +2075,14 @@ export const panIndiaColleges = [
     name: "Mahadevappa Rampure Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1972,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹39.12 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040761/Mahadevappa_Rampure_Medical_College_Gulburga_zjzkyl.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1870,9 +2100,14 @@ export const panIndiaColleges = [
     name: "SN Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2002,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹40.12 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040745/S._Nijalingappa_Medical_College_HSK_Hospital_Research_Centre_Bagalkot_lglgdk.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1890,9 +2125,14 @@ export const panIndiaColleges = [
     name: "Oxford Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2014,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹35 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040755/The_Oxford_Medical_College_Hospital_Research_Centre_Bangalore_Telugu_Minority_wyc5t3.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1910,9 +2150,14 @@ export const panIndiaColleges = [
     name: "Rajarajeswari Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2005,
+    fees: {
+      stateQuota: "₹14 lakh/yr (Est.)",
+      managementQuota: "₹20 lakh/yr (Est.)",
+      nriQuota: "₹35 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040752/Rajarajeswari_Medical_College_Hospital_Tamil_Minority_Deemed_hqrkfn.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1930,9 +2175,14 @@ export const panIndiaColleges = [
     name: "BGS Global Institute of Medical Sciences",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2013,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹42.87 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040746/BGS_Global_Institute_of_Medical_Sciences_Bangalore_pp3qad.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1950,9 +2200,14 @@ export const panIndiaColleges = [
     name: "Dayanand Sagar Medical College",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2020,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr (Est.)",
+      nriQuota: "₹35 lakh/yr (Est.)"
+    },
+    image: "",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1970,9 +2225,14 @@ export const panIndiaColleges = [
     name: "Kanachur Institute of Medical Sciences",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2016,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "₹32.12 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040754/Kanachur_Institute_of_Medical_Sciences_Mangalore_Muslim_Minority_voyate.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -1990,9 +2250,14 @@ export const panIndiaColleges = [
     name: "Subbaiah Institute of Medical Sciences",
     state: "Karnataka",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2012,
+    fees: {
+      stateQuota: "₹1.54 lakh/yr",
+      managementQuota: "₹12 lakh/yr (Est.)",
+      nriQuota: "₹32 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040756/Subbaiah_Institute_of_Medical_Sciences_Shimoga_Telugu_Minority_mhtkcg.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2005,6 +2270,9 @@ export const panIndiaColleges = [
       privateManagement: { round1: null, round2: null, round3: null, round4: null },
     },
   },
+
+  // kerala //
+
   {
     id: "kerala_govt-medical-college-thiruvana_101",
     name: "Govt Medical College Thiruvananthapuram",
@@ -2012,6 +2280,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2032,6 +2301,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2052,6 +2322,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2072,6 +2343,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2092,6 +2364,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2112,6 +2385,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2132,6 +2406,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2152,6 +2427,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2172,6 +2448,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2192,6 +2469,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2210,9 +2488,14 @@ export const panIndiaColleges = [
     name: "Jubilee Mission Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 1999,
+    fees: {
+      stateQuota: "₹8.16 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040684/Jubilee_Mission_Medical_College_Research_Institute_Thrissur_Christian_Minority_tpifsf.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2230,9 +2513,14 @@ export const panIndiaColleges = [
     name: "Amala Institute of Medical Sciences",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 1999,
+    fees: {
+      stateQuota: "₹8.16 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040680/Amala_Institute_of_Medical_Sciences_Thrissur_Christian_Minority_hi69fi.png",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2250,9 +2538,14 @@ export const panIndiaColleges = [
     name: "MOSC Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 2002,
+    fees: {
+      stateQuota: "₹8.16 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040687/Malankara_Orthodox_Syrian_Church_Medical_College_Kolenchery_Christian_Minority_o6o4z0.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2270,9 +2563,14 @@ export const panIndiaColleges = [
     name: "Pushpagiri Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 2002,
+    fees: {
+      stateQuota: "₹8.16 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040681/Pushpagiri_Institute_Of_Medical_Sciences_and_Research_Centre_Tiruvalla_Christian_Minority_t7ocgy.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2290,9 +2588,14 @@ export const panIndiaColleges = [
     name: "MES Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 2004,
+    fees: {
+      stateQuota: "₹8.16 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040681/M_E_S_Medical_College_Perintalmanna_Malappuram_Muslim_Minority_gti1lv.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2310,9 +2613,14 @@ export const panIndiaColleges = [
     name: "Sree Gokulam Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2005,
+    fees: {
+      stateQuota: "₹7.72 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040683/Sree_Gokulam_Medical_College_Trust_Research_Foundation_Trivandrum_ysf81x.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2330,9 +2638,14 @@ export const panIndiaColleges = [
     name: "Believers Church Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2012,
+    fees: {
+      stateQuota: "₹8.16 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040684/Believers_Church_Medical_College_Hospital_Christian_Minority_g30ko8.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2350,9 +2663,14 @@ export const panIndiaColleges = [
     name: "Malabar Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2010,
+    fees: {
+      stateQuota: "₹8.16 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040680/Malabar_Medical_College_Kozhikode_Calicut_ymr2os.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2370,9 +2688,14 @@ export const panIndiaColleges = [
     name: "Travancore Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2008,
+    fees: {
+      stateQuota: "₹8.16 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040686/Travancore_Medical_College_Kollam_Muslim_Minority_ygntrk.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2390,9 +2713,14 @@ export const panIndiaColleges = [
     name: "KMCT Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 2008,
+    fees: {
+      stateQuota: "₹8.07 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040686/KMCT_Medical_College_Kozhikode_Calicut_fujna7.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2410,9 +2738,14 @@ export const panIndiaColleges = [
     name: "Dr Somervell Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 2002,
+    fees: {
+      stateQuota: "₹8.16 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040683/Dr._Somervell_Memorial_CSI_Medical_College_Hospital_Christian_Minority_kqijfb.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2430,9 +2763,14 @@ export const panIndiaColleges = [
     name: "SUT Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2006,
+    fees: {
+      stateQuota: "₹7.77 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040680/Sree_Uthradom_Thiurnal_Academy_of_Medical_Sciences_Trivandrum_yclog3.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2450,9 +2788,14 @@ export const panIndiaColleges = [
     name: "PK Das Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2007,
+    fees: {
+      stateQuota: "₹8.97 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040684/P_K_Das_Institute_of_Medical_Sciences_Palakkad_zrcsdp.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2470,9 +2813,14 @@ export const panIndiaColleges = [
     name: "Sree Narayana Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2008,
+    fees: {
+      stateQuota: "₹8.50 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040687/Sree_Narayana_Instt._of_Medical_Sciences_Chalakka_Ernakulam_ziomir.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2490,9 +2838,14 @@ export const panIndiaColleges = [
     name: "Azeezia Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 2008,
+    fees: {
+      stateQuota: "₹8.16 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040685/Azeezia_Instt_of_Medical_Science_Meeyannoor_Kollam_Muslim_Minority_dxargz.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2510,9 +2863,14 @@ export const panIndiaColleges = [
     name: "Karuna Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 2006,
+    fees: {
+      stateQuota: "₹7.88 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040681/Karuna_Medical_College_Palakkad_Muslim_Minority_fra93m.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2530,9 +2888,14 @@ export const panIndiaColleges = [
     name: "Dr Moopen Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2009,
+    fees: {
+      stateQuota: "₹8.87 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040682/Dr._Moopen_s_Medical_College_Wayanad_c2pogp.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2550,9 +2913,14 @@ export const panIndiaColleges = [
     name: "Mount Zion Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2012,
+    fees: {
+      stateQuota: "₹8.10 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040683/Mount_Zion_Medical_College_Chayalode_Ezhamkulam_Adoor_Pathanamthitta_cxiapw.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2570,9 +2938,14 @@ export const panIndiaColleges = [
     name: "Palakkad Institute of Medical Sciences",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2013,
+    fees: {
+      stateQuota: "₹8.99 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040684/Palakkad_Institute_of_Medical_Sciences_Palakkad_xoud64.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2590,9 +2963,14 @@ export const panIndiaColleges = [
     name: "Al-Azhar Medical College",
     state: "Kerala",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 2010,
+    fees: {
+      stateQuota: "₹8.16 lakh/yr",
+      managementQuota: null,
+      nriQuota: "₹21.66 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040680/Al-Azhar_Medical_College_and_Super_Speciality_Hospital_Thodupuzha_Muslim_Minority_ub91jb.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -2605,6 +2983,9 @@ export const panIndiaColleges = [
       privateManagement: { round1: 62867, round2: 72225, round3: 76185, round4: null },
     },
   },
+
+  //Rajasthan//
+
   {
     id: "rajasthan_sms-mc-jaipur_131",
     name: "SMS MC Jaipur",
@@ -2612,6 +2993,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2632,6 +3014,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2652,6 +3035,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2672,6 +3056,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2692,6 +3077,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2712,6 +3098,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2732,6 +3119,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2752,6 +3140,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2772,6 +3161,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2792,6 +3182,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2812,6 +3203,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2832,6 +3224,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2852,6 +3245,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2872,6 +3266,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2892,6 +3287,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2912,6 +3308,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2932,6 +3329,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2952,6 +3350,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2972,6 +3371,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -2992,6 +3392,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3012,6 +3413,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3032,6 +3434,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3052,6 +3455,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3072,6 +3476,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3092,6 +3497,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3112,6 +3518,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3132,6 +3539,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3152,6 +3560,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3172,6 +3581,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3192,6 +3602,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3212,6 +3623,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3232,6 +3644,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3250,9 +3663,14 @@ export const panIndiaColleges = [
     name: "MG MC Jaipur",
     state: "Rajasthan",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2001,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040670/Mahatma_Gandhi_Medical_College_and_Hospital_Jaipur_sc9mml.webp",
+    fees: {
+      stateQuota: "₹19.5 lakh/yr",
+      managementQuota: "₹26.75 lakh/yr",
+      nriQuota: null   // No NRI quota in Rajasthan private colleges
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -3270,9 +3688,14 @@ export const panIndiaColleges = [
     name: "Geetanjali MC Jaipur",
     state: "Rajasthan",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 250,
+    established: 2008,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040670/Geetanjali_Medical_College_Hospital_Udaipur_bkpahz.jpg",
+    fees: {
+      stateQuota: "₹21 lakh/yr",
+      managementQuota: "₹26–28 lakh/yr",
+      nriQuota: null
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -3290,9 +3713,14 @@ export const panIndiaColleges = [
     name: "American Intl MC Udaipur",
     state: "Rajasthan",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2016,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040673/American_International_Institute_of_Medical_Sciences_Bedwas_Udaipur_uywnak.jpg",
+    fees: {
+      stateQuota: "₹13–15 lakh/yr",
+      managementQuota: "₹20–22 lakh/yr",
+      nriQuota: null
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -3310,9 +3738,14 @@ export const panIndiaColleges = [
     name: "JNU MC Jaipur",
     state: "Rajasthan",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2016,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040672/Jaipur_National_University_Institute_of_Medical_Sciences_and_Resarch_Centre_Jagatpura_Jaipur_siluhh.jpg",
+    fees: {
+      stateQuota: "₹10–12 lakh/yr",
+      managementQuota: "₹16–19.5 lakh/yr",
+      nriQuota: null
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -3330,9 +3763,14 @@ export const panIndiaColleges = [
     name: "Ananta MC Rajsamand",
     state: "Rajasthan",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2015,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040672/Ananta_Institute_of_Medical_Sciences_Research_Centre_Rajsamand_hevbqx.avif",
+    fees: {
+      stateQuota: "₹15 lakh/yr",
+      managementQuota: "₹20–22 lakh/yr",
+      nriQuota: null
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -3345,6 +3783,9 @@ export const panIndiaColleges = [
       privateManagement: { round1: 418186, round2: null, round3: null, round4: null },
     },
   },
+
+  // Uttar Pradesh //
+
   {
     id: "uttar_pradesh_kgmu-lucknow_168",
     name: "KGMU, Lucknow",
@@ -3352,6 +3793,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3372,6 +3814,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3392,6 +3835,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3412,6 +3856,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3432,6 +3877,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3452,6 +3898,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3472,6 +3919,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3492,6 +3940,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3512,6 +3961,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3532,6 +3982,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3552,6 +4003,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3572,6 +4024,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3592,6 +4045,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3612,6 +4066,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3632,6 +4087,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3652,6 +4108,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3672,6 +4129,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3692,6 +4150,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3712,6 +4171,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3732,6 +4192,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3752,6 +4213,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3772,6 +4234,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3792,6 +4255,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3812,6 +4276,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3832,6 +4297,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3852,6 +4318,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3872,6 +4339,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3892,6 +4360,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3912,6 +4381,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3932,6 +4402,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3952,6 +4423,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3972,6 +4444,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -3992,6 +4465,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4010,9 +4484,14 @@ export const panIndiaColleges = [
     name: "School of Medical Sciences, Greater Noida",
     state: "Uttar Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 250,
+    established: 2009,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040729/School_of_Medical_Sciences_Research_Sharda_University_Greater_Noida_m7yqve.jpg",
+    fees: {
+      stateQuota: "₹12.69 lakh/yr",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: null  // No NRI quota in UP state counselling
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4030,9 +4509,14 @@ export const panIndiaColleges = [
     name: "Hind Institute, Sitapur",
     state: "Uttar Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2008,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040737/Hind_Institute_of_Medical_Sciences_Sitapur_cymljm.webp",
+    fees: {
+      stateQuota: "₹10.77 lakh/yr",
+      managementQuota: "₹18–20 lakh/yr (Est.)",
+      nriQuota: null
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4050,9 +4534,14 @@ export const panIndiaColleges = [
     name: "KD Medical College, Mathura",
     state: "Uttar Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2015,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040732/K.D._Medical_College_Hospital_Research_Centre_Mathura_en6en2.webp",
+    fees: {
+      stateQuota: "₹12.28 lakh/yr",
+      managementQuota: "₹18–20 lakh/yr (Est.)",
+      nriQuota: null
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4070,9 +4559,14 @@ export const panIndiaColleges = [
     name: "United Institute, Prayagraj",
     state: "Uttar Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2020,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040740/United_Institute_of_Medical_Sciences_Allahabad_czbt9b.webp",
+    fees: {
+      stateQuota: "₹14.19 lakh/yr",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: null
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4090,9 +4584,14 @@ export const panIndiaColleges = [
     name: "Shri Gorakshnath MC, Gorakhpur",
     state: "Uttar Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2024,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040733/Shri_Gorakshnath_Medical_College_Hospital_Research_Centre_Sonbarsa_Gorakhpur_emmsjm.jpg",
+    fees: {
+      stateQuota: "₹16.15 lakh/yr",
+      managementQuota: "₹22–25 lakh/yr (Est.)",
+      nriQuota: null
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4110,9 +4609,14 @@ export const panIndiaColleges = [
     name: "Saraswati Institute, Hapur",
     state: "Uttar Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2009,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040730/Sarswati_Institute_of_Medical_Sciences_Hapur_ariwbw.png",
+    fees: {
+      stateQuota: "₹11.81 lakh/yr",
+      managementQuota: "₹18–20 lakh/yr (Est.)",
+      nriQuota: null
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4130,9 +4634,14 @@ export const panIndiaColleges = [
     name: "Heritage IMS, Varanasi",
     state: "Uttar Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2010,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040734/Heritage_Institute_of_Medical_Sciences_Varanasi_grezaz.jpg",
+    fees: {
+      stateQuota: "₹13.21 lakh/yr",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: null
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4150,9 +4659,14 @@ export const panIndiaColleges = [
     name: "Rama Medical College, Hapur",
     state: "Uttar Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 250,
+    established: 2002,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040730/Rama_Medical_College_Hospital_Research_Centre_Hapur_x52cvf.webp",
+    fees: {
+      stateQuota: "₹13.09 lakh/yr",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: null
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4170,9 +4684,14 @@ export const panIndiaColleges = [
     name: "Subharti MC, Meerut",
     state: "Uttar Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1998,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040731/Subharti_Medical_College_Meerut_Baudh_Minority_iqbkzp.webp",
+    fees: {
+      stateQuota: "₹11.85 lakh/yr",
+      managementQuota: "₹18–20 lakh/yr (Est.)",
+      nriQuota: null
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4190,9 +4709,14 @@ export const panIndiaColleges = [
     name: "Muzaffarnagar MC",
     state: "Uttar Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2009,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040736/Muzaffarnagar_Medical_College_Muzaffarnagar_kz1dap.png",
+    fees: {
+      stateQuota: "₹12.80 lakh/yr",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: null
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4212,6 +4736,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4232,6 +4757,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4252,6 +4778,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4272,6 +4799,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4292,6 +4820,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4305,6 +4834,9 @@ export const panIndiaColleges = [
       privateManagement: { round1: null, round2: null, round3: null, round4: null },
     },
   },
+
+  // Telangana //
+
   {
     id: "telangana_gandhi-medical-college-hyderab_216",
     name: "Gandhi Medical College, Hyderabad",
@@ -4312,6 +4844,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4338,6 +4871,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4364,6 +4898,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4390,6 +4925,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4416,6 +4952,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4442,6 +4979,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4468,6 +5006,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4494,6 +5033,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -4518,9 +5058,14 @@ export const panIndiaColleges = [
     name: "Apollo Institute of Medical Sciences, Hyderabad",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2012,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹12.50 lakh/yr",
+      nriQuota: "Up to ₹25 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040717/Appolo_Institute_of_Medical_Sciences_and_Research_Hyderabad_os1mnw.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: 12693, round2: null, round3: null, round4: null },
@@ -4544,9 +5089,14 @@ export const panIndiaColleges = [
     name: "Kamineni Institute, Narketpally",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 200,
+    established: 1999,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹13 lakh/yr",
+      nriQuota: "Up to ₹26 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040721/Kamineni_Institute_of_Medical_Sciences_Narketpally_tzvd13.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 24782, round2: null, round3: null, round4: null },
@@ -4570,9 +5120,14 @@ export const panIndiaColleges = [
     name: "Mediciti Institute, Hyderabad",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2002,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "Up to ₹24 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040723/Mediciti_Institute_of_Medical_Sciences_Ghanpur_Hyderabad_bdrlx4.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 26640, round2: null, round3: null, round4: null },
@@ -4596,9 +5151,14 @@ export const panIndiaColleges = [
     name: "MNR Medical College, Sangareddy",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2002,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹11.55 lakh/yr",
+      nriQuota: "Up to ₹23.10 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040721/MNR_Medical_College_Hospital_Sangareddy_ivslzu.avif",
     cutoffs: {
       stateQuota: {
         UR: { round1: 22157, round2: null, round3: null, round4: null },
@@ -4622,9 +5182,14 @@ export const panIndiaColleges = [
     name: "SVS Medical College, Mahabubnagar",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1999,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹12.50 lakh/yr",
+      nriQuota: "Up to ₹25 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040723/SVS_Medical_College_Mehaboobnagar_dsvcon.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 27964, round2: null, round3: null, round4: null },
@@ -4648,9 +5213,14 @@ export const panIndiaColleges = [
     name: "Chalmeda Anand Rao MC, Karimnagar",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2003,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹11.55 lakh/yr",
+      nriQuota: "Up to ₹23.10 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040722/Chalmeda_Anand_Rao_Institute_of_Medical_Science_Karimnagar._eiw3l1.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 27417, round2: null, round3: null, round4: null },
@@ -4674,9 +5244,14 @@ export const panIndiaColleges = [
     name: "Prathima Institute, Karimnagar",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 200,
+    established: 2001,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹13 lakh/yr",
+      nriQuota: "Up to ₹26 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040717/Prathima_Institute_of_Medical_Sciences_Karimnagar_h7rfng.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: 29704, round2: null, round3: null, round4: null },
@@ -4700,9 +5275,14 @@ export const panIndiaColleges = [
     name: "Bhaskar Medical College, Moinabad",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2005,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹11.55 lakh/yr",
+      nriQuota: "Up to ₹23.10 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040720/Bhaskar_Medical_College_Yenkapally_Hyderabad_eruaag.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 28977, round2: null, round3: null, round4: null },
@@ -4726,9 +5306,14 @@ export const panIndiaColleges = [
     name: "Kamineni Academy, Hyderabad",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2009,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹13 lakh/yr",
+      nriQuota: "Up to ₹26 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040716/Kamineni_Academy_of_Medical_Sciences_Research_Centre_Hyderabad_xmughg.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 16946, round2: null, round3: null, round4: null },
@@ -4752,9 +5337,14 @@ export const panIndiaColleges = [
     name: "RVM Medical College, Siddipet",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 200,
+    established: 2007,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "Up to ₹24 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040717/RVM_Institute_of_Medical_sciences_and_Research_Centre_Medak_shx502.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 29740, round2: null, round3: null, round4: null },
@@ -4778,9 +5368,14 @@ export const panIndiaColleges = [
     name: "Mamata Medical College, Khammam",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 200,
+    established: 1998,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "Up to ₹24 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040721/Mamata_Medical_College_Khammam_s0ii9d.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 23633, round2: null, round3: null, round4: null },
@@ -4804,9 +5399,14 @@ export const panIndiaColleges = [
     name: "Maheshwara Medical College, Medak",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2008,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹11.55 lakh/yr",
+      nriQuota: "Up to ₹23.10 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040720/Maheswara_Medical_College_Chitkul_Patancheru_Medak_vmqwis.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4830,9 +5430,14 @@ export const panIndiaColleges = [
     name: "Deccan Medical College",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2008,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹13.90 lakh/yr",  // amended by G.O.Ms.No.132
+      nriQuota: "Up to ₹27.80 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040719/Deccan_College_of_Medical_Sciences_Hyderabad_aokpm3.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: 27090, round2: null, round3: null, round4: null },
@@ -4856,9 +5461,14 @@ export const panIndiaColleges = [
     name: "Arundhati Institute of Medical Sciences",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2014,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹11.55 lakh/yr",
+      nriQuota: "Up to ₹23.10 lakh/yr"
+    },
+    image: "",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4882,9 +5492,14 @@ export const panIndiaColleges = [
     name: "CMR Institute of Medical Sciences",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2023,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹13 lakh/yr",
+      nriQuota: "Up to ₹26 lakh/yr"
+    },
+    image: "",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4908,9 +5523,14 @@ export const panIndiaColleges = [
     name: "Dr Patnam Mahender Reddy MC",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2009,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "Up to ₹24 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040716/Dr._Patnam_Mahender_Reddy_Institute_of_Medical_Sciences_Chevella_Rangareddy_m8bc3n.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4934,9 +5554,14 @@ export const panIndiaColleges = [
     name: "Father Colombo Institute MC",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2010,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹11.55 lakh/yr",
+      nriQuota: "Up to ₹23.10 lakh/yr"
+    },
+    image: "",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4960,9 +5585,14 @@ export const panIndiaColleges = [
     name: "Mamatha Academy of Medical Sciences",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2009,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "Up to ₹24 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040719/Mamata_Academy_of_Medical_Sciences_Bachupally_l02dgv.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -4986,9 +5616,14 @@ export const panIndiaColleges = [
     name: "Pratima Relief Institute, Warangal",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2013,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "Up to ₹24 lakh/yr"
+    },
+    image: "",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -5012,9 +5647,14 @@ export const panIndiaColleges = [
     name: "Surabhi Institute of Medical Sciences",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2011,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹11.55 lakh/yr",
+      nriQuota: "Up to ₹23.10 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040722/Surabhi_Institute_of_Medical_Sciences_Siddipet_Telangana_zhsi7d.png",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -5038,9 +5678,14 @@ export const panIndiaColleges = [
     name: "TRR Institute of Medical Sciences",
     state: "Telangana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2010,
+    fees: {
+      stateQuota: "₹60,000/yr",
+      managementQuota: "₹11.55 lakh/yr",
+      nriQuota: "Up to ₹23.10 lakh/yr"
+    },
+    image: "",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -5059,6 +5704,9 @@ export const panIndiaColleges = [
       privateManagement: { round1: 179067, round2: null, round3: null, round4: null },
     },
   },
+
+  // Tamil Nadu //
+
   {
     id: "tamil_nadu_madras-medical-college-chennai_245",
     name: "Madras Medical College, Chennai",
@@ -5066,6 +5714,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5086,6 +5735,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5106,6 +5756,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5126,6 +5777,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5146,6 +5798,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5166,6 +5819,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5186,6 +5840,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5206,6 +5861,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5226,6 +5882,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5246,6 +5903,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5266,6 +5924,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5286,6 +5945,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5306,6 +5966,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5326,6 +5987,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5346,6 +6008,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5366,6 +6029,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5386,6 +6050,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5406,6 +6071,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5426,6 +6092,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5446,6 +6113,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5466,6 +6134,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5486,6 +6155,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5506,6 +6176,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5526,6 +6197,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5539,6 +6211,9 @@ export const panIndiaColleges = [
       privateManagement: null,
     },
   },
+
+  //Madhya Pradesh//
+
   {
     id: "madhya_pradesh_m-g-m-medical-college-indore_269",
     name: "M G M Medical College, Indore",
@@ -5546,6 +6221,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5566,6 +6242,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5586,6 +6263,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5606,6 +6284,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5626,6 +6305,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5646,6 +6326,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5664,9 +6345,14 @@ export const panIndiaColleges = [
     name: "Ruxmaniben Deepchand Gardi Medical College, Ujjain",
     state: "Madhya Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2001,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040678/Ruxmaniben_Deepchand_Gardi_Medical_College_Ujjain_xcsifm.png",
+    fees: {
+      stateQuota: "₹8.33 lakh/yr",
+      managementQuota: "₹15–18 lakh/yr (Est.)",
+      nriQuota: "₹29.15 lakh/yr"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 71584, round2: null, round3: null, round4: null },
@@ -5684,9 +6370,14 @@ export const panIndiaColleges = [
     name: "Sri Aurobindo Medical College, Indore",
     state: "Madhya Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 250,
+    established: 2003,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040679/Sri_Aurobindo_Medical_College_and_Post_Graduate_Institute_Indore_wjshem.webp",
+    fees: {
+      stateQuota: "₹9.28 lakh/yr",
+      managementQuota: "₹17.65 lakh/yr",
+      nriQuota: "₹27.84 lakh/yr"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 79400, round2: null, round3: null, round4: null },
@@ -5704,9 +6395,14 @@ export const panIndiaColleges = [
     name: "Peoples College of Medical Sciences, Bhopal",
     state: "Madhya Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2001,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040676/Peoples_College_of_Medical_Sciences_Research_Centre_Bhanpur_Bhopal_bcytwo.jpg",
+    fees: {
+      stateQuota: "₹12.15 lakh/yr",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: "₹30 lakh/yr"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 97851, round2: null, round3: null, round4: null },
@@ -5724,9 +6420,14 @@ export const panIndiaColleges = [
     name: "Chirayu Medical College, Bhopal",
     state: "Madhya Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 250,
+    established: 2011,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040677/Chirayu_Medical_College_and_Hospital_Bairagarh_Bhopal_yylh0a.jpg",
+    fees: {
+      stateQuota: "₹11.41 lakh/yr",
+      managementQuota: "₹16.90 lakh/yr",
+      nriQuota: "₹34.23 lakh/yr"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 91996, round2: null, round3: null, round4: null },
@@ -5744,9 +6445,14 @@ export const panIndiaColleges = [
     name: "L N Medical College, Bhopal",
     state: "Madhya Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2009,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040675/L.N._Medical_College_and_Research_Centre_Bhopal_lfnmo1.jpg",
+    fees: {
+      stateQuota: "₹12.75 lakh/yr",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: "₹37.23 lakh/yr"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 105608, round2: null, round3: null, round4: null },
@@ -5764,9 +6470,14 @@ export const panIndiaColleges = [
     name: "Mahaveer Institute of Medical Sciences, Bhopal",
     state: "Madhya Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2020,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040676/Mahaveer_Institute_of_Medical_Sciences_Research_Bhopal_trophc.webp",
+    fees: {
+      stateQuota: "₹8.33 lakh/yr",
+      managementQuota: "₹15–18 lakh/yr (Est.)",
+      nriQuota: "₹24.99 lakh/yr"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 113362, round2: null, round3: null, round4: null },
@@ -5784,9 +6495,14 @@ export const panIndiaColleges = [
     name: "Index Medical College, Indore",
     state: "Madhya Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 250,
+    established: 2007,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040678/Index_Medical_College_Hospital_Research_Centre_Indore_avhwii.jpg",
+    fees: {
+      stateQuota: "₹12.25 lakh/yr",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: "₹36.77 lakh/yr"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 121114, round2: null, round3: null, round4: null },
@@ -5804,9 +6520,14 @@ export const panIndiaColleges = [
     name: "Ram Krishna Medical College, Bhopal",
     state: "Madhya Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2023,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040674/Ram_Krishna_College_Hospital_Research_Centre_Bhopal_rtoxfx.jpg",
+    fees: {
+      stateQuota: "₹10 lakh/yr (Est.)",
+      managementQuota: "₹18–20 lakh/yr (Est.)",
+      nriQuota: "₹28–35 lakh/yr (Est.)"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 125284, round2: null, round3: null, round4: null },
@@ -5824,9 +6545,14 @@ export const panIndiaColleges = [
     name: "LNCT Medical College, Indore",
     state: "Madhya Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2021,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040679/LNCT_Medical_College_Sewakunj_Hospital_Indore_l1jdgc.jpg",
+    fees: {
+      stateQuota: "₹3.02 lakh/yr",  // ₹16.58 lakh for full 5.5-yr course
+      managementQuota: "₹15–18 lakh/yr (Est.)",
+      nriQuota: "₹28–35 lakh/yr (Est.)"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 126518, round2: null, round3: null, round4: null },
@@ -5844,9 +6570,14 @@ export const panIndiaColleges = [
     name: "Amaltas Medical College, Dewas",
     state: "Madhya Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2006,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040675/Amaltas_Institute_of_Medical_Sciences_Dewas_thhmoe.jpg",
+    fees: {
+      stateQuota: "₹9.65 lakh/yr",
+      managementQuota: "₹16–18 lakh/yr (Est.)",
+      nriQuota: "₹28.95 lakh/yr"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 128672, round2: null, round3: null, round4: null },
@@ -5864,9 +6595,14 @@ export const panIndiaColleges = [
     name: "Sukh Sagar Medical College, Jabalpur",
     state: "Madhya Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2021,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040678/Sukh_Sagar_Medical_College_and_Hospital_Jabalpur_pptgql.jpg",
+    fees: {
+      stateQuota: "₹8.18 lakh/yr",
+      managementQuota: "₹15–18 lakh/yr (Est.)",
+      nriQuota: "₹27 lakh/yr"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 138108, round2: null, round3: null, round4: null },
@@ -5884,9 +6620,14 @@ export const panIndiaColleges = [
     name: "RKDF Medical College, Bhopal",
     state: "Madhya Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2014,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040677/RKDF_Medical_College_Hospital_Research_Centre_Jatkhedi_Bhopal_chla7l.jpg",
+    fees: {
+      stateQuota: "₹12.05 lakh/yr",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: "₹36.15 lakh/yr"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 140532, round2: null, round3: null, round4: null },
@@ -5904,9 +6645,14 @@ export const panIndiaColleges = [
     name: "School of Medical Sciences, SAGE University, Indore",
     state: "Madhya Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2020,
+    image: "",
+    fees: {
+      stateQuota: "₹8–10 lakh/yr (Est.)",
+      managementQuota: "₹15–18 lakh/yr (Est.)",
+      nriQuota: "₹28–35 lakh/yr (Est.)"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 145498, round2: null, round3: null, round4: null },
@@ -5923,10 +6669,14 @@ export const panIndiaColleges = [
     id: "madhya_pradesh_mansarovar-medical-college-seh_288",
     name: "Mansarovar Medical College, Sehore",
     state: "Madhya Pradesh",
-    management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2021,
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040675/MANSAROVAR_MEDICAL_COLLEGE_AND_MGU_HOSPITAL_wnfnx9.jpg",
+    fees: {
+      stateQuota: "₹8–10 lakh/yr (Est.)",
+      managementQuota: "₹15–18 lakh/yr (Est.)",
+      nriQuota: "₹28–35 lakh/yr (Est.)"
+    },
     cutoffs: {
       stateQuota: {
         UR: { round1: 146182, round2: null, round3: null, round4: null },
@@ -5939,6 +6689,9 @@ export const panIndiaColleges = [
       privateManagement: null,
     },
   },
+
+  // Assam //
+
   {
     id: "assam_gauhati-medical-college-guwaha_289",
     name: "Gauhati Medical College, Guwahati",
@@ -5946,6 +6699,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 250,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5966,6 +6720,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 125,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -5986,6 +6741,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 125,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6006,6 +6762,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 250,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6026,6 +6783,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 100,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6046,6 +6804,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 100,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6066,6 +6825,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 125,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6086,6 +6846,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 100,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6106,6 +6867,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 100,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6126,6 +6888,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 100,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6146,6 +6909,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 100,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6166,6 +6930,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 100,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6186,6 +6951,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 100,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6206,6 +6972,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 150,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6226,6 +6993,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: 50,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6239,14 +7007,22 @@ export const panIndiaColleges = [
       privateManagement: null,
     },
   },
+
+  //Bihar//
+
   {
     id: "bihar_mata-gujri-memorial-mc-kishang_304",
     name: "Mata Gujri Memorial MC, Kishanganj",
     state: "Bihar",
-    management: "Govt",
+    management: "Private",  // ← FIX: was "Govt"
     seats: 150,
-    established: null,
-    fees: null,
+    established: 2007,
+    fees: {
+      stateQuota: "₹9.63 lakh/yr",
+      managementQuota: "₹12–14 lakh/yr (Est.)",
+      nriQuota: "₹20–25 lakh/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040657/Mata_Gujri_Memorial_College_Kishanganj_Sikh_Minority_keffvn.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: 125773, round2: 131136, round3: 61290, round4: null },
@@ -6263,10 +7039,15 @@ export const panIndiaColleges = [
     id: "bihar_katihar-medical-college-katiha_305",
     name: "Katihar Medical College, Katihar",
     state: "Bihar",
-    management: "Govt",
-    seats: 150,
-    established: null,
-    fees: null,
+    management: "Private",  // ← FIX
+    seats: 100,
+    established: 1983,
+    fees: {
+      stateQuota: "₹9.35 lakh/yr",
+      managementQuota: "₹12 lakh/yr",
+      nriQuota: "USD 25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040656/Katihar_Medical_College_Katihar_Muslim_Minority_ssi47c.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 126570, round2: 131914, round3: 135519, round4: 110432 },
@@ -6283,10 +7064,15 @@ export const panIndiaColleges = [
     id: "bihar_lord-buddha-koshi-mc-saharsa_306",
     name: "Lord Buddha Koshi MC, Saharsa",
     state: "Bihar",
-    management: "Govt",
-    seats: 150,
-    established: null,
-    fees: null,
+    management: "Private",  // ← FIX
+    seats: 100,
+    established: 2016,
+    fees: {
+      stateQuota: "₹10–12 lakh/yr (Est.)",
+      managementQuota: "₹14–16 lakh/yr (Est.)",
+      nriQuota: "₹20–25 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040658/Lord_Buddha_Koshi_Medical_College_and_Hospital_Saharsa_fzgizk.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 307128, round2: null, round3: 284199, round4: 164606 },
@@ -6303,10 +7089,15 @@ export const panIndiaColleges = [
     id: "bihar_narayan-medical-college-sasara_307",
     name: "Narayan Medical College, Sasaram",
     state: "Bihar",
-    management: "Govt",
+    management: "Private",  // ← FIX
     seats: 250,
-    established: null,
-    fees: null,
+    established: 2008,
+    fees: {
+      stateQuota: "₹10.38 lakh/yr",
+      managementQuota: "₹14–16 lakh/yr (Est.)",
+      nriQuota: "USD 25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040656/Narayan_Medical_College_Hospital_Sasaram_xuznur.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 290048, round2: 311448, round3: 309837, round4: 206926 },
@@ -6323,10 +7114,15 @@ export const panIndiaColleges = [
     id: "bihar_radha-devi-jageshwari-mc-muzaf_308",
     name: "Radha Devi Jageshwari MC, Muzaffarpur",
     state: "Bihar",
-    management: "Govt",
+    management: "Private",  // ← FIX
     seats: 150,
-    established: null,
-    fees: null,
+    established: 2018,
+    fees: {
+      stateQuota: "₹10 lakh/yr (Est.)",
+      managementQuota: "₹14–16 lakh/yr (Est.)",
+      nriQuota: "₹20–22 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040658/Radha_Devi_Jageshwari_Memorial_MCH_Turki_Muzaffarpur_jwvgkh.png",
     cutoffs: {
       stateQuota: {
         UR: { round1: 367910, round2: 375395, round3: 384611, round4: 397674 },
@@ -6343,10 +7139,15 @@ export const panIndiaColleges = [
     id: "bihar_shree-narayan-medical-institut_309",
     name: "Shree Narayan Medical Institute, Saharsa",
     state: "Bihar",
-    management: "Govt",
+    management: "Private",  // ← FIX
     seats: 150,
-    established: null,
-    fees: null,
+    established: 2016,
+    fees: {
+      stateQuota: "₹10–12 lakh/yr (Est.)",
+      managementQuota: "₹14–16 lakh/yr (Est.)",
+      nriQuota: "₹20–25 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040655/Shree_Narayan_Medical_Institute_and_Hospital_Saharsa_a1mk00.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 350554, round2: 375450, round3: 374603, round4: 132961 },
@@ -6363,10 +7164,15 @@ export const panIndiaColleges = [
     id: "bihar_madhubani-medical-college-musl_310",
     name: "Madhubani Medical College (Muslim Minority)",
     state: "Bihar",
-    management: "Govt",
+    management: "Private",  // ← FIX
     seats: 250,
-    established: null,
-    fees: null,
+    established: 2018,
+    fees: {
+      stateQuota: "₹13.50 lakh/yr",
+      managementQuota: "₹16 lakh/yr (Est.)",
+      nriQuota: "USD 21,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040655/Madhubani_Medical_College_Madhubani_pmf8o7.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: 372645, round2: 411152, round3: 420182, round4: 432461 },
@@ -6383,10 +7189,15 @@ export const panIndiaColleges = [
     id: "bihar_netaji-subhas-mc-amhara_311",
     name: "Netaji Subhas MC, Amhara",
     state: "Bihar",
-    management: "Govt",
+    management: "Private",  // ← FIX
     seats: 150,
-    established: null,
-    fees: null,
+    established: 2018,
+    fees: {
+      stateQuota: "₹16.25 lakh/yr",
+      managementQuota: "₹18–20 lakh/yr (Est.)",
+      nriQuota: "USD 35,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040655/Netaji_Subhas_Medical_College_Hospital_Amhara_Bihta_Patna_ptiw68.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 393690, round2: 435788, round3: 448421, round4: 473262 },
@@ -6403,10 +7214,15 @@ export const panIndiaColleges = [
     id: "bihar_himalaya-medical-college-patna_312",
     name: "Himalaya Medical College, Patna",
     state: "Bihar",
-    management: "Govt",
+    management: "Private",  // ← FIX
     seats: 150,
-    established: null,
-    fees: null,
+    established: 2018,
+    fees: {
+      stateQuota: "₹10–12 lakh/yr (Est.)",
+      managementQuota: "₹14–16 lakh/yr (Est.)",
+      nriQuota: "₹20–25 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040658/Himalaya_Medical_College_and_Hospital_Patna_pzhhja.png",
     cutoffs: {
       stateQuota: {
         UR: { round1: 421385, round2: 474551, round3: 518365, round4: 629238 },
@@ -6423,10 +7239,15 @@ export const panIndiaColleges = [
     id: "bihar_mahabodhi-medical-college-gaya_313",
     name: "Mahabodhi Medical College, Gaya",
     state: "Bihar",
-    management: "Govt",
+    management: "Private",  // ← FIX
     seats: 100,
-    established: null,
-    fees: null,
+    established: 2022,
+    fees: {
+      stateQuota: "₹10–12 lakh/yr (Est.)",
+      managementQuota: "₹14–16 lakh/yr (Est.)",
+      nriQuota: "₹20–25 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040655/Mahabodhi_Medical_College_and_Hospital_Naknupa_Gaya_oa0ycb.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: 658309, round4: 693346 },
@@ -6443,10 +7264,15 @@ export const panIndiaColleges = [
     id: "bihar_shyamlal-chandrashekhar-mc-kha_314",
     name: "Shyamlal Chandrashekhar MC, Khagaria",
     state: "Bihar",
-    management: "Govt",
+    management: "Private",  // ← FIX
     seats: 100,
-    established: null,
-    fees: null,
+    established: 2022,
+    fees: {
+      stateQuota: "₹10–12 lakh/yr (Est.)",
+      managementQuota: "₹14–16 lakh/yr (Est.)",
+      nriQuota: "₹20–25 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040658/Shyamlal_Chandrashekhar_Medical_College_Khagaria_hh5o7w.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: 663497, round4: 706195 },
@@ -6463,10 +7289,15 @@ export const panIndiaColleges = [
     id: "bihar_viraat-ramayan-institute-motih_315",
     name: "Viraat Ramayan Institute, Motihari",
     state: "Bihar",
-    management: "Govt",
+    management: "Private",  // ← FIX
     seats: 50,
-    established: null,
-    fees: null,
+    established: 2023,
+    fees: {
+      stateQuota: "₹10–12 lakh/yr (Est.)",
+      managementQuota: "₹14–16 lakh/yr (Est.)",
+      nriQuota: "₹20–25 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040658/Viraat_Ramayan_Institute_of_Medical_Sciences_Koyla_Belwa_Motihari_bhrlub.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: 684943, round4: 685933 },
@@ -6479,6 +7310,9 @@ export const panIndiaColleges = [
       privateManagement: { round1: null, round2: null, round3: null, round4: null },
     },
   },
+
+  //Punjab//
+
   {
     id: "punjab_gmc-patiala_316",
     name: "GMC Patiala",
@@ -6486,6 +7320,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6506,6 +7341,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6526,6 +7362,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6546,6 +7383,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6566,6 +7404,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6584,9 +7423,14 @@ export const panIndiaColleges = [
     name: "Sri Guru Ram Das MC, Amritsar",
     state: "Punjab",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 1997,
+    fees: {
+      stateQuota: "₹4.26 lakh/yr",
+      managementQuota: "₹9.55 lakh/yr",
+      nriQuota: "~$95,000/yr (reduced from $1.1 lakh)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040743/Sri_Guru_Ram_Das_Institute_of_Medical_Sciences_and_Research_Sri_Amritsar_Sikh_Minority_bceere.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 167167, round2: 178246, round3: 245829, round4: 258357 },
@@ -6604,9 +7448,14 @@ export const panIndiaColleges = [
     name: "Christian Medical College, Ludhiana",
     state: "Punjab",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 75,
+    established: 1953,
+    fees: {
+      stateQuota: "₹6.60 lakh/yr",   // Fixed fee, 10% increment annually
+      managementQuota: "₹6.60 lakh/yr",  // Same — minority college
+      nriQuota: "~$125,000 total course"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040741/Christian_Medical_College_Ludhiana_Christian_Minority_teoo5b.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: 15950, round2: 22583, round3: null, round4: null },
@@ -6624,9 +7473,14 @@ export const panIndiaColleges = [
     name: "Adesh Institute of Medical Sciences, Bhatinda",
     state: "Punjab",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2006,
+    fees: {
+      stateQuota: "₹4.26 lakh/yr",
+      managementQuota: "₹10.94 lakh/yr",
+      nriQuota: "~$125,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040742/Adesh_Institute_Of_Medical_Sciences_Research_Bhatinda_okivte.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 85595, round2: 98594, round3: 159713, round4: null },
@@ -6639,6 +7493,9 @@ export const panIndiaColleges = [
       privateManagement: null,
     },
   },
+
+  // Haryana //
+
   {
     id: "haryana_pgims-rohtak_324",
     name: "PGIMS Rohtak",
@@ -6646,6 +7503,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6666,6 +7524,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6686,6 +7545,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6706,6 +7566,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6726,6 +7587,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6746,6 +7608,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6766,6 +7629,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6786,6 +7650,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6806,6 +7671,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6824,9 +7690,14 @@ export const panIndiaColleges = [
     name: "Adesh MC Kurukshetra",
     state: "Haryana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2017,
+    fees: {
+      stateQuota: "₹7.80 lakh/yr",
+      managementQuota: "₹13.50–14 lakh/yr",
+      nriQuota: "~$110,000–125,000 full course"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040659/Adesh_Medical_College_and_Hospital_Shahabad_Kurukshetra_uhkutk.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -6844,9 +7715,14 @@ export const panIndiaColleges = [
     name: "SGT Medical College, Gurgaon",
     state: "Haryana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2010,
+    fees: {
+      stateQuota: "₹7.80 lakh/yr",
+      managementQuota: "₹16–18 lakh/yr",
+      nriQuota: "~$140,000–160,000 full course"
+    },
+    image: "",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -6864,9 +7740,14 @@ export const panIndiaColleges = [
     name: "NC Medical College, Panipat",
     state: "Haryana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2016,
+    fees: {
+      stateQuota: "₹7.80 lakh/yr",
+      managementQuota: "₹13.50 lakh/yr",
+      nriQuota: "~$110,000–125,000 full course"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040660/N.C_Medical_College_Hospital_Panipat_t0gaul.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -6884,9 +7765,14 @@ export const panIndiaColleges = [
     name: "World Medical College, Jhajjar",
     state: "Haryana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2016,
+    fees: {
+      stateQuota: "₹7.80 lakh/yr",
+      managementQuota: "₹12–14 lakh/yr",
+      nriQuota: "~$110,000 full course"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040659/World_College_Of_Medical_Sciences_Research_Jhajjar_rpyct5.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -6904,9 +7790,14 @@ export const panIndiaColleges = [
     name: "MMU Sadopur",
     state: "Haryana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2003,
+    fees: {
+      stateQuota: "₹7.80 lakh/yr",
+      managementQuota: "₹14–16 lakh/yr",
+      nriQuota: "~$120,000–140,000 full course"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040660/M.M._College_of_Medical_Sciences_Research_Sadopur_Ambala_tsnaaw.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -6924,9 +7815,14 @@ export const panIndiaColleges = [
     name: "Al Falah Medical College",
     state: "Haryana",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2019,
+    fees: {
+      stateQuota: "₹7.80 lakh/yr",
+      managementQuota: "₹13.50 lakh/yr",
+      nriQuota: "~$110,000 full course"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040660/Al_Falah_School_Of_Medical_Sciences_Research_Centre_Faridabad_Minority_Private_University_sq17lm.png",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -6939,6 +7835,9 @@ export const panIndiaColleges = [
       privateManagement: { round1: 670520, round2: null, round3: null, round4: null },
     },
   },
+
+  // Chhattisgarh //
+
   {
     id: "chhattisgarh_pt-jnmc-raipur_339",
     name: "Pt. JNMC, Raipur",
@@ -6946,6 +7845,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6966,6 +7866,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -6986,6 +7887,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7006,6 +7908,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7026,6 +7929,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7046,6 +7950,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7066,6 +7971,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7086,6 +7992,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7106,6 +8013,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7126,6 +8034,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7144,9 +8053,14 @@ export const panIndiaColleges = [
     name: "Shri Balaji IMS, Raipur",
     state: "Chhattisgarh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2007,
+    fees: {
+      stateQuota: "₹8.02 lakh/yr",
+      managementQuota: "₹12–14 lakh/yr (Est.)",
+      nriQuota: "~$35,000/yr (≈₹29 lakh)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040653/Shri_Balaji_Institute_of_Medical_Science_Raipur_yq4d5l.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -7164,9 +8078,14 @@ export const panIndiaColleges = [
     name: "RIMS, Raipur",
     state: "Chhattisgarh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2006,
+    fees: {
+      stateQuota: "₹7.45 lakh/yr",
+      managementQuota: "₹12–14 lakh/yr (Est.)",
+      nriQuota: "~$35,000/yr (≈₹29 lakh)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040654/Raipur_Institute_of_Medical_Sciences_RIMS_Raipur_nzngq1.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -7184,9 +8103,14 @@ export const panIndiaColleges = [
     name: "Shri Shankaracharya IMS, Bhilai",
     state: "Chhattisgarh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 250,
+    established: 2002,
+    fees: {
+      stateQuota: "₹7.45 lakh/yr",
+      managementQuota: "₹12–14 lakh/yr (Est.)",
+      nriQuota: "~$35,000/yr (≈₹29 lakh)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040654/Shri_Shankaracharya_Institute_of_Medical_Sciences_Bhilai_b9bnlw.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -7204,9 +8128,14 @@ export const panIndiaColleges = [
     name: "Abhishek I Mishra MC, Bhilai",
     state: "Chhattisgarh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2015,
+    fees: {
+      stateQuota: "₹7.45 lakh/yr",
+      managementQuota: "₹12–14 lakh/yr (Est.)",
+      nriQuota: "~$35,000/yr (≈₹29 lakh)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040653/Abhishek_I_Mishra_Memorial_Medical_College_Research_Bhiali_Durg_ixmjrn.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -7224,9 +8153,14 @@ export const panIndiaColleges = [
     name: "Shri Rawatpura Sarkar IMS",
     state: "Chhattisgarh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2013,
+    fees: {
+      stateQuota: "₹7.45 lakh/yr",
+      managementQuota: "₹12–14 lakh/yr (Est.)",
+      nriQuota: "~$35,000/yr (≈₹29 lakh)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040654/Shri_Rawatpura_Sarkar_Institute_of_Medical_Sciences_and_Research_Nava_Raipur_z7fqd6.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -7239,14 +8173,22 @@ export const panIndiaColleges = [
       privateManagement: { round1: 527869, round2: null, round3: null, round4: null },
     },
   },
+
+  // Gujarat //
+
   {
     id: "gujarat_smt-nhl-municipal-mc-ahmedabad_354",
     name: "Smt. NHL Municipal MC, Ahmedabad",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1963,
+    fees: {
+      stateQuota: "₹8.30 lakh/yr",
+      managementQuota: "₹25.63 lakh/yr",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "",
     cutoffs: {
       stateQuota: {
         UR: { round1: 67359, round2: null, round3: null, round4: null },
@@ -7264,9 +8206,14 @@ export const panIndiaColleges = [
     name: "GCS Medical College, Ahmedabad",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2010,
+    fees: {
+      stateQuota: "₹8.30 lakh/yr",
+      managementQuota: "₹18.27 lakh/yr",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040664/GCS_Medical_College_Ahmedabad_dmywk6.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 83117, round2: null, round3: null, round4: null },
@@ -7284,9 +8231,14 @@ export const panIndiaColleges = [
     name: "Narendra Modi Medical College, Ahmedabad",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 250,
+    established: 1989,
+    fees: {
+      stateQuota: "₹10.23 lakh/yr",
+      managementQuota: "₹25.76–28.85 lakh/yr",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "",
     cutoffs: {
       stateQuota: {
         UR: { round1: 89456, round2: null, round3: null, round4: null },
@@ -7304,9 +8256,14 @@ export const panIndiaColleges = [
     name: "SMIMER, Surat",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1963,
+    fees: {
+      stateQuota: "₹10.02 lakh/yr",
+      managementQuota: "₹21.96 lakh/yr",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "",
     cutoffs: {
       stateQuota: {
         UR: { round1: 91590, round2: null, round3: null, round4: null },
@@ -7324,9 +8281,14 @@ export const panIndiaColleges = [
     name: "CU Shah Medical College",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1994,
+    fees: {
+      stateQuota: "₹9.74 lakh/yr",
+      managementQuota: "₹19–20 lakh/yr",
+      nriQuota: "~$22,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040666/C.U._Shah_Medical_College_Surendra_Nagar_iuc3kc.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 95799, round2: null, round3: null, round4: null },
@@ -7344,9 +8306,14 @@ export const panIndiaColleges = [
     name: "Kiran Medical College, Surat",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2012,
+    fees: {
+      stateQuota: "₹9–10 lakh/yr (Est.)",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040665/Kiran_Medical_College_Surat_gxaa08.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 117859, round2: null, round3: null, round4: null },
@@ -7364,9 +8331,14 @@ export const panIndiaColleges = [
     name: "Dr. MK Shah MC, Ahmedabad",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2009,
+    fees: {
+      stateQuota: "₹10.82 lakh/yr",
+      managementQuota: "₹21.64 lakh/yr",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040663/Dr._M.K._Shah_Medical_College_Research_Centre_Ahmedabad_doscs2.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: 119391, round2: null, round3: null, round4: null },
@@ -7384,9 +8356,14 @@ export const panIndiaColleges = [
     name: "Pramukhswami MC, Karamsad",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1993,
+    fees: {
+      stateQuota: "₹9–10 lakh/yr (Est.)",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040667/Pramukhswami_Medical_College_Karmsad_j9m3m3.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: 121120, round2: null, round3: null, round4: null },
@@ -7404,9 +8381,14 @@ export const panIndiaColleges = [
     name: "ND Desai MC, Nadiad",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2006,
+    fees: {
+      stateQuota: "₹10–11 lakh/yr",
+      managementQuota: "₹21–22 lakh/yr",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040667/Dr._N_D_Desai_Faculty_of_Medical_Science_and_Research_Nadiad_a26nxx.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 121992, round2: null, round3: null, round4: null },
@@ -7424,9 +8406,14 @@ export const panIndiaColleges = [
     name: "Shantabaa Medical College",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2009,
+    fees: {
+      stateQuota: "₹10.99–11.50 lakh/yr",
+      managementQuota: "₹22.50 lakh/yr",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040665/Shantabaa_Medical_College_Amreli_b9zbyn.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 129116, round2: null, round3: null, round4: null },
@@ -7444,9 +8431,14 @@ export const panIndiaColleges = [
     name: "Gujarat Adani IMS, Bhuj",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2011,
+    fees: {
+      stateQuota: "₹9.74 lakh/yr",
+      managementQuota: "₹20.78 lakh/yr",
+      nriQuota: "~$22,000–25,000/yr (NRI only, no Mgmt quota)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040663/Gujarat_Adani_Institute_of_Medical_Sciences_Bhuj_nopmvg.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 129769, round2: null, round3: null, round4: null },
@@ -7464,9 +8456,14 @@ export const panIndiaColleges = [
     name: "Nootan MC, Mehsana",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2009,
+    fees: {
+      stateQuota: "₹9.61–9.75 lakh/yr",
+      managementQuota: "₹19–20 lakh/yr",
+      nriQuota: "~$22,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040667/Nootan_Medical_College_and_Research_Centre_Mehsana_vuv865.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 136822, round2: null, round3: null, round4: null },
@@ -7484,9 +8481,14 @@ export const panIndiaColleges = [
     name: "Dr. Kiran C Patel MC",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2013,
+    fees: {
+      stateQuota: "₹9–10 lakh/yr (Est.)",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040668/Dr._Kiran_C.Patel_Medical_College_and_Research_Institute_afvu2n.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 138517, round2: null, round3: null, round4: null },
@@ -7504,9 +8506,14 @@ export const panIndiaColleges = [
     name: "Banas MC, Palanpur",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2013,
+    fees: {
+      stateQuota: "₹8.94 lakh/yr",
+      managementQuota: "₹16.24 lakh/yr",
+      nriQuota: "~$22,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040664/Banas_Medical_College_and_Research_Institute_Palanpur_phycwg.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: 109708, round2: null, round3: null, round4: null },
@@ -7524,9 +8531,14 @@ export const panIndiaColleges = [
     name: "SAL Institute of Medical Sciences",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2012,
+    fees: {
+      stateQuota: "₹9–10 lakh/yr (Est.)",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040663/SAL_Institute_of_Medical_Sciences_Ahmedabad_gwbbac.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 141263, round2: null, round3: null, round4: null },
@@ -7544,9 +8556,14 @@ export const panIndiaColleges = [
     name: "Ananya College of Medicine",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2019,
+    fees: {
+      stateQuota: "₹9–10 lakh/yr (Est.)",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040669/Ananya_College_of_Medicine_Research_Kalol_tbdtgl.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 153619, round2: null, round3: null, round4: null },
@@ -7564,9 +8581,14 @@ export const panIndiaColleges = [
     name: "Matushri PK Medical College",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2018,
+    fees: {
+      stateQuota: "₹9–10 lakh/yr (Est.)",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040667/Matushri_prabhaben_khodabhai_boghara_medical_college_research_centre_cki0nd.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: 166391, round2: null, round3: null, round4: null },
@@ -7584,9 +8606,14 @@ export const panIndiaColleges = [
     name: "Zydus Medical College, Dahod",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2014,
+    fees: {
+      stateQuota: "₹10.49 lakh/yr",
+      managementQuota: "₹20.98 lakh/yr",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040668/Zydus_Medical_College_Hospital_Dahod_rnsbgr.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 171334, round2: null, round3: null, round4: null },
@@ -7604,9 +8631,14 @@ export const panIndiaColleges = [
     name: "Bhagyoday Medical College",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2019,
+    fees: {
+      stateQuota: "₹9–10 lakh/yr (Est.)",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040663/Bhagyoday_Medical_College_Kadi_grlmnb.avif",
     cutoffs: {
       stateQuota: {
         UR: { round1: 179936, round2: null, round3: null, round4: null },
@@ -7624,9 +8656,14 @@ export const panIndiaColleges = [
     name: "Parul Institute of Medical Sciences",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 200,
+    established: 2012,
+    fees: {
+      stateQuota: "₹11.20 lakh/yr",
+      managementQuota: "₹20.90–21.40 lakh/yr",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040663/Parul_Institute_of_Medical_Sciences_Research_Vadodara_lff6by.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: 180351, round2: null, round3: null, round4: null },
@@ -7644,9 +8681,14 @@ export const panIndiaColleges = [
     name: "Swaminarayan IMS, Kalol",
     state: "Gujarat",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2014,
+    fees: {
+      stateQuota: "₹9–10 lakh/yr (Est.)",
+      managementQuota: "₹20–22 lakh/yr (Est.)",
+      nriQuota: "~$22,000–25,000/yr"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040666/Swaminarayan_Institute_of_Medical_Sciences_Research_Kalol_Gandhinagar_bhkg58.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: 181962, round2: null, round3: null, round4: null },
@@ -7659,6 +8701,9 @@ export const panIndiaColleges = [
       privateManagement: { round1: 366830, round2: null, round3: null, round4: null },
     },
   },
+
+  // Jharkhand //
+
   {
     id: "jharkhand_rajendra-institute-of-medical_375",
     name: "Rajendra Institute of Medical Sciences (RIMS), Ranchi",
@@ -7666,6 +8711,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7686,6 +8732,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7706,6 +8753,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7726,6 +8774,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7746,6 +8795,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7766,6 +8816,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7786,6 +8837,7 @@ export const panIndiaColleges = [
     management: "Deemed",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7804,9 +8856,14 @@ export const panIndiaColleges = [
     name: "Laxmi Chandravansi MC, Palamu",
     state: "Jharkhand",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2021,
+    fees: {
+      stateQuota: "₹10.25 lakh/yr",
+      managementQuota: "₹15–18 lakh/yr (Est.)",
+      nriQuota: "₹35–40 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040670/Laxmi_Chandravansi_Medical_College_Hospital_Bishrampur_Palamu_d8py8v.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -7824,9 +8881,14 @@ export const panIndiaColleges = [
     name: "Netaji Subhas MC, Saraikela",
     state: "Jharkhand",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2022,
+    fees: {
+      stateQuota: "₹10–12 lakh/yr (Est.)",
+      managementQuota: "₹15–18 lakh/yr (Est.)",
+      nriQuota: "₹35–40 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040669/Netaji_Subhash_Medical_College_and_Hospital_mdbkjp.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -7839,6 +8901,8 @@ export const panIndiaColleges = [
       privateManagement: { round1: null, round2: 723819, round3: 711167, round4: 833677 },
     },
   },
+
+  // Himachal Pradesh //
   {
     id: "himachal_pradesh_indira-gandhi-mc-shimla_384",
     name: "Indira Gandhi MC, Shimla",
@@ -7846,6 +8910,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7866,6 +8931,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7886,6 +8952,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7906,6 +8973,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7926,6 +8994,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7946,6 +9015,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -7964,9 +9034,14 @@ export const panIndiaColleges = [
     name: "MM Medical College, Solan",
     state: "Himachal Pradesh",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2003,
+    fees: {
+      stateQuota: "₹7.45 lakh/yr (Est.)",
+      managementQuota: "₹14–16 lakh/yr (Est.)",
+      nriQuota: "₹28–35 lakh/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040689/Maharshi_Markandeshwar_Medical_College_Hospital_Solan_hnodjv.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -7979,6 +9054,9 @@ export const panIndiaColleges = [
       privateManagement: { round1: 745068, round2: null, round3: null, round4: null },
     },
   },
+
+  // Odisha
+
   {
     id: "odisha_scb-medical-college-cuttack_391",
     name: "SCB Medical College, Cuttack",
@@ -7986,6 +9064,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8006,6 +9085,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8026,6 +9106,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8046,6 +9127,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8066,6 +9148,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8086,6 +9169,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8106,6 +9190,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8126,6 +9211,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8146,6 +9232,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8166,6 +9253,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8186,6 +9274,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8206,6 +9295,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8226,6 +9316,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8246,6 +9337,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8264,9 +9356,14 @@ export const panIndiaColleges = [
     name: "Hi-Tech Medical College, Bhubaneswar",
     state: "Odisha",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2005,
+    fees: {
+      stateQuota: "₹6–8 lakh/yr",
+      managementQuota: "₹10–11 lakh/yr",
+      nriQuota: "₹40–44 lakh/yr (4× management)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040689/Hi-Tech_Medical_College_Hospital_Bhubaneshwar_rwmzzx.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 100445, round2: null, round3: null, round4: null },
@@ -8284,9 +9381,14 @@ export const panIndiaColleges = [
     name: "Hi-Tech Medical College, Rourkela",
     state: "Odisha",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 100,
+    established: 2012,
+    fees: {
+      stateQuota: "₹6–8 lakh/yr",
+      managementQuota: "₹10–11 lakh/yr",
+      nriQuota: "₹40–44 lakh/yr (4× management)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040689/Hi-_Tech_Medical_College_Hospital_Rourkela_hpo8re.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: 82965, round2: null, round3: null, round4: null },
@@ -8304,9 +9406,14 @@ export const panIndiaColleges = [
     name: "DRIEMS Institute of Health Sciences, Kairapari",
     state: "Odisha",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2013,
+    fees: {
+      stateQuota: "₹6–8 lakh/yr",
+      managementQuota: "₹10–11.5 lakh/yr",
+      nriQuota: "₹40–46 lakh/yr (4× management)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040691/DRIEMS_Institute_of_Health_Sciences_and_Hospital_Kairapari_pwtzjq.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: 119834, round2: null, round3: null, round4: null },
@@ -8319,6 +9426,8 @@ export const panIndiaColleges = [
       privateManagement: null,
     },
   },
+
+  // Uttarakhand //
   {
     id: "uttarakhand_gmc-haldwani_408",
     name: "GMC Haldwani",
@@ -8326,6 +9435,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8346,6 +9456,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8366,6 +9477,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8386,6 +9498,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8406,6 +9519,7 @@ export const panIndiaColleges = [
     management: "Govt",
     seats: null,
     established: null,
+    image: "",
     fees: null,
     cutoffs: {
       stateQuota: {
@@ -8424,9 +9538,14 @@ export const panIndiaColleges = [
     name: "HIMS, Dehradun",
     state: "Uttarakhand",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 1994,
+    fees: {
+      stateQuota: "₹13.32 lakh/yr",
+      managementQuota: "₹18 lakh/yr",
+      nriQuota: "~$29,000/yr (~₹24 lakh)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040745/Himalayan_Institute_of_Medical_Sciences_Dehradun_a3a8tx.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -8444,9 +9563,14 @@ export const panIndiaColleges = [
     name: "SGRR Medical College, Dehradun",
     state: "Uttarakhand",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2008,
+    fees: {
+      stateQuota: "₹9.78 lakh/yr",
+      managementQuota: "₹13.22 lakh/yr",
+      nriQuota: "~$29,000/yr (~₹24 lakh)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040746/Shri_Guru_Ram_Rai_Institute_of_Medical_Health_Sciences_Dehradun_o21syl.jpg",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },
@@ -8464,9 +9588,14 @@ export const panIndiaColleges = [
     name: "Gautam Buddha Medical College, Dehradun",
     state: "Uttarakhand",
     management: "Private",
-    seats: null,
-    established: null,
-    fees: null,
+    seats: 150,
+    established: 2021,
+    fees: {
+      stateQuota: "₹15–18 lakh/yr (Est.)",
+      managementQuota: "₹20–21 lakh/yr (Est.)",
+      nriQuota: "~$29,000/yr (Est.)"
+    },
+    image: "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040744/Gautam_Buddha_Chikitsa_Mahavidyalaya_Dehradun_hchmp2.webp",
     cutoffs: {
       stateQuota: {
         UR: { round1: null, round2: null, round3: null, round4: null },

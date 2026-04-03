@@ -3,12 +3,12 @@ import { LayoutDashboard, Users, Settings, Download, BarChart3, Stethoscope } fr
 import NavItem from './NavItem';
 
 const NAV = [
-  { id: 'overview',     icon: LayoutDashboard, label: 'Overview'    },
-  { id: 'predictions',  icon: BarChart3,       label: 'Predictions' },
-  { id: 'users',        icon: Users,           label: 'Users'       },
-  { id: 'doctors',      icon: Stethoscope,     label: 'Doctors'     },
-  { id: 'settings',     icon: Settings,        label: 'Settings'    },
-  { id: 'export',       icon: Download,        label: 'Export'      },
+  { id: 'overview', icon: LayoutDashboard, label: 'Overview' },
+  { id: 'predictions', icon: BarChart3, label: 'Predictions' },
+  { id: 'users', icon: Users, label: 'Users' },
+  { id: 'doctors', icon: Stethoscope, label: 'Doctors' },
+  { id: 'settings', icon: Settings, label: 'Settings' },
+  { id: 'export', icon: Download, label: 'Export' },
 ];
 
 const Sidebar = memo(({ section, setSection, stats, leadsCount }) => {

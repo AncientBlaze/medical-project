@@ -5,7 +5,8 @@ import {
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { wbColleges } from "../../data/wbCollegeData.js";
+import { allColleges } from "../../data/allColleges";
+
 
 // ── College Detail Drawer ─────────────────────────────────────────────────────
 const ROUND_LABELS = { round1: 'Round 1', round2: 'Round 2', round3: 'Mop-Up', round4: 'Stray' };
@@ -221,15 +222,31 @@ const ExploreSearchBar = () => {
   const [selected, setSelected] = useState(null);
   const wrapRef = useRef(null);
 
+  // 🔥 MAIN LOGIC FIX
   useEffect(() => {
-    if (!q.trim()) { setResults([]); setOpen(false); return; }
-    const r = wbColleges.filter((c) => c.name.toLowerCase().includes(q.toLowerCase())).slice(0, 7);
+    // If empty → show ALL colleges
+    if (!q.trim()) {
+      setResults(allColleges);
+      setOpen(true);
+      return;
+    }
+
+    // If typing → filter
+    const r = allColleges.filter((c) =>
+      c.name.toLowerCase().includes(q.toLowerCase())
+    );
+
     setResults(r);
-    setOpen(r.length > 0);
+    setOpen(true);
   }, [q]);
 
+  // Close on outside click
   useEffect(() => {
-    const handler = (e) => { if (wrapRef.current && !wrapRef.current.contains(e.target)) setOpen(false); };
+    const handler = (e) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
   }, []);
@@ -243,52 +260,84 @@ const ExploreSearchBar = () => {
           focus-within:border-[#F9B406] dark:focus-within:border-teal-500
           focus-within:ring-2 focus-within:ring-[#F9B406]/10 dark:focus-within:ring-teal-500/10
           ${open ? 'rounded-b-none border-b-0' : ''}`}>
+
           <input
             type="text"
             value={q}
+            onFocus={() => {
+              // 🔥 SHOW ALL ON CLICK
+              if (!q.trim()) {
+                setResults(allColleges);
+              }
+              setOpen(true);
+            }}
             onChange={(e) => setQ(e.target.value)}
             placeholder="Explore colleges…"
             className="flex-1 px-5 py-4 text-sm bg-transparent outline-none text-[#2d409c] dark:text-white placeholder-slate-400 dark:placeholder-slate-600"
           />
+
           {q && (
-            <button onClick={() => { setQ(''); setResults([]); setOpen(false); }}
-              className="px-2 text-slate-400 hover:text-[#2d409c] dark:hover:text-slate-300">
+            <button
+              onClick={() => {
+                setQ('');
+                setResults(allColleges);
+                setOpen(true);
+              }}
+              className="px-2 text-slate-400 hover:text-[#2d409c] dark:hover:text-slate-300"
+            >
               <X className="w-4 h-4" />
             </button>
           )}
-          <button className="flex items-center justify-center px-5 py-4 bg-[#F9B406] dark:bg-teal-400 hover:bg-[#e0a205] dark:hover:bg-teal-300 text-slate-950 transition-colors">
+
+          <button className="flex items-center justify-center px-5 py-5 bg-[#F9B406] dark:bg-teal-400 hover:bg-[#e0a205] dark:hover:bg-teal-300 text-slate-950 transition-colors">
             <Search className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Dropdown */}
+        {/* 🔥 SCROLLABLE DROPDOWN */}
         {open && (
-          <div className="absolute left-0 right-0 rounded-b-2xl border border-t-0 shadow-xl overflow-hidden z-30
+          <div className="absolute left-0 right-0 max-h-100 overflow-y-auto rounded-b-2xl border border-t-0 shadow-xl z-30
             bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700">
+
             {results.map((c) => (
-              <button key={c.id}
-                onClick={() => { setSelected(c); setOpen(false); setQ(''); }}
+              <button
+                key={c.uid}
+                onClick={() => {
+                  setSelected(c);
+                  setOpen(false);
+                  setQ('');
+                }}
                 className="w-full flex items-center gap-3 px-5 py-3 text-left text-sm transition-colors
                   hover:bg-slate-50 dark:hover:bg-slate-800
                   border-b border-slate-100 dark:border-slate-800 last:border-0
-                  text-slate-700 dark:text-white/80">
+                  text-slate-700 dark:text-white/80"
+              >
                 <Building2 className="w-3.5 h-3.5 shrink-0 text-slate-400 dark:text-[#2d409c]" />
-                <span className="flex-1 truncate">{c?.name}</span>
-                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border shrink-0
+
+                <span className="flex-1 truncate">{c.name}</span>
+
+                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border
                   ${c.management !== 'Private'
                     ? 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-100 dark:border-blue-500/20'
                     : 'bg-violet-50 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-100 dark:border-violet-500/20'
                   }`}>
                   {c.management}
                 </span>
-                <ChevronRight className="w-3.5 h-3.5 text-slate-300 dark:text-slate-700 shrink-0" />
+
+                <ChevronRight className="w-3.5 h-3.5 text-slate-300 dark:text-slate-700" />
               </button>
             ))}
+
           </div>
         )}
       </div>
 
-      {selected && <CollegeDrawer college={selected} onClose={() => setSelected(null)} />}
+      {selected && (
+        <CollegeDrawer
+          college={selected}
+          onClose={() => setSelected(null)}
+        />
+      )}
     </>
   );
 };
@@ -366,18 +415,18 @@ const Home = () => (
       </div>
     </div>
 
-    {/* ── Counselling Services ───────────────────────────────────────────── */}
+
     <div className="max-w-6xl mx-auto px-6 pb-16 ">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 px-8 border rounded-2xl bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
         <div className="hidden lg:flex items-center justify-center">
           <div className="w-full h-80 rounded-xl border flex items-center justify-center
             bg-slate-50 dark:bg-slate-900/40 border-slate-200 dark:border-slate-700">
-            <p className="text-sm text-slate-400 dark:text-slate-500">Counselling Services Illustration</p>
+            <p className="text-sm text-slate-400 dark:text-slate-500">Admission Support Illustration</p>
           </div>
         </div>
         <div>
           <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-[#2d409c] dark:text-white">
-            Our <span className="text-[#F9B406] dark:text-teal-400">Counselling Services</span>
+            Our <span className="text-[#F9B406] dark:text-teal-400">Admission Support</span>
           </h2>
           <div className="space-y-4">
             {[
@@ -397,7 +446,7 @@ const Home = () => (
               </div>
             ))}
           </div>
-          <Link to="/packages"
+          <Link to="/admission-support"
             className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full font-bold transition-all hover:scale-105
               bg-[#F9B406] dark:bg-teal-400 hover:bg-[#e0a205] dark:hover:bg-teal-300 text-slate-950">
             View Plans →
@@ -405,6 +454,8 @@ const Home = () => (
         </div>
       </div>
     </div>
+
+
 
     {/* ── NEET College Predictor ─────────────────────────────────────────── */}
     <div>
@@ -448,6 +499,7 @@ const Home = () => (
       </div>
     </div>
 
+    {/* ── Counselling Services ───────────────────────────────────────────── */}
     <div className="max-w-6xl mx-auto px-6 pb-16 ">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 px-8 border rounded-2xl bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
         <div className="hidden lg:flex items-center justify-center">
@@ -458,7 +510,7 @@ const Home = () => (
         </div>
         <div>
           <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-[#2d409c] dark:text-white">
-            Our <span className="text-[#F9B406] dark:text-teal-400">Admission Support</span>
+            Our <span className="text-[#F9B406] dark:text-teal-400">Counselling Services</span>
           </h2>
           <div className="space-y-4">
             {[
