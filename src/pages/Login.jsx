@@ -222,22 +222,6 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
               </button>
             </p>
 
-            {/* Demo credentials */}
-            <div className="mt-6 p-4 rounded-xl border bg-slate-50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-700/60">
-              <p className="flex items-center gap-2 text-xs font-semibold mb-2.5 uppercase tracking-wide text-slate-500 dark:text-white/50">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F9B406] dark:bg-teal-400 animate-pulse" />
-                Demo Credentials (Admin)
-              </p>
-              <div className="space-y-1.5 text-xs text-slate-500 dark:text-slate-500">
-                <div className="flex items-center gap-2">
-                  <Mail className="w-3.5 h-3.5 text-slate-400 dark:text-[#2C2E69]" /> admin@example.com
-                </div>
-                <div className="flex items-center gap-2">
-                  <Lock className="w-3.5 h-3.5 text-slate-400 dark:text-[#2C2E69]" /> demo123
-                </div>
-              </div>
-            </div>
-
           </form>
         </div>
       </div>

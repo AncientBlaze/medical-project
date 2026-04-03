@@ -12,6 +12,7 @@ import DoctorsAdmin from './Sections/DoctorsAdmin';
 import CollegesModal from './Components/CollegesModal';
 import LoadingState from './Components/LoadingState';
 import ErrorState from './Components/ErrorState';
+import LeadsManager from './Components/LeadsManager';
 
 const Admin = () => {
   const user = useAuthStore((s) => s.user);
@@ -65,6 +66,7 @@ const Admin = () => {
     settings: Settings,
     export: Export,
     doctors: DoctorsAdmin,
+    lead: LeadsManager,
   };
   const Section = sections[section] ?? Overview;
 

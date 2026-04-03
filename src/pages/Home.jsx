@@ -222,23 +222,23 @@ const ExploreSearchBar = () => {
   const [selected, setSelected] = useState(null);
   const wrapRef = useRef(null);
 
-  // 🔥 MAIN LOGIC FIX
-  useEffect(() => {
-    // If empty → show ALL colleges
-    if (!q.trim()) {
-      setResults(allColleges);
-      setOpen(true);
-      return;
-    }
+  // Auto open code unnecessary ekhon
+  // useEffect(() => {
+  //   // If empty → show ALL colleges
+  //   if (!q.trim()) {
+  //     setResults(allColleges);
+  //     setOpen(true);
+  //     return;
+  //   }
 
-    // If typing → filter
-    const r = allColleges.filter((c) =>
-      c.name.toLowerCase().includes(q.toLowerCase())
-    );
+  //   // If typing → filter
+  //   const r = allColleges.filter((c) =>
+  //     c.name.toLowerCase().includes(q.toLowerCase())
+  //   );
 
-    setResults(r);
-    setOpen(true);
-  }, [q]);
+  //   setResults(r);
+  //   setOpen(true);
+  // }, [q]);
 
   // Close on outside click
   useEffect(() => {
@@ -407,9 +407,7 @@ const Home = () => (
           </ul>
         </div>
         <div className="flex-1 hidden lg:flex items-center justify-center">
-          <div className="w-full h-64 rounded-xl border flex items-center justify-center
-            bg-slate-50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-700">
-            <p className="text-sm text-slate-400 dark:text-slate-500">Platform Illustration</p>
+          <div className="w-full h-64 rounded-xl flex items-center justify-center bg-[url('/Counselling.png')] bg-contain bg-no-repeat bg-center dark:bg-[url('/Counselling_Dark.png')]">
           </div>
         </div>
       </div>
@@ -419,9 +417,8 @@ const Home = () => (
     <div className="max-w-6xl mx-auto px-6 pb-16 ">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 px-8 border rounded-2xl bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
         <div className="hidden lg:flex items-center justify-center">
-          <div className="w-full h-80 rounded-xl border flex items-center justify-center
-            bg-slate-50 dark:bg-slate-900/40 border-slate-200 dark:border-slate-700">
-            <p className="text-sm text-slate-400 dark:text-slate-500">Admission Support Illustration</p>
+          <div className="w-full h-80 rounded-xl flex items-center justify-center
+            bg-[url('/Admission_Support.png')] dark:bg-[url('/Admission_Support_Dark.png')] bg-center bg-contain ">
           </div>
         </div>
         <div>
@@ -490,9 +487,9 @@ const Home = () => (
             </Link>
           </div>
           <div className="hidden lg:flex items-center justify-center">
-            <div className="w-full h-80 rounded-xl border flex items-center justify-center
-              bg-slate-50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-700">
-              <p className="text-sm text-slate-400 dark:text-slate-500">Predictor Illustration</p>
+            <div className="w-full h-80 rounded-xl flex items-center justify-center
+              bg-[url('/Predictor.png')] bg-contain bg-no-repeat bg-center dark:bg-[url('/Predictor_Dark.png')]">
+              
             </div>
           </div>
         </div>
@@ -503,9 +500,8 @@ const Home = () => (
     <div className="max-w-6xl mx-auto px-6 pb-16 ">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 px-8 border rounded-2xl bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
         <div className="hidden lg:flex items-center justify-center">
-          <div className="w-full h-80 rounded-xl border flex items-center justify-center
-            bg-slate-50 dark:bg-slate-900/40 border-slate-200 dark:border-slate-700">
-            <p className="text-sm text-slate-400 dark:text-slate-500">Counselling Services Illustration</p>
+          <div className="w-full h-80 rounded-xl flex items-center justify-center
+            bg-[url('/Coun.png')] bg-contain bg-no-repeat bg-center dark:bg-[url('/Coun_Dark.png')] ">
           </div>
         </div>
         <div>

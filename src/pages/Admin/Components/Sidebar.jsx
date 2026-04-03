@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { LayoutDashboard, Users, Settings, Download, BarChart3, Stethoscope } from 'lucide-react';
+import { LayoutDashboard, Users, Settings, Download, BarChart3, Stethoscope, Donut } from 'lucide-react';
 import NavItem from './NavItem';
 
 const NAV = [
@@ -9,6 +9,7 @@ const NAV = [
   { id: 'doctors', icon: Stethoscope, label: 'Doctors' },
   { id: 'settings', icon: Settings, label: 'Settings' },
   { id: 'export', icon: Download, label: 'Export' },
+  { id: 'lead', icon: Donut, label: 'Leads'}
 ];
 
 const Sidebar = memo(({ section, setSection, stats, leadsCount }) => {
