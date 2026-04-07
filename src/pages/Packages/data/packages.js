@@ -97,7 +97,7 @@ export const ADMISSION_PACKAGES = [
     isFree: false,
     highlight: false,
     badge: 'WB Exclusive',
-    refundable: true,
+    refundable: false,
     scope: 'india',
     features: [
       'Everything in MedChoice Navigator',

@@ -46,7 +46,7 @@ const MANAGEMENT_FILTERS = [
 const ROUND_LABELS = { round1: 'Rnd 1', round2: 'Rnd 2', round3: 'Mop-Up', round4: 'Stray' };
 
 const FEATURES = [
-  { icon: BarChart2, title: 'NEET 2025 Cutoffs', desc: 'Real counselling data — 4 rounds, all categories' },
+  { icon: BarChart2, title: 'NEET 2026 Cutoffs', desc: 'Real counselling data — 4 rounds, all categories' },
   { icon: Building2, title: '415+ Colleges', desc: '20 states — Govt, Central Govt & Private colleges' },
   { icon: Zap, title: 'Category-Wise Results', desc: 'UR / OBC / EWS / SC / ST / PWD — precise eligibility' },
 ];
@@ -367,7 +367,7 @@ const Predictor = () => {
   const stateCollegeCount = getCollegesForState(formData.state).length;
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-[#2C2E69] dark:text-white">
+    <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-[#2D409C] dark:text-white">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 py-10 sm:py-12">
 
         {/* Page header */}
@@ -376,14 +376,14 @@ const Predictor = () => {
             <Target className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
             <span className="text-xs font-semibold text-amber-800 dark:text-teal-400/70">NEET 2025 · Pan India</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-[#2C2E69] dark:text-white">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-[#2D409C] dark:text-white">
             Find Your{' '}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#F9B406] to-[#F9B406]/60 dark:from-teal-400 dark:to-teal-400/60">
               Medical College
             </span>
           </h1>
           <p className="text-sm sm:text-base max-w-xl mx-auto text-slate-500 dark:text-slate-400">
-            Enter your rank, select your state and category to get matched against real 2025 cutoff data across 20 states.
+            Enter your rank, select your state and category to get matched against real 2026 cutoff data across 20 states.
           </p>
         </div>
 
@@ -506,7 +506,7 @@ const Predictor = () => {
                     </div>
                     <div className="flex items-start gap-2.5 p-4 rounded-xl border mb-6 text-xs bg-blue-50 dark:bg-blue-500/5 border-blue-200 dark:border-blue-500/20 text-blue-700 dark:text-blue-400">
                       <Info className="w-3.5 h-3.5 mt-0.5 shrink-0" />
-                      Predictions are based on NEET 2025 counselling cutoff data. Actual admission depends on seat availability, state-specific rules, and current-year counselling trends. Always verify with official MCC / state counselling portals.
+                      Predictions are based on NEET 2026 counselling cutoff data. Actual admission depends on seat availability, state-specific rules, and current-year counselling trends. Always verify with official MCC / state counselling portals.
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                       {predictions.matchedColleges.map((college, i) => (

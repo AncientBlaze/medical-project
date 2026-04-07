@@ -839,7 +839,7 @@ const Admissions = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-5
             bg-white dark:bg-slate-900/60 border-slate-200 dark:border-slate-800">
             <Building2 className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
-            <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">Private MBBS India 2025–26</span>
+            <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">Private MBBS India 2026–27</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-[#2D409C]">

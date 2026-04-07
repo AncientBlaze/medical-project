@@ -198,7 +198,7 @@ const Disclaimer = () => (
       </div>
 
       <p className="text-center text-xs pt-4 text-slate-400 dark:text-white/20">
-        © 2025 MedSankalp · All rights reserved
+        © 2026 MedSankalp · All rights reserved
       </p>
     </div>
   </div>

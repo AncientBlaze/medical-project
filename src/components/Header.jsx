@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { label: 'Counselling', to: '/preferences-list' },
   { label: 'Study Abroad', to: '/study-abroad' },
   { label: 'Admissions', to: '/admissions' },
+  { label: 'Mentors', to: '/doctors' },
   { label: 'Contact', to: '/contact' },
 ];
 
@@ -61,10 +62,9 @@ const Header = ({ user, onLogout }) => {
               end={to === '/'}
               className={({ isActive }) =>
                 `px-3 py-1.5 rounded-lg text-sm font-medium transition-all
-                ${
-                  isActive
-                    ? 'text-[#F9B406] dark:text-teal-400 bg-[#F9B406]/10 dark:bg-teal-500/10'
-                    : 'text-[#2d409c] dark:text-slate-400 hover:text-[#2d409c] dark:hover:text-white hover:bg-amber-50 dark:hover:bg-slate-900/40'
+                ${isActive
+                  ? 'text-[#F9B406] dark:text-teal-400 bg-[#F9B406]/10 dark:bg-teal-500/10'
+                  : 'text-[#2d409c] dark:text-slate-400 hover:text-[#2d409c] dark:hover:text-white hover:bg-amber-50 dark:hover:bg-slate-900/40'
                 }`
               }
             >
@@ -129,10 +129,9 @@ const Header = ({ user, onLogout }) => {
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
                 `block px-3 py-2 rounded-lg text-sm font-medium transition
-                ${
-                  isActive
-                    ? 'text-[#F9B406] dark:text-teal-400 bg-[#F9B406]/10 dark:bg-teal-500/10'
-                    : 'text-[#2d409c] dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-slate-900/40'
+                ${isActive
+                  ? 'text-[#F9B406] dark:text-teal-400 bg-[#F9B406]/10 dark:bg-teal-500/10'
+                  : 'text-[#2d409c] dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-slate-900/40'
                 }`
               }
             >

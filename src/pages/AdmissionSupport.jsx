@@ -151,7 +151,7 @@ const AdmissionSupport = () => {
             <Shield className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
             <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">Direct Admission Support</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 dark:text-white text-[#2D409C]">
             Admission &{' '}
             <span className="text-[#F9B406] dark:text-teal-400">Support Programs</span>
           </h1>

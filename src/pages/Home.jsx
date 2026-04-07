@@ -1,7 +1,10 @@
 import {
   MapPin, ExternalLink, Building2, Users, Zap, Search,
   MessageCircle, Lightbulb, Target, Award, X, IndianRupee,
-  Info, CalendarDays, ChevronRight
+  Info, CalendarDays, ChevronRight,
+  Globe,
+  GraduationCap,
+  Shield
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
@@ -271,7 +274,20 @@ const ExploreSearchBar = () => {
               }
               setOpen(true);
             }}
-            onChange={(e) => setQ(e.target.value)}
+            onChange={(e) => {
+              const val = e.target.value;
+              setQ(val);
+              // Filter results based on input
+              if (!val.trim()) {
+                setResults(allColleges);
+              } else {
+                const filtered = allColleges.filter((c) =>
+                  c.name.toLowerCase().includes(val.toLowerCase())
+                );
+                setResults(filtered);
+              }
+              setOpen(true);
+            }}
             placeholder="Explore colleges…"
             className="flex-1 px-5 py-4 text-sm bg-transparent outline-none text-[#2d409c] dark:text-white placeholder-slate-400 dark:placeholder-slate-600"
           />
@@ -369,6 +385,24 @@ const Home = () => (
         <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-8">
           Access real NEET cutoff data, compare colleges, and make informed decisions about your future
         </p>
+        
+        {/* Stats pills */}
+
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 pb-10">
+            {[
+              { icon: Globe, label: '10 countries' },
+              { icon: GraduationCap, label: '71+ universities' },
+              { icon: Shield, label: 'NMC approved' },
+              { icon: IndianRupee, label: 'From ₹12 Lakhs' },
+            ].map(({ icon: Icon, label }) => (
+              <div key={label} className="flex items-center gap-2 px-3 py-2 rounded-xl border text-sm font-medium
+                bg-white/80 dark:bg-slate-900/40 border-slate-200 dark:border-slate-700/60
+                text-slate-600 dark:text-slate-400 backdrop-blur-sm">
+                <Icon className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
+                {label}
+              </div>
+            ))}
+          </div>
 
         {/* ── Search bar ── */}
         <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
@@ -378,6 +412,7 @@ const Home = () => (
           </span>{' '}
           for every step of your admission process.
         </p>
+        
         <ExploreSearchBar />
       </div>
     </div>
@@ -489,7 +524,7 @@ const Home = () => (
           <div className="hidden lg:flex items-center justify-center">
             <div className="w-full h-80 rounded-xl flex items-center justify-center
               bg-[url('/Predictor.png')] bg-contain bg-no-repeat bg-center dark:bg-[url('/Predictor_Dark.png')]">
-              
+
             </div>
           </div>
         </div>

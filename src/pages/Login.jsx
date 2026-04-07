@@ -81,7 +81,7 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F9B406]/10 border border-[#F9B406]/20 dark:bg-teal-500/10 dark:border-teal-500/20 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#F9B406] dark:bg-teal-400 animate-pulse" />
             <span className="text-xs font-medium tracking-wide uppercase text-[#2C2E69] dark:text-teal-300">
-              NEET 2025 Predictions Live
+              NEET 2026 Predictions Live
             </span>
           </div>
 
@@ -120,7 +120,7 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
         </div>
 
         <p className="relative z-10 text-xs text-slate-400 dark:text-[#2C2E69]">
-          © 2025 MedSankalp · Data sourced from MCC, State DME & NEET official records
+          © 2026 MedSankalp · Data sourced from MCC, State DME & NEET official records
         </p>
       </div>
 

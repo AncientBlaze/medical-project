@@ -708,7 +708,7 @@ const StudyAbroad = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-5
             bg-white/80 dark:bg-slate-900/60 border-slate-200 dark:border-slate-800 backdrop-blur-sm">
             <Plane className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
-            <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">MBBS Abroad 2025–26</span>
+            <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">MBBS Abroad 2026–27</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl text-[#2D409C] font-black tracking-tight mb-4 leading-[1.1]">

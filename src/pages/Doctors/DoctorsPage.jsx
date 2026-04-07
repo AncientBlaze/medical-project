@@ -158,7 +158,7 @@ const DoctorsPage = () => {
             <Stethoscope className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
             <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">Expert Counsellors</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-[#2D409C]">
             Meet Our{' '}
             <span className="text-[#F9B406] dark:text-teal-400">Expert Doctors</span>
           </h1>

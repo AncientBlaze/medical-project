@@ -148,7 +148,7 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
         </div>
 
         <p className="relative z-10 text-xs text-slate-400 dark:text-[#2C2E69]">
-          © 2025 MedSankalp · Data sourced from MCC, State DME & NEET official records
+          © 2026 MedSankalp · Data sourced from MCC, State DME & NEET official records
         </p>
       </div>
 
@@ -160,7 +160,7 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
             Create your account
           </h1>
           <p className="text-sm mb-8 text-slate-500 dark:text-white/40">
-            Free forever · Cutoff predictions for NEET 2025
+            Free forever · Cutoff predictions for NEET 2026
           </p>
 
           {serverError && (
