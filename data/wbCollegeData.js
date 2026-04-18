@@ -107,7 +107,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 1957,
     "seats": 200,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -206,7 +206,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 1835,
     "seats": 250,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -305,7 +305,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 1886,
     "seats": 250,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -404,7 +404,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 1948,
     "seats": 250,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -503,7 +503,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 1956,
     "seats": 200,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -602,7 +602,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2012,
     "seats": 100,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -701,7 +701,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 1969,
     "seats": 250,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -800,7 +800,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2010,
     "seats": 125,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -899,7 +899,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2010,
     "seats": 125,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -998,7 +998,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2019,
     "seats": 100,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -1097,7 +1097,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2020,
     "seats": 100,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -1196,7 +1196,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2019,
     "seats": 100,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -1295,7 +1295,7 @@ export const wbColleges = [
     "management": "Central Govt",
     "established": 2013,
     "seats": 100,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -1394,7 +1394,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2022,
     "seats": 100,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -1493,7 +1493,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2021,
     "seats": 100,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -1592,7 +1592,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2011,
     "seats": 125,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -1691,7 +1691,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2004,
     "seats": 250,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -1790,7 +1790,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2012,
     "seats": 125,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -1889,7 +1889,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 1873,
     "seats": 250,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -1988,7 +1988,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 1968,
     "seats": 250,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -2087,7 +2087,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2022,
     "seats": 100,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -2186,7 +2186,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2018,
     "seats": 100,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -2285,7 +2285,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2019,
     "seats": 100,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -2384,7 +2384,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2022,
     "seats": 100,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -2483,7 +2483,7 @@ export const wbColleges = [
     "management": "Govt",
     "established": 2022,
     "seats": 100,
-    "image":"",
+    "image": "",
     "fees": {
       "stateQuota": null,
       "managementQuota": null,
@@ -2681,7 +2681,7 @@ export const wbColleges = [
     "management": "Private",
     "established": 2016,
     "seats": 200,
-    "image":"https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040725/Gouri_Devi_Institute_of_Medical_Sciences_and_Hospital_Durgapur_to0aca.jpg",
+    "image": "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040725/Gouri_Devi_Institute_of_Medical_Sciences_and_Hospital_Durgapur_to0aca.jpg",
     "fees": {
       "stateQuota": "₹26.45 lakh",
       "managementQuota": "₹99 Lakh",
@@ -2780,7 +2780,7 @@ export const wbColleges = [
     "management": "Private",
     "established": 2013,
     "seats": 250,
-    "image":"https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040727/IQ-City_Medical_College_Burdwan_wmuqwo.webp",
+    "image": "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040727/IQ-City_Medical_College_Burdwan_wmuqwo.webp",
     "fees": {
       "stateQuota": "₹21.88 lakh",
       "managementQuota": "₹99 Lakh",
@@ -2879,7 +2879,7 @@ export const wbColleges = [
     "management": "Private",
     "established": 2011,
     "seats": 150,
-    "image":"https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040726/ICARE_Institute_of_Medical_Sciences_Research_Haldia_Purba_Midanpore_uibbws.webp",
+    "image": "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040726/ICARE_Institute_of_Medical_Sciences_Research_Haldia_Purba_Midanpore_uibbws.webp",
     "fees": {
       "stateQuota": "₹21.42 lakh",
       "managementQuota": "₹90 Lakh",
@@ -2978,7 +2978,7 @@ export const wbColleges = [
     "management": "Private",
     "established": 2018,
     "seats": 250,
-    "image":"https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040724/Jagannath_Gupta_Institute_of_Medical_Sciences_Hospital_Kolkata_wqknwg.webp",
+    "image": "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040724/Jagannath_Gupta_Institute_of_Medical_Sciences_Hospital_Kolkata_wqknwg.webp",
     "fees": {
       "stateQuota": "₹24.66 lakh",
       "managementQuota": "₹99.36 Lakh",
@@ -3077,7 +3077,7 @@ export const wbColleges = [
     "management": "Private",
     "established": 2019,
     "seats": 250,
-    "image":"https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040725/Shri_Ramkrishna_Institute_of_Medical_Sciences_Sanaka_Hospitals_Durgapur_kers03.jpg",
+    "image": "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040725/Shri_Ramkrishna_Institute_of_Medical_Sciences_Sanaka_Hospitals_Durgapur_kers03.jpg",
     "fees": {
       "stateQuota": "₹24.66 lakh",
       "managementQuota": "₹99.31 Lakh",
@@ -3176,7 +3176,7 @@ export const wbColleges = [
     "management": "Private",
     "established": 2024,
     "seats": 150,
-    "image":"https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040726/East_West_Institute_of_Medical_Sciences_and_Research_Purba_Bardhaman_dyb1w6.webp",
+    "image": "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040726/East_West_Institute_of_Medical_Sciences_and_Research_Purba_Bardhaman_dyb1w6.webp",
     "fees": {
       "stateQuota": "₹25.51 lakh",
       "managementQuota": "₹99.31 Lakh",
@@ -3275,7 +3275,7 @@ export const wbColleges = [
     "management": "Private",
     "established": 2024,
     "seats": 150,
-    "image":"https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040727/Raniganj_Inst._of_Medical_Sci._Raniganj_Paschim_Bardhaman_tiyckn.webp",
+    "image": "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040727/Raniganj_Inst._of_Medical_Sci._Raniganj_Paschim_Bardhaman_tiyckn.webp",
     "fees": {
       "stateQuota": "₹34.75 lakh",
       "managementQuota": "₹91 Lakh",
@@ -3374,7 +3374,7 @@ export const wbColleges = [
     "management": "Private",
     "established": 2023,
     "seats": 150,
-    "image":"https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040724/JMN_Medical_College_Nadia_k2nrtn.avif",
+    "image": "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040724/JMN_Medical_College_Nadia_k2nrtn.avif",
     "fees": {
       "stateQuota": "₹25 lakh",
       "managementQuota": "₹91 Lakh",
@@ -3473,7 +3473,7 @@ export const wbColleges = [
     "management": "Private",
     "established": 2020,
     "seats": 150,
-    "image":"https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040725/Santiniketan_Medical_College_Bolpur_yobolg.webp",
+    "image": "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040725/Santiniketan_Medical_College_Bolpur_yobolg.webp",
     "fees": {
       "stateQuota": "₹26.05 lakh",
       "managementQuota": "₹88 Lakh",
@@ -3572,7 +3572,7 @@ export const wbColleges = [
     "management": "Private",
     "established": 2023,
     "seats": 150,
-    "image":"https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040724/JIS_School_of_Medical_Science_Research_Howrah_av7hxe.jpg",
+    "image": "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040724/JIS_School_of_Medical_Science_Research_Howrah_av7hxe.jpg",
     "fees": {
       "stateQuota": "₹26.56 lakh",
       "managementQuota": "₹99.55 Lakh",
@@ -3671,7 +3671,7 @@ export const wbColleges = [
     "management": "Private",
     "established": 2024,
     "seats": 150,
-    "image":"https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040726/Krishnanagar_Institute_of_Medical_Sciences_Krishnanagar_Nadia_atlrsc.webp",
+    "image": "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040726/Krishnanagar_Institute_of_Medical_Sciences_Krishnanagar_Nadia_atlrsc.webp",
     "fees": {
       "stateQuota": "₹37 lakh",
       "managementQuota": "₹91 Lakh",
@@ -3770,7 +3770,7 @@ export const wbColleges = [
     "management": "Private",
     "established": 2024,
     "seats": 150,
-    "image":"https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040727/Jakir_Hosain_Medical_College_RI_Murshidabad_vnftv8.jpg",
+    "image": "https://res.cloudinary.com/ddbeb8j3c/image/upload/v1775040727/Jakir_Hosain_Medical_College_RI_Murshidabad_vnftv8.jpg",
     "fees": {
       "stateQuota": "₹36 lakh",
       "managementQuota": "₹90 Lakh",

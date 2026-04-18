@@ -23,7 +23,7 @@ const LeadsSchema = new mongoose.Schema(
 
     type: {
       type: String,
-      enum: ["abroad", "admission"],
+      enum: ["abroad", "admission", "prediction"],
       required: true,
     },
 
@@ -61,13 +61,38 @@ const LeadsSchema = new mongoose.Schema(
       },
     },
 
+    // Prediction fields
+    rank: {
+      type: Number,
+      required: function () {
+        return this.type === "prediction";
+      },
+    },
+
+    category: {
+      type: String,
+      enum: ["General", "OBC", "OBC-NCL", "SC", "ST", "EWS", null],
+      required: function () {
+        return this.type === "prediction";
+      },
+    },
+
+    quota: {
+      type: String,
+      enum: ["allIndia", "state", null],
+    },
+
+    matchedColleges: {
+      type: [String],
+      default: undefined, // avoids storing empty [] on non-prediction leads
+    },
+
     source: {
       type: String,
       required: true,
       trim: true,
     },
 
-    // Optional but useful in real world
     status: {
       type: String,
       enum: ["new", "contacted", "converted", "rejected"],
@@ -75,16 +100,12 @@ const LeadsSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true, // adds createdAt + updatedAt 🔥
+    timestamps: true,
   }
 );
 
+LeadsSchema.index({ email: 1, phone: 1, type: 1 }, { unique: true });
 
-// ✅ COMPOUND UNIQUE INDEX (BEST PRACTICE)
-LeadsSchema.index({ email: 1, phone: 1 }, { unique: true });
-
-
-// Optional: prevent model overwrite in dev (nodemon issue)
 const LeadsModel =
   mongoose.models.leads || mongoose.model("leads", LeadsSchema);
 

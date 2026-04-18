@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {
   User, Mail, Lock, Eye, EyeOff, Phone, CheckCircle,
   AlertCircle, GraduationCap, UserPlus, ArrowRight,
-  BookOpen, TrendingUp, Star
+  BookOpen, TrendingUp, Star, X, Loader2, ShieldCheck
 } from 'lucide-react';
 import api from '../utils/api';
 
@@ -12,6 +12,211 @@ const BENEFITS = [
   { icon: Star,          text: 'Personalised college shortlist based on your rank' },
   { icon: GraduationCap, text: 'MBBS, BDS & AYUSH seat matrix access' },
 ];
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+const normalizePhone = (phone) => {
+  const p = phone.replace(/\D/g, '');
+  if (p.length === 10) return `+91${p}`;
+  if (!p.startsWith('+')) return `+${p}`;
+  return p;
+};
+
+// ── OTP Input ─────────────────────────────────────────────────────────────────
+
+const OTPInput = ({ value, onChange, length = 4 }) => {
+  const refs = Array.from({ length }, () => useRef(null));
+
+  const handleKey = (e, idx) => {
+    if (e.key === 'Backspace' && !value[idx] && idx > 0)
+      refs[idx - 1].current?.focus();
+  };
+
+  const handleChange = (e, idx) => {
+    const char = e.target.value.replace(/\D/g, '').slice(-1);
+    const arr = value.split('');
+    arr[idx] = char;
+    onChange(arr.join(''));
+    if (char && idx < length - 1) refs[idx + 1].current?.focus();
+  };
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+    const pasted = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, length);
+    onChange(pasted.padEnd(length, ''));
+    refs[Math.min(pasted.length, length - 1)].current?.focus();
+  };
+
+  return (
+    <div className="flex gap-3 justify-center">
+      {Array.from({ length }).map((_, i) => (
+        <input
+          key={i}
+          ref={refs[i]}
+          type="text"
+          inputMode="numeric"
+          maxLength={1}
+          value={value[i] ?? ''}
+          onChange={(e) => handleChange(e, i)}
+          onKeyDown={(e) => handleKey(e, i)}
+          onPaste={handlePaste}
+          className="w-13 h-14 rounded-xl border text-center text-xl font-bold transition-colors
+            bg-white dark:bg-slate-900
+            border-slate-200 dark:border-slate-700
+            text-[#2C2E69] dark:text-white
+            focus:outline-none focus:ring-2
+            focus:border-[#F9B406] dark:focus:border-teal-500
+            focus:ring-[#F9B406]/15 dark:focus:ring-teal-500/15"
+        />
+      ))}
+    </div>
+  );
+};
+
+// ── OTP Modal ─────────────────────────────────────────────────────────────────
+
+const OTPModal = ({ phone, onVerified, onClose }) => {
+  const [step, setStep]       = useState('send');   // 'send' | 'verify' | 'success'
+  const [otp, setOtp]         = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError]     = useState('');
+  const [timer, setTimer]     = useState(0);
+
+  useEffect(() => {
+    if (timer > 0) {
+      const t = setTimeout(() => setTimer(t => t - 1), 1000);
+      return () => clearTimeout(t);
+    }
+  }, [timer]);
+
+  const sendOtp = async () => {
+    setLoading(true); setError('');
+    try {
+      await api.post('/auth/send-otp', { phone: normalizePhone(phone) });
+      setStep('verify');
+      setTimer(30);
+    } catch (err) {
+      setError(err?.response?.data?.message || 'Failed to send OTP');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const verifyOtp = async () => {
+    if (otp.length < 4) { setError('Enter the 4-digit OTP.'); return; }
+    setLoading(true); setError('');
+    try {
+      const { data } = await api.post('/auth/verify-otp', { phone: normalizePhone(phone), otp });
+      setStep('success');
+      setTimeout(() => onVerified(data), 1200);
+    } catch (err) {
+      setError(err?.response?.data?.message || 'Invalid OTP');
+      setOtp('');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+  sendOtp();
+  }, []);
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+      onClick={(e) => e.target === e.currentTarget && onClose()}
+    >
+      <div className="w-full max-w-sm rounded-2xl border p-7 shadow-2xl
+        bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700">
+
+        {/* Header */}
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h3 className="font-bold text-lg text-[#2C2E69] dark:text-white">Verify your phone</h3>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">One last step to activate your account</p>
+          </div>
+          <button onClick={onClose}
+            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+
+        {/* ── Step: Send ── */}
+        {step === 'send' && (
+          <div className="text-center">
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5
+              bg-[#F9B406]/10 dark:bg-teal-500/10 border border-[#F9B406]/20 dark:border-teal-500/20">
+              <Phone className="w-7 h-7 text-[#F9B406] dark:text-teal-400" />
+            </div>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">We'll send a 4-digit OTP to</p>
+            <p className="font-bold text-[#2C2E69] dark:text-white mb-6 text-lg">{phone}</p>
+            {error && (
+              <div className="flex items-center gap-2 text-xs text-red-500 mb-4 justify-center">
+                <AlertCircle className="w-3.5 h-3.5 shrink-0" /> {error}
+              </div>
+            )}
+            <button onClick={sendOtp} disabled={loading}
+              className="w-full py-3.5 rounded-xl font-bold text-sm transition-colors disabled:opacity-60
+                bg-[#F9B406] dark:bg-teal-400 hover:bg-[#e0a205] dark:hover:bg-teal-300 text-slate-950">
+              {loading
+                ? <Loader2 className="w-4 h-4 animate-spin mx-auto" />
+                : 'Send OTP'}
+            </button>
+          </div>
+        )}
+
+        {/* ── Step: Verify ── */}
+        {step === 'verify' && (
+          <div className="text-center">
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+              Enter the 4-digit code sent to{' '}
+              <span className="font-semibold text-[#2C2E69] dark:text-white">{phone}</span>
+            </p>
+            <OTPInput value={otp} onChange={setOtp} />
+            {error && (
+              <div className="flex items-center gap-2 text-xs text-red-500 mt-3 justify-center">
+                <AlertCircle className="w-3.5 h-3.5 shrink-0" /> {error}
+              </div>
+            )}
+            <button
+              onClick={verifyOtp}
+              disabled={loading || otp.length < 4}
+              className="w-full mt-6 py-3.5 rounded-xl font-bold text-sm transition-colors disabled:opacity-60
+                bg-[#F9B406] dark:bg-teal-400 hover:bg-[#e0a205] dark:hover:bg-teal-300 text-slate-950">
+              {loading
+                ? <Loader2 className="w-4 h-4 animate-spin mx-auto" />
+                : 'Verify & Continue'}
+            </button>
+            <div className="mt-4 text-xs text-slate-400 dark:text-slate-600">
+              {timer > 0
+                ? `Resend OTP in ${timer}s`
+                : (
+                  <button onClick={sendOtp}
+                    className="text-[#F9B406] dark:text-teal-400 hover:underline font-medium">
+                    Resend OTP
+                  </button>
+                )
+              }
+            </div>
+          </div>
+        )}
+
+        {/* ── Step: Success ── */}
+        {step === 'success' && (
+          <div className="text-center py-6">
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4
+              bg-emerald-100 dark:bg-emerald-500/20">
+              <ShieldCheck className="w-8 h-8 text-emerald-500" />
+            </div>
+            <p className="font-bold text-lg text-[#2C2E69] dark:text-white">Phone Verified!</p>
+            <p className="text-sm text-slate-400 dark:text-slate-500 mt-1">Taking you in…</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// ── Input Field ───────────────────────────────────────────────────────────────
 
 const InputField = ({ label, icon: Icon, rightElement, error, hint, ...props }) => (
   <div>
@@ -32,10 +237,12 @@ const InputField = ({ label, icon: Icon, rightElement, error, hint, ...props }) 
         <div className="absolute right-3.5 top-1/2 -translate-y-1/2">{rightElement}</div>
       )}
     </div>
-    {hint && !error && <p className="mt-1.5 text-xs text-slate-400 dark:text-[#2C2E69]">{hint}</p>}
-    {error         && <p className="mt-1.5 text-xs text-red-500 dark:text-red-400">{error}</p>}
+    {hint  && !error && <p className="mt-1.5 text-xs text-slate-400 dark:text-[#2C2E69]">{hint}</p>}
+    {error &&           <p className="mt-1.5 text-xs text-red-500 dark:text-red-400">{error}</p>}
   </div>
 );
+
+// ── Signup ────────────────────────────────────────────────────────────────────
 
 const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
   const [formData, setFormData] = useState({
@@ -45,6 +252,9 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
   const [serverError,  setServerError]  = useState('');
   const [loading,      setLoading]      = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+
+  // After signup succeeds, show OTP modal with the registered phone
+  const [otpPhone, setOtpPhone] = useState(null);   // null = modal hidden
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -58,9 +268,9 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
     if (!formData.name.trim())   errs.name = 'Full name is required';
     if (!formData.email.trim())  errs.email = 'Email is required';
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errs.email = 'Enter a valid email';
-    if (!formData.password)            errs.password = 'Password is required';
+    if (!formData.password)              errs.password = 'Password is required';
     else if (formData.password.length < 6) errs.password = 'Minimum 6 characters';
-    if (!formData.confirmPassword)     errs.confirmPassword = 'Please confirm your password';
+    if (!formData.confirmPassword)       errs.confirmPassword = 'Please confirm your password';
     else if (formData.password !== formData.confirmPassword) errs.confirmPassword = 'Passwords do not match';
     setFieldErrors(errs);
     return Object.keys(errs).length === 0;
@@ -71,13 +281,19 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
     if (!validate()) return;
     setLoading(true); setServerError('');
     try {
-      const { data } = await api.post('/auth/signup', {
-        name: formData.name, email: formData.email,
-        password: formData.password, phone: formData.phone,
+      await api.post('/auth/signup', {
+        name:     formData.name,
+        email:    formData.email,
+        password: formData.password,
+        phone:    formData.phone,
       });
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
-      onSignupSuccess(data.user);
+
+      // If user provided a phone, open OTP modal; otherwise go straight in
+      if (formData.phone.trim()) {
+        setOtpPhone(formData.phone.trim());
+      } else {
+        onSignupSuccess(null);
+      }
     } catch (err) {
       setServerError(err?.response?.data?.message || 'Server error. Please try again.');
     } finally {
@@ -85,14 +301,29 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
     }
   };
 
+  // Called when OTP verified — backend returns token + user
+  const handleOtpVerified = (data) => {
+    if (data?.token) {
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('user', JSON.stringify(data.user));
+    }
+    onSignupSuccess(data?.user ?? null);
+  };
+
+  // "Skip for now" — close modal and proceed without verification
+  const handleSkipOtp = () => {
+    setOtpPhone(null);
+    onSignupSuccess(null);
+  };
+
   const passwordStrength = (() => {
     const p = formData.password;
     if (!p) return null;
-    if (p.length < 6) return { label: 'Too short', color: 'bg-red-500',              w: 'w-1/4' };
-    if (p.length < 8) return { label: 'Weak',      color: 'bg-orange-400',           w: 'w-2/4' };
+    if (p.length < 6) return { label: 'Too short', color: 'bg-red-500',                   w: 'w-1/4' };
+    if (p.length < 8) return { label: 'Weak',      color: 'bg-orange-400',                w: 'w-2/4' };
     if (/[A-Z]/.test(p) && /\d/.test(p))
-                      return { label: 'Strong',    color: 'bg-[#F9B406] dark:bg-teal-400', w: 'w-full' };
-    return            { label: 'Fair',      color: 'bg-yellow-400',           w: 'w-3/4' };
+                      return { label: 'Strong',    color: 'bg-[#F9B406] dark:bg-teal-400',w: 'w-full' };
+    return            { label: 'Fair',      color: 'bg-yellow-400',                w: 'w-3/4' };
   })();
 
   return (
@@ -102,7 +333,6 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
       <div className="hidden lg:flex lg:w-2/5 relative flex-col justify-between p-12 overflow-hidden
         bg-[#FFF7E1] dark:bg-slate-900">
 
-        {/* Grid texture */}
         <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
           style={{
             backgroundImage: 'linear-gradient(rgba(249,180,6,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(249,180,6,0.5) 1px, transparent 1px)',
@@ -111,7 +341,6 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
         <div className="absolute top-10 -right-16 w-72 h-72 rounded-full blur-3xl opacity-10 pointer-events-none bg-[#F9B406] dark:bg-teal-500" />
         <div className="absolute bottom-20 -left-8 w-56 h-56 rounded-full blur-3xl opacity-10 pointer-events-none bg-[#e0a205] dark:bg-teal-400" />
 
-        {/* Logo */}
         <div className="relative z-10 flex items-center gap-3">
           <div className="flex items-center justify-center w-10 h-10 rounded-xl border bg-[#F9B406]/20 border-[#F9B406]/30 dark:bg-teal-400/10 dark:border-teal-400/20">
             <GraduationCap className="w-5 h-5 text-[#F9B406] dark:text-teal-400" />
@@ -129,7 +358,6 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
               Start Predicting
             </span>
           </h2>
-          
           <p className="text-sm leading-relaxed mb-8 text-[#2C2E69] dark:text-slate-400">
             Join 2.4 lakh+ NEET aspirants who use MedSankalp to plan smarter
             and walk into counselling with confidence.
@@ -189,7 +417,7 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
             <InputField label="Phone Number" icon={Phone}
               type="tel" name="phone" value={formData.phone}
               onChange={handleChange} placeholder="+91 98765 43210"
-              hint="Used for counselling deadline reminders" />
+              hint="We'll send an OTP to verify your number" />
 
             <div>
               <InputField label="Password" icon={Lock}
@@ -250,6 +478,15 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
           </p>
         </div>
       </div>
+
+      {/* ── OTP Modal ───────────────────────────────────────────────────── */}
+      {otpPhone && (
+        <OTPModal
+          phone={otpPhone}
+          onVerified={handleOtpVerified}
+          onClose={() => {}}
+        />
+      )}
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  ArrowRight, Check, Shield, X, ChevronDown, ChevronUp,
+  ArrowRight, Check, Shield, ChevronDown, ChevronUp,
   FileText, Lock, Info, Globe, MapPin, Plane
 } from 'lucide-react';
-import { ADMISSION_PACKAGES, TERMS, REFUND_POLICY, PRIVACY_POLICY, DISCLAIMER } from "../pages/Packages/data/packages.js";
+import { ADMISSION_PACKAGES, TERMS, PRIVACY_POLICY, DISCLAIMER } from "../pages/Packages/data/packages.js";
 import EnquiryModal from '../pages/Packages/components/EnquiryModal.jsx';
 
 // ── Package Card ──────────────────────────────────────────────────────────────
@@ -39,10 +39,10 @@ const PackageCard = ({ pkg, onEnquire, onDetails }) => {
         </h2>
         <p className="text-xs text-slate-500 dark:text-white/40 mb-4 leading-snug">{pkg.subtitle}</p>
 
-        <div className="mb-1 flex items-end gap-2">
+        {/* <div className="mb-1 flex items-end gap-2">
           <span className="text-3xl font-extrabold text-slate-900 dark:text-white">{pkg.price}</span>
           <span className="text-sm text-slate-400 dark:text-white/30 mb-1">+ GST /- only</span>
-        </div>
+        </div> */}
         <div className="mb-4" />
 
         {pkg.refundable && (
@@ -84,10 +84,9 @@ const PackageCard = ({ pkg, onEnquire, onDetails }) => {
 
 // ── Policies accordion ────────────────────────────────────────────────────────
 const policies = [
-  { id: 'terms',      icon: FileText, label: 'Terms & Conditions',    content: TERMS },
-  { id: 'refund',     icon: Shield,   label: 'Refund Policy',         content: REFUND_POLICY },
-  { id: 'privacy',    icon: Lock,     label: 'Privacy Policy',        content: PRIVACY_POLICY },
-  { id: 'disclaimer', icon: Info,     label: 'Counselling Disclaimer', content: DISCLAIMER },
+  { id: 'terms', icon: FileText, label: 'Terms & Conditions', content: TERMS },
+  { id: 'privacy', icon: Lock, label: 'Privacy Policy', content: PRIVACY_POLICY },
+  { id: 'disclaimer', icon: Info, label: 'Counselling Disclaimer', content: DISCLAIMER },
 ];
 
 const PoliciesSection = () => {
@@ -112,11 +111,10 @@ const PoliciesSection = () => {
             {open === id && (
               <div className="px-5 pb-5 border-t border-slate-100 dark:border-slate-800 pt-4">
                 {content.split('\n').filter(Boolean).map((para, i) => (
-                  <p key={i} className={`text-sm leading-relaxed mb-2 ${
-                    para.startsWith('**')
+                  <p key={i} className={`text-sm leading-relaxed mb-2 ${para.startsWith('**')
                       ? 'font-semibold text-slate-900 dark:text-white mt-4 first:mt-0'
                       : 'text-slate-500 dark:text-white/50'
-                  }`}>
+                    }`}>
                     {para.replace(/\*\*/g, '')}
                   </p>
                 ))}
@@ -134,7 +132,7 @@ const AdmissionSupport = () => {
   const [enquiry, setEnquiry] = useState(null);
   const navigate = useNavigate();
 
-  const indiaPackages  = ADMISSION_PACKAGES.filter((p) => p.scope === 'india');
+  const indiaPackages = ADMISSION_PACKAGES.filter((p) => p.scope === 'india');
   const abroadPackages = ADMISSION_PACKAGES.filter((p) => p.scope === 'abroad');
 
   return (
@@ -165,10 +163,10 @@ const AdmissionSupport = () => {
       <div className="max-w-5xl mx-auto px-6 py-10">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
-            { icon: Check,  label: 'Dedicated Counsellor' },
+            { icon: Check, label: 'Dedicated Counsellor' },
             { icon: Shield, label: 'Documentation Support' },
-            { icon: Globe,  label: 'Round-wise Strategy' },
-            { icon: Info,   label: 'Post-Admission Help' },
+            { icon: Globe, label: 'Round-wise Strategy' },
+            { icon: Info, label: 'Post-Admission Help' },
           ].map(({ icon: Icon, label }) => (
             <div key={label} className="flex flex-col items-center gap-2 p-4 rounded-xl border text-center
               bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-700/60">

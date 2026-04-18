@@ -14,9 +14,7 @@ api.interceptors.request.use((config) => {
     const token = localStorage.getItem('token');
     if (token) config.headers.Authorization = `Bearer ${token}`;
   } catch (e) {
-    // ignore
     console.error(e.data?.message || e.message || 'Error attaching token to request');
-    // ignore
   }
   return config;
 }, (err) => Promise.reject(err));

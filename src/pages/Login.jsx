@@ -1,21 +1,222 @@
-import { useState, useEffect } from 'react';
-import { Mail, Lock, Eye, EyeOff, LogIn, AlertCircle, CheckCircle, GraduationCap, TrendingUp, BookOpen, Award } from 'lucide-react';
+import { useState, useEffect, useRef, useMemo } from 'react';
+import {
+  Mail, Lock, Eye, EyeOff, LogIn, AlertCircle, CheckCircle,
+  GraduationCap, TrendingUp, BookOpen, Award,
+  Phone, X, Loader2, ShieldCheck
+} from 'lucide-react';
 import api from '../utils/api';
 
 const STATS = [
-  { icon: GraduationCap, label: 'Colleges Tracked',  value: '650+' },
-  { icon: TrendingUp,    label: 'Predictions Made',  value: '2.4L+' },
-  { icon: Award,         label: 'Success Rate',       value: '94%' },
-  { icon: BookOpen,      label: 'Seats Analysed',     value: '1.1L+' },
+  { icon: GraduationCap, label: 'Colleges Tracked', value: '650+' },
+  { icon: TrendingUp, label: 'Predictions Made', value: '2.4L+' },
+  { icon: Award, label: 'Success Rate', value: '94%' },
+  { icon: BookOpen, label: 'Seats Analysed', value: '1.1L+' },
 ];
 
+const normalizePhone = (phone) => {
+  const p = phone.replace(/\D/g, '');
+  if (p.length === 10) return `+91${p}`;
+  if (!p.startsWith('+')) return `+${p}`;
+  return p;
+};
+
+// ── OTP Input ─────────────────────────────────────────────────────────────────
+
+const OTPInput = ({ value, onChange, length = 4 }) => {
+  // ✅ Single ref holding an array — no hooks-in-loop violation
+  const refs = useRef([]);
+
+  const handleKey = (e, idx) => {
+    if (e.key === 'Backspace' && !value[idx] && idx > 0)
+      refs.current[idx - 1]?.focus();
+  };
+
+  const handleChange = (e, idx) => {
+    const char = e.target.value.replace(/\D/g, '').slice(-1);
+    const arr = value.split('');
+    arr[idx] = char;
+    onChange(arr.join(''));
+    if (char && idx < length - 1) refs.current[idx + 1]?.focus();
+  };
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+    const pasted = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, length);
+    onChange(pasted.padEnd(length, ''));
+    refs.current[Math.min(pasted.length, length - 1)]?.focus();
+  };
+
+  return (
+    <div className="flex gap-3 justify-center">
+      {Array.from({ length }).map((_, i) => (
+        <input
+          key={i}
+          ref={(el) => (refs.current[i] = el)}
+          type="text"
+          inputMode="numeric"
+          maxLength={1}
+          value={value[i] ?? ''}
+          onChange={(e) => handleChange(e, i)}
+          onKeyDown={(e) => handleKey(e, i)}
+          onPaste={handlePaste}
+          className="w-13 h-14 rounded-xl border text-center text-xl font-bold transition-colors
+            bg-white dark:bg-slate-900
+            border-slate-200 dark:border-slate-700
+            text-[#2C2E69] dark:text-white
+            focus:outline-none focus:ring-2
+            focus:border-[#F9B406] dark:focus:border-teal-500
+            focus:ring-[#F9B406]/15 dark:focus:ring-teal-500/15"
+        />
+      ))}
+    </div>
+  );
+};
+
+// ── OTP Modal ─────────────────────────────────────────────────────────────────
+
+const OTPModal = ({ phone, onVerified, onClose }) => {
+  const [step, setStep] = useState('send');
+  const [otp, setOtp] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [timer, setTimer] = useState(0);
+
+  useEffect(() => {
+    if (timer > 0) {
+      const t = setTimeout(() => setTimer(v => v - 1), 1000);
+      return () => clearTimeout(t);
+    }
+  }, [timer]);
+
+  const sendOtp = async () => {
+    setLoading(true); setError('');
+    try {
+      await api.post('/auth/send-otp', { phone: normalizePhone(phone) });
+      setStep('verify');
+      setTimer(30);
+    } catch (err) {
+      setError(err?.response?.data?.message || 'Failed to send OTP');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const verifyOtp = async () => {
+    if (otp.length < 4) { setError('Enter the 4-digit OTP.'); return; }
+    setLoading(true); setError('');
+    try {
+      await api.post('/auth/verify-otp', { phone: normalizePhone(phone), otp });
+      setStep('success');
+      setTimeout(onVerified, 1200);
+    } catch (err) {
+      setError(err?.response?.data?.message || 'Invalid OTP');
+      setOtp('');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+      onClick={(e) => e.target === e.currentTarget && onClose()}
+    >
+      <div className="w-full max-w-sm rounded-2xl border p-7 shadow-2xl
+        bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700">
+
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h3 className="font-bold text-lg text-[#2C2E69] dark:text-white">Verify your phone</h3>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">Required to access your account</p>
+          </div>
+          <button onClick={onClose}
+            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+
+        {step === 'send' && (
+          <div className="text-center">
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5
+              bg-[#F9B406]/10 dark:bg-teal-500/10 border border-[#F9B406]/20 dark:border-teal-500/20">
+              <Phone className="w-7 h-7 text-[#F9B406] dark:text-teal-400" />
+            </div>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">We'll send a 4-digit OTP to</p>
+            <p className="font-bold text-[#2C2E69] dark:text-white mb-6 text-lg">{phone}</p>
+            {error && (
+              <div className="flex items-center gap-2 text-xs text-red-500 mb-4 justify-center">
+                <AlertCircle className="w-3.5 h-3.5 shrink-0" /> {error}
+              </div>
+            )}
+            <button onClick={sendOtp} disabled={loading}
+              className="w-full py-3.5 rounded-xl font-bold text-sm transition-colors disabled:opacity-60
+                bg-[#F9B406] dark:bg-teal-400 hover:bg-[#e0a205] dark:hover:bg-teal-300 text-slate-950">
+              {loading ? <Loader2 className="w-4 h-4 animate-spin mx-auto" /> : 'Send OTP'}
+            </button>
+          </div>
+        )}
+
+        {step === 'verify' && (
+          <div className="text-center">
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+              Enter the 4-digit code sent to{' '}
+              <span className="font-semibold text-[#2C2E69] dark:text-white">{phone}</span>
+            </p>
+            <OTPInput value={otp} onChange={setOtp} />
+            {error && (
+              <div className="flex items-center gap-2 text-xs text-red-500 mt-3 justify-center">
+                <AlertCircle className="w-3.5 h-3.5 shrink-0" /> {error}
+              </div>
+            )}
+            <button onClick={verifyOtp} disabled={loading || otp.length < 4}
+              className="w-full mt-6 py-3.5 rounded-xl font-bold text-sm transition-colors disabled:opacity-60
+                bg-[#F9B406] dark:bg-teal-400 hover:bg-[#e0a205] dark:hover:bg-teal-300 text-slate-950">
+              {loading ? <Loader2 className="w-4 h-4 animate-spin mx-auto" /> : 'Verify & Sign In'}
+            </button>
+            <div className="mt-4 text-xs text-slate-400 dark:text-slate-600">
+              {timer > 0
+                ? `Resend OTP in ${timer}s`
+                : <button onClick={sendOtp} className="text-[#F9B406] dark:text-teal-400 hover:underline font-medium">Resend OTP</button>
+              }
+            </div>
+          </div>
+        )}
+
+        {step === 'success' && (
+          <div className="text-center py-6">
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4
+              bg-emerald-100 dark:bg-emerald-500/20">
+              <ShieldCheck className="w-8 h-8 text-emerald-500" />
+            </div>
+            <p className="font-bold text-lg text-[#2C2E69] dark:text-white">Verified!</p>
+            <p className="text-sm text-slate-400 dark:text-slate-500 mt-1">Signing you in…</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// ── Login ─────────────────────────────────────────────────────────────────────
+
 const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
-  const [formData,     setFormData]     = useState({ email: '', password: '' });
-  const [error,        setError]        = useState('');
-  const [success,      setSuccess]      = useState('');
-  const [loading,      setLoading]      = useState(false);
+  const [formData, setFormData] = useState({ identifier: '', password: '' });
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [rememberMe,   setRememberMe]   = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [otpPhone, setOtpPhone] = useState(null);
+
+  // helpers
+  const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  const isPhone = (v) => /^[6-9]\d{9}$/.test(v.replace(/\D/g, ''));
+
+  // derive what to send to the API
+  const buildIdentifier = (identifier) =>
+    isEmail(identifier)
+      ? { email: identifier }
+      : { phone: normalizePhone(identifier) };
 
   useEffect(() => {
     const saved = localStorage.getItem('savedEmail');
@@ -32,7 +233,8 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
     e.preventDefault();
     setLoading(true); setError('');
     try {
-      const { data } = await api.post('/auth/login', formData);
+      const payload = { ...buildIdentifier(formData.identifier), password: formData.password };
+      const { data } = await api.post('/auth/login', payload);
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
       rememberMe
@@ -41,13 +243,44 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
       setSuccess('Verified! Loading your dashboard…');
       setTimeout(() => onLoginSuccess(data.user), 1400);
     } catch (err) {
-      setError(err?.response?.data?.message || 'Server error. Please try again.');
+      const res = err?.response;
+      if (res?.status === 403) {
+        setOtpPhone(res.data.phone);
+        return;
+      }
+      setError(res?.data?.message || 'Login failed. Please try again.');
     } finally {
       setLoading(false);
     }
   };
 
-  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
+  const handleOtpVerified = async () => {
+    setOtpPhone(null);
+    setLoading(true); setError('');
+    try {
+      const payload = { ...buildIdentifier(formData.identifier), password: formData.password };
+      const { data } = await api.post('/auth/login', payload);
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('user', JSON.stringify(data.user));
+      setSuccess('Verified! Loading your dashboard…');
+      setTimeout(() => onLoginSuccess(data.user), 1400);
+    } catch (err) {
+      const res = err?.response;
+      if (res?.status === 403) {
+        // verification didn't persist — re-open modal
+        setOtpPhone(res.data.phone);
+        return;
+      }
+      setError(res?.data?.message || 'Login failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const isValidEmail = useMemo(
+    () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email),
+    [formData.email]
+  );
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row bg-[#fffdf7] dark:bg-slate-950 transition-colors">
@@ -56,17 +289,14 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
       <div className="hidden lg:flex lg:w-1/2 xl:w-3/5 relative flex-col justify-between p-12
         bg-[#FFF7E1] dark:bg-slate-900 overflow-hidden">
 
-        {/* Grid texture */}
         <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
           style={{
             backgroundImage: 'linear-gradient(rgba(249,180,6,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(249,180,6,0.5) 1px, transparent 1px)',
             backgroundSize: '48px 48px',
           }} />
-
         <div className="absolute top-20 left-20 w-72 h-72 bg-[#F9B406] rounded-full blur-3xl opacity-10 pointer-events-none dark:bg-teal-500" />
         <div className="absolute bottom-32 right-10 w-56 h-56 bg-[#e0a205] rounded-full blur-3xl opacity-10 pointer-events-none dark:bg-teal-400" />
 
-        {/* Logo */}
         <div className="relative z-10 flex items-center gap-3">
           <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#F9B406]/20 border border-[#F9B406]/30 dark:bg-teal-500/20 dark:border-teal-500/30">
             <GraduationCap className="w-5 h-5 text-[#F9B406] dark:text-teal-400" />
@@ -76,7 +306,6 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
           </span>
         </div>
 
-        {/* Hero */}
         <div className="relative z-10 max-w-lg">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F9B406]/10 border border-[#F9B406]/20 dark:bg-teal-500/10 dark:border-teal-500/20 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#F9B406] dark:bg-teal-400 animate-pulse" />
@@ -84,7 +313,6 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
               NEET 2026 Predictions Live
             </span>
           </div>
-
           <h2 className="text-4xl xl:text-5xl font-extrabold text-[#2C2E69] dark:text-white leading-tight tracking-tight mb-4">
             Know Your College
             <br />
@@ -92,19 +320,15 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
               Before Counselling
             </span>
           </h2>
-
           <p className="text-sm text-[#2C2E69] dark:text-slate-400 leading-relaxed mb-10">
             AI-powered cutoff predictions across all MBBS, BDS & AYUSH colleges.
             State quota, all-India quota, management seats — all in one place.
           </p>
-
-          {/* Stats */}
           <div className="grid grid-cols-2 gap-4">
             {STATS.map(({ icon: Icon, label, value }) => (
               <div key={label}
                 className="flex items-center gap-3 p-4 rounded-2xl border transition-colors
-                  bg-white/70 dark:bg-white/5
-                  border-[#F9B406]/20 dark:border-slate-700/60
+                  bg-white/70 dark:bg-white/5 border-[#F9B406]/20 dark:border-slate-700/60
                   hover:border-[#F9B406]/40 dark:hover:border-teal-500/30">
                 <div className="flex items-center justify-center w-9 h-9 rounded-xl shrink-0
                   bg-[#F9B406]/10 dark:bg-teal-500/10">
@@ -147,73 +371,71 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-4">
-
-            {/* Email */}
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider mb-2 text-slate-500 dark:text-white/40">
-                Email Address
+                Email or Phone
               </label>
               <div className="relative">
-                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none text-slate-400 dark:text-[#2C2E69]" />
-                <input type="email" name="email" value={formData.email} onChange={handleChange} required
-                  placeholder="you@example.com"
-                  className="w-full pl-10 pr-10 py-3 rounded-xl text-sm border transition-colors focus:outline-none focus:ring-2
-                    bg-white dark:bg-slate-900
-                    border-slate-200 dark:border-slate-700/60
-                    text-[#2C2E69] dark:text-white
-                    placeholder-slate-400 dark:placeholder-slate-600
-                    focus:border-[#F9B406] dark:focus:border-teal-500
-                    focus:ring-[#F9B406]/15 dark:focus:ring-teal-500/15
-                    shadow-sm" />
-                {formData.email && isValidEmail && (
+                {isPhone(formData.identifier)
+                  ? <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none text-slate-400 dark:text-[#2C2E69]" />
+                  : <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none text-slate-400 dark:text-[#2C2E69]" />
+                }
+                <input
+                  type="text"
+                  name="identifier"
+                  value={formData.identifier}
+                  onChange={handleChange}
+                  required
+                  placeholder="Enter Email or Phone"
+                  className="w-full pl-10 pr-10 py-3 rounded-xl text-sm border transition-colors focus:outline-none focus:ring-2 shadow-sm bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700/60 text-[#2C2E69] dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:border-[#F9B406] dark:focus:border-teal-500 focus:ring-[#F9B406]/15 dark:focus:ring-teal-500/15"
+                />
+                {(isEmail(formData.identifier) || isPhone(formData.identifier)) && (
                   <CheckCircle className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#F9B406] dark:text-teal-400" />
                 )}
               </div>
             </div>
 
-            {/* Password */}
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-white/40">
                   Password
                 </label>
-                <button type="button" className="text-xs text-[#F9B406] dark:text-teal-400 hover:opacity-80 transition-opacity">
-                  Forgot password?
-                </button>
               </div>
               <div className="relative">
                 <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none text-slate-400 dark:text-[#2C2E69]" />
                 <input type={showPassword ? 'text' : 'password'} name="password"
-                  value={formData.password} onChange={handleChange} required
-                  placeholder="••••••••"
-                  className="w-full pl-10 pr-10 py-3 rounded-xl text-sm border transition-colors focus:outline-none focus:ring-2
-                    bg-white dark:bg-slate-900
-                    border-slate-200 dark:border-slate-700/60
-                    text-[#2C2E69] dark:text-white
-                    placeholder-slate-400 dark:placeholder-slate-600
+                  value={formData.password} onChange={handleChange} required placeholder="••••••••"
+                  className="w-full pl-10 pr-10 py-3 rounded-xl text-sm border transition-colors focus:outline-none focus:ring-2 shadow-sm
+                    bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700/60
+                    text-[#2C2E69] dark:text-white placeholder-slate-400 dark:placeholder-slate-600
                     focus:border-[#F9B406] dark:focus:border-teal-500
-                    focus:ring-[#F9B406]/15 dark:focus:ring-teal-500/15
-                    shadow-sm" />
+                    focus:ring-[#F9B406]/15 dark:focus:ring-teal-500/15" />
                 <button type="button" onClick={() => setShowPassword(v => !v)}
                   className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-[#2C2E69] hover:text-[#2C2E69] dark:hover:text-slate-400 transition-colors">
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
               </div>
             </div>
-
-            {/* Submit */}
+            {/* // Add this above the submit button
+            <label className="flex items-center gap-2 text-sm text-slate-500 dark:text-white/40 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={rememberMe}
+                onChange={e => setRememberMe(e.target.checked)}
+                className="rounded accent-[#F9B406] dark:accent-teal-400"
+              />
+              Remember me
+            </label> */}
             <button type="submit" disabled={loading}
               className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed
                 bg-[#F9B406] hover:bg-[#e0a205] dark:bg-teal-400 dark:hover:bg-teal-300
                 text-slate-950 shadow-[#F9B406]/25 dark:shadow-teal-400/20">
-              {loading ? (
-                <><span className="w-4 h-4 border-2 border-slate-950/30 border-t-slate-950 rounded-full animate-spin" />Verifying…</>
-              ) : (
-                <><LogIn className="w-4 h-4" />Sign In</>
-              )}
+              {loading
+                ? <><span className="w-4 h-4 border-2 border-slate-950/30 border-t-slate-950 rounded-full animate-spin" />Verifying…</>
+                : <><LogIn className="w-4 h-4" />Sign In</>
+              }
             </button>
 
-            {/* Switch */}
             <p className="mt-6 text-center text-sm text-slate-500 dark:text-white/30">
               New here?{' '}
               <button onClick={onSwitchToSignup} type="button"
@@ -221,10 +443,17 @@ const Login = ({ onLoginSuccess, onSwitchToSignup }) => {
                 Create a free account
               </button>
             </p>
-
           </form>
         </div>
       </div>
+
+      {otpPhone && (
+        <OTPModal
+          phone={otpPhone}
+          onVerified={handleOtpVerified}
+          onClose={() => setOtpPhone(null)}
+        />
+      )}
     </div>
   );
 };

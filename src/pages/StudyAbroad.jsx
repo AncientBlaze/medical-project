@@ -568,7 +568,7 @@ const CountryDetail = ({ country }) => {
         </div>
       </div>
 
-      {/* Living cost + CTA */}
+      {/* Living cost + CTA
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div className="rounded-2xl border p-5 bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-700/60">
           <p className="text-xs font-semibold text-slate-500 dark:text-slate-500 uppercase tracking-wider mb-1">Monthly Living Cost</p>
@@ -595,7 +595,7 @@ const CountryDetail = ({ country }) => {
 
       {applyUni && (
         <LeadModal university={applyUni} country={country} onClose={() => setApplyUni(null)} />
-      )}
+      )} */}
     </div>
   );
 };
@@ -695,27 +695,46 @@ const StudyAbroad = () => {
     <div className="abroad-root min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-slate-900 dark:text-white">
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <div className="relative border-b border-slate-200 dark:border-slate-800 overflow-hidden">
-        {/* background gradient */}
-        <div className="absolute inset-0 pointer-events-none
-          bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(249,180,6,0.08),transparent)]
-          dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(20,184,166,0.09),transparent)]" />
-        {/* decorative circles */}
-        <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full opacity-[0.04] dark:opacity-[0.06]
-          bg-[#F9B406] dark:bg-teal-400 blur-3xl pointer-events-none" />
+      <div className="relative border-b border-amber-200 dark:border-slate-800 bg-linear-to-br from-amber-50 to-amber-100 dark:from-slate-900/60 dark:to-slate-950 overflow-hidden">
 
-        <div className="relative w-full px-4 sm:px-6 lg:px-10 pt-10 pb-10 sm:pt-14 sm:pb-14 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-5
-            bg-white/80 dark:bg-slate-900/60 border-slate-200 dark:border-slate-800 backdrop-blur-sm">
+        {/* Glow gradient */}
+        <div className="absolute inset-0 pointer-events-none
+    bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(249,180,6,0.12),transparent)]
+    dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(20,184,166,0.12),transparent)]"
+        />
+
+        {/* Decorative blur orb */}
+        <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full opacity-[0.06] dark:opacity-[0.08]
+    bg-[#F9B406] dark:bg-teal-400 blur-3xl pointer-events-none"
+        />
+
+        <div className="relative w-full px-4 sm:px-6 lg:px-10 pt-12 pb-12 sm:pt-16 sm:pb-16 text-center">
+
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-6
+      bg-white/70 dark:bg-slate-900/50 
+      border-amber-200 dark:border-slate-700 
+      backdrop-blur-md"
+          >
             <Plane className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
-            <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">MBBS Abroad 2026–27</span>
+            <span className="text-xs font-semibold text-slate-700 dark:text-slate-400">
+              MBBS Abroad 2026–27
+            </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl text-[#2D409C] font-black tracking-tight mb-4 leading-[1.1]">
-            Study MBBS{' '}
-            <span className="text-[#F9B406] dark:text-teal-400">Abroad</span>
+          {/* Heading */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4 leading-[1.1] text-[#2D409C] dark:text-white">
+            Study MBBS{" "}
+            <span className="text-transparent bg-clip-text bg-linear-to-r 
+        from-[#F9B406] to-[#F9B406]/60 
+        dark:from-teal-400 dark:to-teal-400/60"
+            >
+              Abroad
+            </span>
           </h1>
-          <p className="text-sm sm:text-base max-w-xl mx-auto text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">
+
+          {/* Description */}
+          <p className="text-sm sm:text-base max-w-xl mx-auto text-slate-600 dark:text-slate-400 mb-10 leading-relaxed">
             NMC-approved universities across 10 countries — at 60–80% less than Indian private colleges.
           </p>
 
@@ -727,13 +746,53 @@ const StudyAbroad = () => {
               { icon: Shield, label: 'NMC approved' },
               { icon: IndianRupee, label: 'From ₹12 Lakhs' },
             ].map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-center gap-2 px-3 py-2 rounded-xl border text-sm font-medium
-                bg-white/80 dark:bg-slate-900/40 border-slate-200 dark:border-slate-700/60
-                text-slate-600 dark:text-slate-400 backdrop-blur-sm">
+              <div
+                key={label}
+                className="flex items-center gap-2 px-3 py-2 rounded-xl border text-sm font-medium
+          bg-white/70 dark:bg-slate-900/50
+          border-amber-200 dark:border-slate-700/60
+          text-slate-700 dark:text-slate-400
+          backdrop-blur-md
+          transition hover:shadow-lg hover:shadow-amber-200/30 dark:hover:shadow-teal-900/20"
+              >
                 <Icon className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
                 {label}
               </div>
             ))}
+          </div>
+
+        </div>
+      </div>
+      
+      <div className="border-t border-slate-200 dark:border-slate-800">
+        <div className="px-4 sm:px-6 lg:px-10 py-12">
+          <div className="rounded-2xl border p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-10
+            bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-700/60
+            max-w-4xl mx-auto">
+            <div className="flex-1 text-center sm:text-left">
+              <h2 className="abroad-display text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-2 leading-tight">
+                Need help choosing the right country?
+              </h2>
+              <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                MedSankalp's Global programs include university selection, documentation, visa guidance, and arrival support — all in one place.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full sm:w-auto">
+              <Link to="/admission-support"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm transition-all
+                  active:scale-95 hover:scale-[1.02]
+                  bg-[#F9B406] dark:bg-teal-400 hover:bg-[#e0a205] dark:hover:bg-teal-300
+                  text-slate-950 shadow-lg shadow-[#F9B406]/25 dark:shadow-teal-300/25">
+                View Admission Plans <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link to="/contact"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm border transition-all
+                  active:scale-95 hover:scale-[1.02]
+                  bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-700
+                  text-slate-700 dark:text-slate-300">
+                Talk to Counsellor
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -872,41 +931,6 @@ const StudyAbroad = () => {
           </div>
         )}
       </div>
-
-      {/* ── Bottom CTA ───────────────────────────────────────────────────── */}
-      <div className="border-t border-slate-200 dark:border-slate-800 mt-6">
-        <div className="px-4 sm:px-6 lg:px-10 py-12">
-          <div className="rounded-2xl border p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-10
-            bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-700/60
-            max-w-4xl mx-auto">
-            <div className="flex-1 text-center sm:text-left">
-              <h2 className="abroad-display text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-2 leading-tight">
-                Need help choosing the right country?
-              </h2>
-              <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                MedSankalp's Global programs include university selection, documentation, visa guidance, and arrival support — all in one place.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full sm:w-auto">
-              <Link to="/admission-support"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm transition-all
-                  active:scale-95 hover:scale-[1.02]
-                  bg-[#F9B406] dark:bg-teal-400 hover:bg-[#e0a205] dark:hover:bg-teal-300
-                  text-slate-950 shadow-lg shadow-[#F9B406]/25">
-                View Abroad Plans <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm border transition-all
-                  active:scale-95 hover:scale-[1.02]
-                  bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-700
-                  text-slate-700 dark:text-slate-300">
-                Talk to Counsellor
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   );
 };

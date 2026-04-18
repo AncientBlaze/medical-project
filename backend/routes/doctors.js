@@ -54,8 +54,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// ── Admin (requireAdmin handles token + isAdmin check) ────────────────────────
-
 router.post('/', requireAdmin, upload.single('photo'), async (req, res) => {
   try {
     const { name, title, specialisations, about, experience, rating } = req.body;
@@ -67,6 +65,7 @@ router.post('/', requireAdmin, upload.single('photo'), async (req, res) => {
     });
     res.status(201).json({ success: true, doctor });
   } catch (err) {
+    console.log(err);
     res.status(500).json({ success: false, message: err.message });
   }
 });

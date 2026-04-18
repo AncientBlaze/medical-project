@@ -184,6 +184,50 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// 🟢 CREATE PREDICTION LEAD
+router.post("/send-prediction", async (req, res) => {
+  try {
+    const { name, phone, email, rank, category, quota, state, matchedColleges } = req.body;
+
+    if (!phone || !rank || !category) {
+      return res.status(400).json({
+        success: false,
+        message: "Required fields missing (phone, rank, category)",
+      });
+    }
+
+    const newLead = await LeadsModel.create({
+      name,
+      phone,
+      email,
+      rank,
+      category,
+      quota,
+      state,
+      matchedColleges,
+      source: "predictor",
+      type: "prediction",
+    });
+
+    res.status(201).json({
+      success: true,
+      message: "Prediction lead created",
+      data: newLead,
+    });
+  } catch (error) {
+    if (error.code === 11000) {
+      return res.status(400).json({
+        success: false,
+        message: "Lead already exists",
+      });
+    }
+    res.status(500).json({
+      success: false,
+      message: "Server error",
+      error: error.message,
+    });
+  }
+});
 
 // 🔥 DELETE ALL LEADS (ADMIN NUKE BUTTON 💣)
 router.delete("/", async (req, res) => {

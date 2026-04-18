@@ -225,25 +225,6 @@ const ExploreSearchBar = () => {
   const [selected, setSelected] = useState(null);
   const wrapRef = useRef(null);
 
-  // Auto open code unnecessary ekhon
-  // useEffect(() => {
-  //   // If empty → show ALL colleges
-  //   if (!q.trim()) {
-  //     setResults(allColleges);
-  //     setOpen(true);
-  //     return;
-  //   }
-
-  //   // If typing → filter
-  //   const r = allColleges.filter((c) =>
-  //     c.name.toLowerCase().includes(q.toLowerCase())
-  //   );
-
-  //   setResults(r);
-  //   setOpen(true);
-  // }, [q]);
-
-  // Close on outside click
   useEffect(() => {
     const handler = (e) => {
       if (wrapRef.current && !wrapRef.current.contains(e.target)) {
@@ -268,7 +249,6 @@ const ExploreSearchBar = () => {
             type="text"
             value={q}
             onFocus={() => {
-              // 🔥 SHOW ALL ON CLICK
               if (!q.trim()) {
                 setResults(allColleges);
               }
@@ -277,7 +257,6 @@ const ExploreSearchBar = () => {
             onChange={(e) => {
               const val = e.target.value;
               setQ(val);
-              // Filter results based on input
               if (!val.trim()) {
                 setResults(allColleges);
               } else {
@@ -310,7 +289,6 @@ const ExploreSearchBar = () => {
           </button>
         </div>
 
-        {/* 🔥 SCROLLABLE DROPDOWN */}
         {open && (
           <div className="absolute left-0 right-0 max-h-100 overflow-y-auto rounded-b-2xl border border-t-0 shadow-xl z-30
             bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700">
@@ -329,9 +307,7 @@ const ExploreSearchBar = () => {
                   text-slate-700 dark:text-white/80"
               >
                 <Building2 className="w-3.5 h-3.5 shrink-0 text-slate-400 dark:text-[#2d409c]" />
-
                 <span className="flex-1 truncate">{c.name}</span>
-
                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border
                   ${c.management !== 'Private'
                     ? 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-100 dark:border-blue-500/20'
@@ -339,7 +315,6 @@ const ExploreSearchBar = () => {
                   }`}>
                   {c.management}
                 </span>
-
                 <ChevronRight className="w-3.5 h-3.5 text-slate-300 dark:text-slate-700" />
               </button>
             ))}
@@ -360,8 +335,7 @@ const ExploreSearchBar = () => {
 
 // ── Home ──────────────────────────────────────────────────────────────────────
 const WHY_CHOOSE = [
-
-  { icon: Target, title: 'Doctor-Driven, Student-Focused, Result-Oriented', desc: "MedSankalp is built by doctors and MBBS students who’ve been through the same journey — giving you real, practical guidance that actually works." },
+  { icon: Target, title: 'Doctor-Driven, Student-Focused, Result-Oriented', desc: "MedSankalp is built by doctors and MBBS students who've been through the same journey — giving you real, practical guidance that actually works." },
   { icon: MessageCircle, title: 'Personalized MBBS Counselling', desc: 'No generic advice. Get guidance tailored to your NEET rank, category, and career goals.' },
   { icon: Lightbulb, title: 'End-to-End Admission Support', desc: 'From strategy to seat allotment — we stay with you at every step of your MBBS journey.' },
   { icon: Award, title: 'Real Data. Real Insights.', desc: 'Accurate cutoffs, college analysis, and counselling strategies based on real experiences, not assumptions.' },
@@ -385,24 +359,23 @@ const Home = () => (
         <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-8">
           Access real NEET cutoff data, compare colleges, and make informed decisions about your future
         </p>
-        
-        {/* Stats pills */}
 
+        {/* Stats pills */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 pb-10">
-            {[
-              { icon: Globe, label: '10 countries' },
-              { icon: GraduationCap, label: '71+ universities' },
-              { icon: Shield, label: 'NMC approved' },
-              { icon: IndianRupee, label: 'From ₹12 Lakhs' },
-            ].map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-center gap-2 px-3 py-2 rounded-xl border text-sm font-medium
-                bg-white/80 dark:bg-slate-900/40 border-slate-200 dark:border-slate-700/60
-                text-slate-600 dark:text-slate-400 backdrop-blur-sm">
-                <Icon className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
-                {label}
-              </div>
-            ))}
-          </div>
+          {[
+            { icon: Globe, label: 'India-Wide Colleges' },
+            { icon: GraduationCap, label: '415+ universities' },
+            { icon: Shield, label: 'NMC approved' },
+            { icon: IndianRupee, label: 'Free Prediction' },
+          ].map(({ icon: Icon, label }) => (
+            <div key={label} className="flex items-center gap-2 px-3 py-2 rounded-xl border text-sm font-medium
+              bg-white/80 dark:bg-slate-900/40 border-slate-200 dark:border-slate-700/60
+              text-slate-600 dark:text-slate-400 backdrop-blur-sm">
+              <Icon className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
+              {label}
+            </div>
+          ))}
+        </div>
 
         {/* ── Search bar ── */}
         <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
@@ -412,14 +385,14 @@ const Home = () => (
           </span>{' '}
           for every step of your admission process.
         </p>
-        
+
         <ExploreSearchBar />
       </div>
     </div>
 
     {/* ── Platform Section ──────────────────────────────────────────────── */}
     <div className="max-w-6xl mx-auto px-6 py-16">
-      <div className="rounded-2xl border p-10 flex flex-col lg:flex-row items-center gap-10
+      <div className="rounded-2xl border p-6 sm:p-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-10
         bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
         <div className="flex-1">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#2d409c] dark:text-white">
@@ -441,23 +414,27 @@ const Home = () => (
             ))}
           </ul>
         </div>
-        <div className="flex-1 hidden lg:flex items-center justify-center">
-          <div className="w-full h-64 rounded-xl flex items-center justify-center bg-[url('/Counselling.png')] bg-contain bg-no-repeat bg-center dark:bg-[url('/Counselling_Dark.png')]">
-          </div>
+        {/* ✅ Visible on all screen sizes */}
+        <div className="flex-1 flex items-center justify-center w-full">
+          <div className="w-full h-52 sm:h-64 lg:h-64 rounded-xl
+            bg-[url('/Counselling.png')] bg-contain bg-no-repeat bg-center
+            dark:bg-[url('/Counselling_Dark.png')]" />
         </div>
       </div>
     </div>
 
 
-    <div className="max-w-6xl mx-auto px-6 pb-16 ">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 px-8 border rounded-2xl bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
-        <div className="hidden lg:flex items-center justify-center">
-          <div className="w-full h-80 rounded-xl flex items-center justify-center
-            bg-[url('/Admission_Support.png')] dark:bg-[url('/Admission_Support_Dark.png')] bg-center bg-contain ">
-          </div>
+    {/* ── Admission Support ─────────────────────────────────────────────── */}
+    <div className="max-w-6xl mx-auto px-6 pb-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 sm:py-16 px-6 sm:px-8 border rounded-2xl bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
+        {/* ✅ Image first on mobile (above text), shown on all sizes */}
+        <div className="flex items-center justify-center w-full order-first lg:order-0">
+          <div className="w-full h-52 sm:h-64 lg:h-80 rounded-xl
+            bg-[url('/Admission_Support.png')] dark:bg-[url('/Admission_Support_Dark.png')]
+            bg-center bg-contain bg-no-repeat" />
         </div>
         <div>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-[#2d409c] dark:text-white">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-[#2d409c] dark:text-white">
             Our <span className="text-[#F9B406] dark:text-teal-400">Admission Support</span>
           </h2>
           <div className="space-y-4">
@@ -469,7 +446,7 @@ const Home = () => (
               'Documentation & Scholarship Guidance',
               'Deep Analysis of Cutoff Trends, Seat Matrix, Bond & Fees',
             ].map((service, idx) => (
-              <div key={idx} className="flex items-start gap-3">
+              <div key={idx} className="flex items-start gap-3 transition-all hover:scale-105">
                 <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5
                   bg-[#F9B406] dark:bg-teal-400">
                   <span className="text-slate-950 text-xs font-bold">✓</span>
@@ -488,13 +465,12 @@ const Home = () => (
     </div>
 
 
-
     {/* ── NEET College Predictor ─────────────────────────────────────────── */}
     <div>
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 px-8 border rounded-2xl bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 sm:py-16 px-6 sm:px-8 border rounded-2xl bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
           <div>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-[#2d409c] dark:text-white">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-[#2d409c] dark:text-white">
               NEET UG College <span className="text-[#F9B406] dark:text-teal-400">Predictor</span>
             </h2>
             <div className="space-y-4">
@@ -506,7 +482,7 @@ const Home = () => (
                 'Includes both AIQ and STATE Counselling predictions',
                 'Covers Govt, Central, Deemed & Private colleges',
               ].map((feature, idx) => (
-                <div key={idx} className="flex items-start gap-3">
+                <div key={idx} className="flex items-start gap-3 transition-all hover:scale-105">
                   <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5
                     bg-[#F9B406] dark:bg-teal-400">
                     <span className="text-slate-950 text-xs font-bold">✓</span>
@@ -521,26 +497,27 @@ const Home = () => (
               Get Predictor →
             </Link>
           </div>
-          <div className="hidden lg:flex items-center justify-center">
-            <div className="w-full h-80 rounded-xl flex items-center justify-center
-              bg-[url('/Predictor.png')] bg-contain bg-no-repeat bg-center dark:bg-[url('/Predictor_Dark.png')]">
-
-            </div>
+          {/* ✅ Visible on all screen sizes */}
+          <div className="flex items-center justify-center w-full">
+            <div className="w-full h-52 sm:h-64 lg:h-80 rounded-xl
+              bg-[url('/Predictor.png')] bg-contain bg-no-repeat bg-center
+              dark:bg-[url('/Predictor_Dark.png')]" />
           </div>
         </div>
       </div>
     </div>
 
     {/* ── Counselling Services ───────────────────────────────────────────── */}
-    <div className="max-w-6xl mx-auto px-6 pb-16 ">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 px-8 border rounded-2xl bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
-        <div className="hidden lg:flex items-center justify-center">
-          <div className="w-full h-80 rounded-xl flex items-center justify-center
-            bg-[url('/Coun.png')] bg-contain bg-no-repeat bg-center dark:bg-[url('/Coun_Dark.png')] ">
-          </div>
+    <div className="max-w-6xl mx-auto px-6 pb-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 sm:py-16 px-6 sm:px-8 border rounded-2xl bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
+        {/* ✅ Image first on mobile, shown on all sizes */}
+        <div className="flex items-center justify-center w-full order-first lg:order-0">
+          <div className="w-full h-52 sm:h-64 lg:h-80 rounded-xl
+            bg-[url('/Coun.png')] bg-contain bg-no-repeat bg-center
+            dark:bg-[url('/Coun_Dark.png')]" />
         </div>
         <div>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-[#2d409c] dark:text-white">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-[#2d409c] dark:text-white">
             Our <span className="text-[#F9B406] dark:text-teal-400">Counselling Services</span>
           </h2>
           <div className="space-y-4">
@@ -552,7 +529,7 @@ const Home = () => (
               'Documentation & Scholarship Guidance',
               'Deep Analysis of Cutoff Trends, Seat Matrix, Bond & Fees',
             ].map((service, idx) => (
-              <div key={idx} className="flex items-start gap-3">
+              <div key={idx} className="flex items-start gap-3 transition-all hover:scale-105">
                 <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5
                   bg-[#F9B406] dark:bg-teal-400">
                   <span className="text-slate-950 text-xs font-bold">✓</span>

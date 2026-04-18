@@ -1,48 +1,44 @@
 import { useState, useRef, useEffect } from 'react';
 import {
-  User, Mail, Phone, GraduationCap, Edit2, Check, X, Loader2, ShieldCheck, LogOut, Camera, AlertCircle
+  User, Mail, Phone, GraduationCap, Edit2, Check, X, Loader2,
+  ShieldCheck, LogOut, Camera, AlertCircle
 } from 'lucide-react';
 import useAuthStore from '../store/authStore.js';
 import api from '../utils/api.js';
 import { useNavigate } from 'react-router-dom';
 
-
 const normalizePhone = (phone) => {
-  let p = phone.replace(/\D/g, '');
-
+  const p = phone.replace(/\D/g, '');
   if (p.length === 10) return `+91${p}`;
   if (!p.startsWith('+')) return `+${p}`;
-
   return p;
 };
 
-// ── Constants ─────────────────────────────────────────────────────────────────
 const NEET_YEARS = ['2026', '2025', '2024', '2023', '2022', '2021'];
 
 // ── OTP Input ─────────────────────────────────────────────────────────────────
-const OTPInput = ({ value, onChange, length = 6 }) => {
-  const refs = Array.from({ length }, () => useRef(null));
+// Uses a single ref array — no hooks-in-loop violation
+const OTPInput = ({ value, onChange, length = 4 }) => {
+  const refs = useRef([]);
 
   const handleKey = (e, idx) => {
-    if (e.key === 'Backspace') {
-      if (!value[idx] && idx > 0) refs[idx - 1].current?.focus();
-    }
+    if (e.key === 'Backspace' && !value[idx] && idx > 0)
+      refs.current[idx - 1]?.focus();
   };
 
   const handleChange = (e, idx) => {
     const char = e.target.value.replace(/\D/g, '').slice(-1);
     const arr = value.split('');
     arr[idx] = char;
-    const next = arr.join('');
-    onChange(next);
-    if (char && idx < length - 1) refs[idx + 1].current?.focus();
+    onChange(arr.join(''));
+    if (char && idx < length - 1) refs.current[idx + 1]?.focus();
   };
 
   const handlePaste = (e) => {
     e.preventDefault();
     const pasted = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, length);
     onChange(pasted.padEnd(length, ''));
-    refs[Math.min(pasted.length, length - 1)].current?.focus();
+    refs.current[Math.min(pasted.length, length - 1)]?.focus();
   };
 
   return (
@@ -50,7 +46,7 @@ const OTPInput = ({ value, onChange, length = 6 }) => {
       {Array.from({ length }).map((_, i) => (
         <input
           key={i}
-          ref={refs[i]}
+          ref={(el) => (refs.current[i] = el)}
           type="text"
           inputMode="numeric"
           maxLength={1}
@@ -73,7 +69,7 @@ const OTPInput = ({ value, onChange, length = 6 }) => {
 
 // ── Phone Verify Modal ────────────────────────────────────────────────────────
 const PhoneVerifyModal = ({ phone, onVerified, onClose }) => {
-  const [step, setStep] = useState('send');   // 'send' | 'verify' | 'success'
+  const [step, setStep] = useState('send');
   const [otp, setOtp] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -81,7 +77,7 @@ const PhoneVerifyModal = ({ phone, onVerified, onClose }) => {
 
   useEffect(() => {
     if (timer > 0) {
-      const t = setTimeout(() => setTimer(timer - 1), 1000);
+      const t = setTimeout(() => setTimer((v) => v - 1), 1000);
       return () => clearTimeout(t);
     }
   }, [timer]);
@@ -100,7 +96,7 @@ const PhoneVerifyModal = ({ phone, onVerified, onClose }) => {
   };
 
   const verifyOtp = async () => {
-    if (otp.length < 6) { setError('Enter the 6-digit OTP.'); return; }
+    if (otp.length < 4) { setError('Enter the 4-digit OTP.'); return; }
     setLoading(true); setError('');
     try {
       await api.post('/auth/verify-otp', { phone: normalizePhone(phone), otp });
@@ -108,20 +104,22 @@ const PhoneVerifyModal = ({ phone, onVerified, onClose }) => {
       setTimeout(() => { onVerified(normalizePhone(phone)); onClose(); }, 1200);
     } catch (err) {
       setError(err?.response?.data?.message || 'Invalid OTP');
-      setOtp('')
+      setOtp('');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
-      onClick={(e) => e.target === e.currentTarget && onClose()}>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+      onClick={(e) => e.target === e.currentTarget && onClose()}
+    >
       <div className="w-full max-w-sm rounded-2xl border p-6 bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 shadow-2xl">
         <div className="flex items-center justify-between mb-5">
           <h3 className="font-bold text-slate-900 dark:text-white">Verify Phone Number</h3>
-          <button onClick={onClose} className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+          <button onClick={onClose}
+            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
             <X className="w-4 h-4" />
           </button>
         </div>
@@ -146,11 +144,12 @@ const PhoneVerifyModal = ({ phone, onVerified, onClose }) => {
         {step === 'verify' && (
           <div className="text-center">
             <p className="text-sm text-slate-600 dark:text-slate-400 mb-5">
-              Enter the 6-digit OTP sent to <span className="font-semibold text-slate-900 dark:text-white">{phone}</span>
+              Enter the 4-digit OTP sent to{' '}
+              <span className="font-semibold text-slate-900 dark:text-white">{phone}</span>
             </p>
             <OTPInput value={otp} onChange={setOtp} />
             {error && <p className="text-xs text-red-500 mt-3">{error}</p>}
-            <button onClick={verifyOtp} disabled={loading || otp.length < 6}
+            <button onClick={verifyOtp} disabled={loading || otp.length < 4}
               className="w-full mt-5 py-3 rounded-xl font-bold text-sm transition-colors disabled:opacity-60
                 bg-[#F9B406] dark:bg-teal-400 hover:bg-[#e0a205] dark:hover:bg-teal-300 text-slate-950">
               {loading ? <Loader2 className="w-4 h-4 animate-spin mx-auto" /> : 'Verify OTP'}
@@ -183,6 +182,11 @@ const Field = ({ label, icon: Icon, value, onSave, type = 'text', options, readO
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(value ?? '');
   const [saving, setSaving] = useState(false);
+
+  // Keep draft in sync if parent value changes (e.g. after store update)
+  useEffect(() => {
+    if (!editing) setDraft(value ?? '');
+  }, [value, editing]);
 
   const save = async () => {
     if (draft === value) { setEditing(false); return; }
@@ -230,20 +234,17 @@ const Field = ({ label, icon: Icon, value, onSave, type = 'text', options, readO
         )}
 
         <div className="flex items-center gap-1 shrink-0">
-          {/* Verified badge for phone */}
           {verified && !editing && (
             <span className="flex items-center gap-1 text-[10px] font-bold text-emerald-500 px-1.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-500/10">
               <ShieldCheck className="w-3 h-3" /> Verified
             </span>
           )}
-          {/* Verify button for unverified phone */}
           {onVerify && !verified && !editing && value && (
             <button onClick={onVerify}
               className="text-[10px] font-bold px-2 py-1 rounded-lg text-[#F9B406] dark:text-teal-400 border border-[#F9B406]/30 dark:border-teal-500/30 hover:bg-[#F9B406]/5 dark:hover:bg-teal-500/5">
               Verify
             </button>
           )}
-
           {!readOnly && (
             editing ? (
               <>
@@ -290,37 +291,31 @@ const Avatar = ({ name }) => {
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 const StudentProfile = () => {
-
   const navigate = useNavigate();
   const { user, setUser, logout } = useAuthStore();
-  const [profile, setProfile] = useState({
-    name: user?.name ?? '',
-    email: user?.email ?? '',
-    phone: user?.phone ?? '',
-    neetYear: user?.neetYear ?? '',
-    phoneVerified: user?.phoneVerified ?? false,
-  });
   const [verifyModal, setVerifyModal] = useState(false);
   const [saveError, setSaveError] = useState('');
+
+  // Single source of truth: the auth store's user object.
+  // All fields read from `user` directly — no local profile state.
 
   const updateField = async (field, value) => {
     setSaveError('');
     try {
-      const updated = { ...profile, [field]: value };
       await api.patch('/profile', { [field]: value });
-      setProfile(updated);
-      setUser({ ...user, ...updated });
+      setUser({ ...user, [field]: value });
     } catch {
       setSaveError('Failed to save. Please try again.');
     }
   };
 
-  const onPhoneVerified = (phone) => {
-    const updated = { ...profile, phone, phoneVerified: true };
-    setProfile(updated);
-    setUser({ ...user, ...updated });
-    api.patch('/profile', { phone, phoneVerified: true }).catch(() => { });
+  const onPhoneVerified = (normalizedPhone) => {
+    setUser({ ...user, phone: normalizedPhone, phoneVerified: true });
+    // Persist to backend — fire and forget
+    api.patch('/profile', { phone: normalizedPhone, phoneVerified: true }).catch(() => {});
   };
+
+  if (!user) return null;
 
   return (
     <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-slate-900 dark:text-white">
@@ -329,19 +324,21 @@ const StudentProfile = () => {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white">My Profile</h1>
-          <p className="text-sm text-slate-500 dark:text-slate-500 mt-1">Manage your personal information and NEET details</p>
+          <p className="text-sm text-slate-500 dark:text-slate-500 mt-1">
+            Manage your personal information and NEET details
+          </p>
         </div>
 
         {/* Avatar + name card */}
         <div className="flex items-center gap-5 p-6 rounded-2xl border mb-5
           bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-700/60 shadow-sm">
-          <Avatar name={profile.name} />
+          <Avatar name={user.name} />
           <div>
             <p className="font-bold text-lg text-slate-900 dark:text-white leading-tight">
-              {profile.name || 'Your Name'}
+              {user.name || 'Your Name'}
             </p>
             <p className="text-sm text-slate-500 dark:text-slate-500">
-              {profile.email || 'No email set'}
+              {user.email || 'No email set'}
             </p>
             <div className="flex items-center gap-2 mt-1.5">
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border
@@ -349,9 +346,9 @@ const StudentProfile = () => {
                 border-[#F9B406]/20 dark:border-teal-500/20">
                 Student
               </span>
-              {profile.neetYear && (
+              {user.neetYear && (
                 <span className="text-[10px] font-semibold text-slate-400 dark:text-slate-600">
-                  NEET {profile.neetYear}
+                  NEET {user.neetYear}
                 </span>
               )}
             </div>
@@ -374,41 +371,43 @@ const StudentProfile = () => {
           <Field
             label="Full Name"
             icon={User}
-            value={profile.name}
+            value={user.name}
             onSave={(v) => updateField('name', v)}
+            readOnly
           />
           <Field
             label="Email Address"
             icon={Mail}
-            value={profile.email}
+            value={user.email}
             type="email"
             onSave={(v) => updateField('email', v)}
+            readOnly
           />
           <Field
             label="Mobile Number"
             icon={Phone}
-            value={profile.phone}
+            value={user.phone}
             type="tel"
             onSave={(v) => updateField('phone', v)}
-            verified={profile.phoneVerified}
+            verified={true}
             onVerify={() => setVerifyModal(true)}
+            readOnly
           />
-          <Field
+          {/* <Field
             label="NEET UG Year"
             icon={GraduationCap}
-            value={profile.neetYear}
+            value={user.neetYear}
             options={NEET_YEARS}
             onSave={(v) => updateField('neetYear', v)}
-          />
+            readOnly
+          /> */}
         </div>
 
-        {/* Danger zone */}
+        {/* Account */}
         <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-900/40">
           <h2 className="text-sm font-bold text-slate-900 dark:text-white mb-3">Account</h2>
-          <button onClick={() => {
-            logout();
-            navigate('/login');
-          }}
+          <button
+            onClick={() => { logout(); navigate('/login'); }}
             className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors
               text-red-500 border border-red-200 dark:border-red-500/20
               hover:bg-red-50 dark:hover:bg-red-500/10">
@@ -418,9 +417,9 @@ const StudentProfile = () => {
 
       </div>
 
-      {verifyModal && profile.phone && (
+      {verifyModal && user.phone && (
         <PhoneVerifyModal
-          phone={profile.phone}
+          phone={user.phone}
           onVerified={onPhoneVerified}
           onClose={() => setVerifyModal(false)}
         />

@@ -1,43 +1,87 @@
 import express from 'express';
 import bcryptjs from 'bcryptjs';
-import twilio from 'twilio';
+import axios from 'axios';
 
 import { generateToken, extractToken, verifyToken } from '../utils/token.js';
 import User from '../models/User.js';
 
 const router = express.Router();
 
-if (!process.env.TWILIO_SID || !process.env.TWILIO_AUTH_TOKEN) {
-  throw new Error('Twilio env not configured');
+if (!process.env.MSG91_AUTH_KEY || !process.env.MSG91_TEMPLATE_ID) {
+  throw new Error('MSG91 env not configured');
 }
 
-const client = twilio(
-  process.env.TWILIO_SID,
-  process.env.TWILIO_AUTH_TOKEN
-);
+// ─── MSG91 helpers ────────────────────────────────────────────────────────────
 
-const generateOTP = () =>
-  Math.floor(100000 + Math.random() * 900000).toString();
+const sendOTPviaMSG91 = (mobile) =>
+  axios.post(
+    'https://control.msg91.com/api/v5/otp',
+    {},
+    {
+      params: {
+        mobile,
+        authkey: process.env.MSG91_AUTH_KEY,
+        template_id: process.env.MSG91_TEMPLATE_ID,
+      },
+      headers: { 'Content-Type': 'application/json' },
+    }
+  );
+
+const verifyOTPviaMSG91 = (mobile, otp) =>
+  axios.get('https://control.msg91.com/api/v5/otp/verify', {
+    params: { mobile, otp },
+    headers: { authkey: process.env.MSG91_AUTH_KEY },
+  });
+
+const retryOTPviaMSG91 = (mobile) =>
+  axios.get('https://control.msg91.com/api/v5/otp/retry', {
+    params: {
+      mobile,
+      authkey: process.env.MSG91_AUTH_KEY,
+      retrytype: 'text',
+    },
+  });
+
+// ─── Normalise phone to E.164 (MSG91 wants country-code prefix, no "+") ───────
+
+const normaliseMobile = (phone) => {
+  // Strip everything except digits
+  const digits = phone.replace(/\D/g, '');
+
+  // 10 digits → assume India
+  if (digits.length === 10) return `91${digits}`;
+
+  // Already has country code
+  return digits;
+};
+
+// ─── Routes ───────────────────────────────────────────────────────────────────
 
 router.post('/login', async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, phone, password } = req.body;
 
-    if (!email || !password)
-      return res.status(400).json({ message: 'Email and password are required' });
+    // Require password + at least one identifier
+    if ((!email && !phone) || !password)
+      return res.status(400).json({ message: 'Email or phone, and password are required' });
 
-    const user = await User.findOne({ email });
+    // Only include defined identifiers in the query
+    const identifiers = [];
+    if (email) identifiers.push({ email });
+    if (phone) identifiers.push({ phone });
+
+    const user = await User.findOne({ $or: identifiers });
+
     if (!user)
-      return res.status(401).json({ message: 'Invalid email or password' });
+      return res.status(401).json({ message: 'Invalid credentials' });
 
     const valid = await bcryptjs.compare(password, user.password);
     if (!valid)
-      return res.status(401).json({ message: 'Invalid email or password' });
+      return res.status(401).json({ message: 'Invalid credentials' });
 
-    // // 🔒 Optional: require phone verification
-    // if (!user.isVerified) {
-    //   return res.status(403).json({ message: 'Please verify your phone via OTP' });
-    // }
+    if (!user.isVerified) {
+      return res.status(403).json({ unverified: true, phone: user.phone });
+    }
 
     const token = generateToken(user);
 
@@ -48,9 +92,13 @@ router.post('/login', async (req, res) => {
         name: user.name,
         email: user.email,
         phone: user.phone,
-        isAdmin: user.isAdmin
-      }
+        isAdmin: user.isAdmin,
+        phoneVerified: user.isVerified,
+      },
     });
+    
+    console.log(res);
+
   } catch (err) {
     console.error('Login error', err);
     res.status(500).json({ message: 'Server error' });
@@ -73,17 +121,11 @@ router.post('/signup', async (req, res) => {
 
     const hashed = await bcryptjs.hash(password, 10);
 
-    const newUser = new User({
-      name,
-      email,
-      password: hashed,
-      phone
-    });
-
+    const newUser = new User({ name, email, password: hashed, phone });
     await newUser.save();
 
     res.status(201).json({
-      message: 'Signup successful. Please verify phone via OTP.'
+      message: 'Signup successful. Please verify your phone via OTP.',
     });
   } catch (err) {
     console.error('Signup error', err);
@@ -91,6 +133,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
+// POST /auth/send-otp
 router.post('/send-otp', async (req, res) => {
   try {
     let { phone } = req.body;
@@ -98,81 +141,56 @@ router.post('/send-otp', async (req, res) => {
     if (!phone)
       return res.status(400).json({ message: 'Phone is required' });
 
-    // 🧹 Remove spaces, dashes etc
-    phone = phone.replace(/\D/g, '');
+    const mobile = normaliseMobile(phone);
 
-    // 🇮🇳 If 10 digit → assume India (+91)
-    if (phone.length === 10) {
-      phone = `+91${phone}`;
-    }
-    // 🌍 If starts with country code but no "+"
-    else if (phone.length > 10 && !phone.startsWith('+')) {
-      phone = `+${phone}`;
-    }
-
-    // ✅ Final validation (E.164 format)
-    if (!/^\+\d{10,15}$/.test(phone)) {
+    if (!/^\d{10,15}$/.test(mobile))
       return res.status(400).json({ message: 'Invalid phone format' });
-    }
 
-    const user = await User.findOne({ phone });
+    const user = await User.findOne({ phone: { $regex: mobile.slice(-10) } });
     if (!user)
       return res.status(404).json({ message: 'User not found. Please signup first.' });
 
-    // ⛔ Cooldown (30 sec)
-    if (user.otpSentAt && Date.now() - user.otpSentAt < 30 * 1000) {
+    // ⛔ 30-second cooldown
+    if (user.otpSentAt && Date.now() - user.otpSentAt < 30 * 1000)
       return res.status(429).json({ message: 'Wait before requesting another OTP' });
-    }
 
-    const otp = generateOTP();
+    // MSG91 generates & sends the OTP — no local storage needed
+    const { data } = await sendOTPviaMSG91(mobile);
 
-    user.otp = await bcryptjs.hash(otp, 10);
-    user.otpExpires = new Date(Date.now() + 5 * 60 * 1000);
+    if (data.type !== 'success')
+      return res.status(502).json({ message: 'Failed to send OTP', detail: data });
+
     user.otpSentAt = Date.now();
-
     await user.save();
-    // 📩 Send SMS
-    await client.messages.create({
-      body: `Your OTP is ${otp}`,
-      from: process.env.TWILIO_PHONE,
-      to: phone
-    });
 
     res.json({ message: 'OTP sent successfully' });
-
   } catch (err) {
     console.error('Send OTP error', err);
     res.status(500).json({ message: 'Server error' });
   }
 });
 
+// POST /auth/verify-otp
 router.post('/verify-otp', async (req, res) => {
   try {
-    const { phone, otp } = req.body;
+    let { phone, otp } = req.body;
 
     if (!phone || !otp)
       return res.status(400).json({ message: 'Phone and OTP required' });
 
-    const user = await User.findOne({ phone });
+    const mobile = normaliseMobile(phone);
 
+    // Ask MSG91 to verify
+    const { data } = await verifyOTPviaMSG91(mobile, otp);
+
+    if (data.type !== 'success')
+      return res.status(400).json({ message: 'Invalid or expired OTP', detail: data });
+
+    const user = await User.findOne({ phone: { $regex: mobile.slice(-10) } });
     if (!user)
       return res.status(404).json({ message: 'User not found' });
 
-    if (!user.otp || !user.otpExpires)
-      return res.status(400).json({ message: 'No OTP found' });
-
-    if (user.otpExpires < new Date())
-      return res.status(400).json({ message: 'OTP expired' });
-
-    const isMatch = await bcryptjs.compare(otp, user.otp);
-
-    if (!isMatch)
-      return res.status(400).json({ message: 'Invalid OTP' });
-
     user.isVerified = true;
-    user.otp = undefined;
-    user.otpExpires = undefined;
-
     await user.save();
 
     const token = generateToken(user);
@@ -182,17 +200,41 @@ router.post('/verify-otp', async (req, res) => {
       token,
       user: {
         id: user._id,
+        name: user.name,
+        email: user.email,
         phone: user.phone,
-        isAdmin: user.isAdmin
-      }
+        isAdmin: user.isAdmin,
+      },
     });
-
   } catch (err) {
     console.error('Verify OTP error', err);
     res.status(500).json({ message: 'Server error' });
   }
 });
 
+// POST /auth/retry-otp
+router.post('/retry-otp', async (req, res) => {
+  try {
+    let { phone } = req.body;
+
+    if (!phone)
+      return res.status(400).json({ message: 'Phone is required' });
+
+    const mobile = normaliseMobile(phone);
+
+    const { data } = await retryOTPviaMSG91(mobile);
+
+    if (data.type !== 'success')
+      return res.status(502).json({ message: 'Failed to retry OTP', detail: data });
+
+    res.json({ message: 'OTP resent successfully' });
+  } catch (err) {
+    console.error('Retry OTP error', err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// GET /auth/verify  (token check)
 router.get('/verify', async (req, res) => {
   try {
     const token = extractToken(req.headers.authorization);
@@ -216,10 +258,9 @@ router.get('/verify', async (req, res) => {
         name: user.name,
         email: user.email,
         phone: user.phone,
-        isAdmin: user.isAdmin
-      }
+        isAdmin: user.isAdmin,
+      },
     });
-
   } catch (err) {
     res.status(401).json({ message: 'Invalid token' });
   }

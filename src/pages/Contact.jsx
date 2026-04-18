@@ -4,10 +4,10 @@ import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
 const INITIAL = { name: '', email: '', phone: '', subject: '', message: '' };
 
 const INFO = [
-  { icon: MapPin, label: 'Address', lines: ['To be Updated'] },
-  { icon: Phone,  label: 'Phone',   lines: ['+91***********'] },
-  { icon: Mail,   label: 'Email',   lines: ['socialdrive@gmail.com'] },
-  { icon: Clock,  label: 'Hours',   lines: ['Mon – Fri: 9:00 AM – 6:00 PM', 'Saturday: 10:00 AM – 4:00 PM', 'Sunday: Closed'] },
+  { icon: MapPin, label: 'Address', lines: ['241, GT Road, Mahesh, Serampore, Hooghly, West Bengal, 712202'] },
+  { icon: Phone, label: 'Phone', lines: ['+919477346186'] },
+  { icon: Mail, label: 'Email', lines: ['support@medsankalp.com'] },
+  { icon: Clock, label: 'Hours', lines: ['Mon – Fri: 11:00 AM – 08:00 PM', 'Saturday-Sunday: Appointments Only'] },
 ];
 
 const Field = ({ label, children }) => (
@@ -20,24 +20,31 @@ const Field = ({ label, children }) => (
 );
 
 const Contact = () => {
-  const [formData,  setFormData]  = useState(INITIAL);
+  const [formData, setFormData] = useState(INITIAL);
   const [submitted, setSubmitted] = useState(false);
-  const [sending,   setSending]   = useState(false);
+  const [sending, setSending] = useState(false);
 
   const inputClass = 'w-full px-4 py-2.5 rounded-xl text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-1 transition-colors shadow-sm dark:shadow-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#2d409c] dark:text-white focus:border-[#F9B406] dark:focus:border-teal-500 focus:ring-[#F9B406]/20 dark:focus:ring-teal-500/20';
 
   const handleChange = (e) =>
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setSending(true);
-    await new Promise(r => setTimeout(r, 800));
-    console.log('Form submitted:', formData);
-    setFormData(INITIAL);
-    setSending(false);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+
+    const body = `Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+
+Message:
+${formData.message}`;
+
+    const gmailUrl = 'https://mail.google.com/mail/?view=cm'
+      + '&to=' + encodeURIComponent('support@medsankalp.com')
+      + '&su=' + encodeURIComponent('Contact Form: ' + formData.subject)
+      + '&body=' + encodeURIComponent(body);
+
+    window.open(gmailUrl, '_blank');
   };
 
   return (

@@ -58,7 +58,7 @@ const DoctorCard = ({ doctor }) => {
             : <User className="w-7 h-7 text-[#F9B406] dark:text-teal-400" />
           }
         </div>
-        
+
         <div className="flex-1 min-w-full items-start">
           <h3 className="font-bold text-lg text-slate-900 dark:text-white truncate">{doctor.name}</h3>
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">{doctor.title}</p>
@@ -132,9 +132,10 @@ const DoctorsPage = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  const filtered = filter === 'All'
+  const filtered = (filter === 'All'
     ? doctors
-    : doctors.filter((d) => d.specialisations?.includes(filter));
+    : doctors.filter((d) => d.specialisations?.includes(filter))
+  ).sort((a, b) => (b.experience ?? 0) - (a.experience ?? 0));
 
   const avgRating = doctors.length
     ? (doctors.reduce((s, d) => s + (d.rating ?? 0), 0) / doctors.length).toFixed(1)
@@ -148,23 +149,49 @@ const DoctorsPage = () => {
     <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-slate-900 dark:text-white">
 
       {/* Hero */}
-      <div className="relative border-b border-slate-200 dark:border-slate-800">
+      <div className="relative border-b border-amber-200 dark:border-slate-800 bg-linear-to-br from-amber-50 to-amber-100 dark:from-slate-900/60 dark:to-slate-950 overflow-hidden">
+
+        {/* Glow */}
         <div className="absolute inset-0 pointer-events-none
-          bg-[radial-gradient(ellipse_70%_40%_at_50%_0%,rgba(249,180,6,0.05),transparent)]
-          dark:bg-[radial-gradient(ellipse_70%_40%_at_50%_0%,rgba(20,184,166,0.07),transparent)]" />
-        <div className="relative max-w-4xl mx-auto px-6 py-14 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-5
-            bg-white dark:bg-slate-900/60 border-slate-200 dark:border-slate-800">
+    bg-[radial-gradient(ellipse_75%_45%_at_50%_-10%,rgba(249,180,6,0.12),transparent)]
+    dark:bg-[radial-gradient(ellipse_75%_45%_at_50%_-10%,rgba(20,184,166,0.12),transparent)]"
+        />
+
+        {/* Soft orb */}
+        <div className="absolute -top-16 right-1/2 translate-x-1/2 w-64 h-64 rounded-full opacity-[0.05] dark:opacity-[0.08]
+    bg-[#F9B406] dark:bg-teal-400 blur-3xl pointer-events-none"
+        />
+
+        <div className="relative max-w-4xl mx-auto px-6 py-14 sm:py-16 text-center">
+
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-6
+      bg-white/70 dark:bg-slate-900/50
+      border-amber-200 dark:border-slate-700
+      backdrop-blur-md"
+          >
             <Stethoscope className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
-            <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">Expert Counsellors</span>
+            <span className="text-xs font-semibold text-slate-700 dark:text-slate-400">
+              Expert Counsellors
+            </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-[#2D409C]">
-            Meet Our{' '}
-            <span className="text-[#F9B406] dark:text-teal-400">Expert Doctors</span>
+
+          {/* Heading */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-[#2D409C] dark:text-white">
+            Meet Our{" "}
+            <span className="text-transparent bg-clip-text bg-linear-to-r 
+        from-[#F9B406] to-[#F9B406]/60 
+        dark:from-teal-400 dark:to-teal-400/60"
+            >
+              Expert Doctors
+            </span>
           </h1>
-          <p className="text-sm sm:text-base max-w-xl mx-auto text-slate-500 dark:text-slate-400">
+
+          {/* Description */}
+          <p className="text-sm sm:text-base max-w-xl mx-auto text-slate-600 dark:text-slate-400 leading-relaxed">
             Get guidance from experienced doctors and MBBS students who've been through the counselling process.
           </p>
+
         </div>
       </div>
 

@@ -98,7 +98,7 @@ function SignupPage() {
     <Signup
       onSignupSuccess={(u) => {
         signup(u);
-        navigate(location.state?.from || '/', { replace: true });
+        navigate('/login', { replace: true });
       }}
       onSwitchToLogin={() => navigate('/login', { state: location.state })}
     />
@@ -111,7 +111,7 @@ function ScrollToTop() {
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: 'auto', // use 'smooth' if you want animation
+      behavior: 'smooth'
     });
   }, [pathname]);
 

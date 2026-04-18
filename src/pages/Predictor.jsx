@@ -368,24 +368,54 @@ const Predictor = () => {
 
   return (
     <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-[#2D409C] dark:text-white">
-      <div className="max-w-6xl mx-auto px-5 sm:px-6 py-10 sm:py-12">
 
         {/* Page header */}
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-5 bg-amber-100 dark:bg-slate-900/40 border-amber-300 dark:border-slate-800">
-            <Target className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
-            <span className="text-xs font-semibold text-amber-800 dark:text-teal-400/70">NEET 2025 · Pan India</span>
+        <div className="relative border-b border-amber-200 dark:border-slate-800 bg-linear-to-br from-amber-50 to-amber-100 dark:from-slate-900/60 dark:to-slate-950 overflow-hidden">
+
+          {/* Glow layer */}
+          <div className="absolute inset-0 
+    bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(249,180,6,0.15),transparent)] 
+    dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(20,184,166,0.1),transparent)]"
+          />
+
+          <div className="relative max-w-screen mx-auto px-4 sm:px-6 py-12 sm:py-16">
+
+            <div className="text-center mb-6">
+
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-5 
+        bg-amber-100/80 dark:bg-slate-900/40 
+        border-amber-300 dark:border-slate-800 
+        backdrop-blur-sm"
+              >
+                <Target className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
+                <span className="text-xs font-semibold text-amber-800 dark:text-teal-400/70">
+                  NEET 2026 · Pan India
+                </span>
+              </div>
+
+              {/* Heading */}
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-[#2D409C] dark:text-white">
+                Find Your{" "}
+                <span className="text-transparent bg-clip-text bg-linear-to-r 
+          from-[#F9B406] to-[#F9B406]/60 
+          dark:from-teal-400 dark:to-teal-400/60"
+                >
+                  Medical College
+                </span>
+              </h1>
+
+              {/* Description */}
+              <p className="text-sm sm:text-base max-w-xl mx-auto text-slate-600 dark:text-slate-400">
+                Enter your rank, select your state and category to get matched against real 2026 cutoff data across 20 states.
+              </p>
+
+            </div>
+
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-[#2D409C] dark:text-white">
-            Find Your{' '}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#F9B406] to-[#F9B406]/60 dark:from-teal-400 dark:to-teal-400/60">
-              Medical College
-            </span>
-          </h1>
-          <p className="text-sm sm:text-base max-w-xl mx-auto text-slate-500 dark:text-slate-400">
-            Enter your rank, select your state and category to get matched against real 2026 cutoff data across 20 states.
-          </p>
         </div>
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 py-10 sm:py-12">
+
 
         {/* Form card */}
         <div className="rounded-2xl p-6 sm:p-8 mb-8 relative overflow-hidden border bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-700/60 shadow-sm">

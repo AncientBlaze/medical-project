@@ -48,7 +48,7 @@ const DoctorDetailSkeleton = () => (
           <Skeleton className="h-4 w-1/2" />
           <Skeleton className="h-4 w-3/4" />
           <div className="flex gap-2 flex-wrap">
-            {[80, 64, 96, 72].map((w, i) => <Skeleton key={i} className={`h-6 w-${w/4} rounded-full`} style={{ width: w }} />)}
+            {[80, 64, 96, 72].map((w, i) => <Skeleton key={i} className={`h-6 w-${w / 4} rounded-full`} style={{ width: w }} />)}
           </div>
         </div>
       </div>
@@ -82,33 +82,59 @@ const DoctorProfile = () => {
     <div className="min-h-screen transition-colors duration-300 bg-[#fffdf7] dark:bg-slate-950 text-slate-900 dark:text-white">
 
       {/* ── Hero ────────────────────────────────────────────────────────── */}
-      <div className="relative border-b border-slate-200 dark:border-slate-800">
+      <div className="relative border-b border-amber-200 dark:border-slate-800 bg-linear-to-br from-amber-50 to-amber-100 dark:from-slate-900/60 dark:to-slate-950 overflow-hidden">
+
+        {/* Glow */}
         <div className="absolute inset-0 pointer-events-none
-          bg-[radial-gradient(ellipse_70%_40%_at_50%_0%,rgba(249,180,6,0.05),transparent)]
-          dark:bg-[radial-gradient(ellipse_70%_40%_at_50%_0%,rgba(20,184,166,0.07),transparent)]" />
-        <div className="relative max-w-4xl mx-auto px-6 py-14 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-5
-            bg-white dark:bg-slate-900/60 border-slate-200 dark:border-slate-800">
+    bg-[radial-gradient(ellipse_75%_45%_at_50%_-10%,rgba(249,180,6,0.12),transparent)]
+    dark:bg-[radial-gradient(ellipse_75%_45%_at_50%_-10%,rgba(20,184,166,0.12),transparent)]"
+        />
+
+        {/* Soft orb */}
+        <div className="absolute -top-16 right-1/2 translate-x-1/2 w-64 h-64 rounded-full opacity-[0.05] dark:opacity-[0.08]
+    bg-[#F9B406] dark:bg-teal-400 blur-3xl pointer-events-none"
+        />
+
+        <div className="relative max-w-4xl mx-auto px-6 py-14 sm:py-16 text-center">
+
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-6
+      bg-white/70 dark:bg-slate-900/50
+      border-amber-200 dark:border-slate-700
+      backdrop-blur-md"
+          >
             <Stethoscope className="w-3.5 h-3.5 text-[#F9B406] dark:text-teal-400" />
-            <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">Expert Counsellors</span>
+            <span className="text-xs font-semibold text-slate-700 dark:text-slate-400">
+              Expert Counsellors
+            </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-[#2D409C]">
-            Meet Our{' '}
-            <span className="text-[#F9B406] dark:text-teal-400">Expert Doctors</span>
+
+          {/* Heading */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-[#2D409C] dark:text-white">
+            Meet Our{" "}
+            <span className="text-transparent bg-clip-text bg-linear-to-r 
+        from-[#F9B406] to-[#F9B406]/60 
+        dark:from-teal-400 dark:to-teal-400/60"
+            >
+              Expert Doctors
+            </span>
           </h1>
-          <p className="text-sm sm:text-base max-w-xl mx-auto text-slate-500 dark:text-slate-400">
+
+          {/* Description */}
+          <p className="text-sm sm:text-base max-w-xl mx-auto text-slate-600 dark:text-slate-400 leading-relaxed">
             Get guidance from experienced doctors and MBBS students who've been through the counselling process.
           </p>
+
         </div>
       </div>
 
       {/* ── Stats ───────────────────────────────────────────────────────── */}
       <div className="max-w-5xl mx-auto px-6 py-10">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <StatBox icon={User}         label="Expert Doctors"    value="—" />
-          <StatBox icon={Star}         label="Avg. Rating"       value="—" />
+          <StatBox icon={User} label="Expert Doctors" value="—" />
+          <StatBox icon={Star} label="Avg. Rating" value="—" />
           <StatBox icon={GraduationCap} label="Students Guided" value="—" />
-          <StatBox icon={Award}        label="Years Experience"  value="—" />
+          <StatBox icon={Award} label="Years Experience" value="—" />
         </div>
       </div>
 

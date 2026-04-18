@@ -9,14 +9,14 @@ export const connectDB = async () => {
     console.log('✅ Connected to MongoDB');
 
     // Ensure demo admin user exists
-    const existing = await User.findOne({ email: DEMO_ADMIN_EMAIL });
+    const existing = await User.findOne({ email: "medsankalp@gmail.com" });
     if (!existing) {
       const hashed = await bcryptjs.hash(DEMO_ADMIN_PASSWORD, 10);
       await new User({
         name: 'Admin',
-        email: DEMO_ADMIN_EMAIL,
+        email: 'medsankalp@gmail.com',
         password: hashed,
-        phone: '+1 (800) 123-4567',
+        phone: '+917980162289',
         isAdmin: true
       }).save();
       console.log(`✅ Demo admin user created (email: ${DEMO_ADMIN_EMAIL} / pass: ${DEMO_ADMIN_PASSWORD})`);

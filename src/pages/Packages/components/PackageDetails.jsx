@@ -68,8 +68,6 @@ const PackageDetail = () => {
             <div className="shrink-0 text-right">
               <div className="flex items-end gap-1 justify-end">
                 <span className="text-3xl font-extrabold text-slate-900 dark:text-white">{pkg.price}</span>
-                {!pkg.isFree && <span className="text-sm text-slate-400 dark:text-white/30 mb-1">+ GST</span>}
-                {pkg.isFree  && <span className="text-sm font-semibold text-emerald-500 mb-1">or FREE</span>}
               </div>
               {pkg.originalPrice && (
                 <div className="flex items-center justify-end gap-2 mt-1">
@@ -94,7 +92,7 @@ const PackageDetail = () => {
         </div>
 
         {/* Refund badge */}
-        {pkg.refundable && (
+        {/* {pkg.refundable && (
           <div className="flex items-center gap-3 p-4 rounded-2xl border
             bg-emerald-50 dark:bg-emerald-500/10 border-emerald-200 dark:border-emerald-500/20">
             <ShieldCheck className="w-5 h-5 text-emerald-500 shrink-0" />
@@ -105,7 +103,7 @@ const PackageDetail = () => {
               </p>
             </div>
           </div>
-        )}
+        )} */}
 
         {/* What's included */}
         <div className="rounded-2xl border overflow-hidden bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-700/60 shadow-sm">
