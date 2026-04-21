@@ -174,7 +174,7 @@ const Footer = () => {
                     className={btnLinkClass}
                   >
                     <Phone className="w-4 h-4 text-[#F9B406] dark:text-teal-400 shrink-0 mr-3" />
-                    +91 9876 543 210
+                    +919477346186
                   </button>
                 </li>
                 <li className="flex items-center min-h-11">
