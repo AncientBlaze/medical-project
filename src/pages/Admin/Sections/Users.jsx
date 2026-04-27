@@ -44,7 +44,6 @@ const Users = ({ leads, stats }) => {
             <div className="w-8 h-8 rounded-lg border flex items-center justify-center text-xs font-bold bg-amber-50 dark:bg-teal-400/20 border-amber-200 dark:border-teal-400/30 text-[#F9B406] dark:text-teal-400">
               {l.user.name?.charAt(0)}
             </div>
-
             {/* Info */}
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-[#2d409c] dark:text-white">
@@ -52,8 +51,13 @@ const Users = ({ leads, stats }) => {
               </p>
 
               <p className="text-xs text-slate-500 dark:text-slate-400">
+                {l.user.phone}
+              </p>
+
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 {l.user.email}
               </p>
+
             </div>
 
             {/* Predictions */}

@@ -6,6 +6,7 @@ import path from 'path';
 import { connectDB } from './config/database.js';
 import { PORT } from './config/constants.js';
 import authRoutes from './routes/auth.js';
+import passwordResetRoutes from './routes/passwordReset.js';
 import predictionsRoutes from './routes/predictions.js';
 import adminRoutes from './routes/admin.js';
 import doctorsRoutes from './routes/doctors.js';
@@ -25,6 +26,7 @@ await connectDB();
 app.use('/api/leads', leadRoutes);
 
 app.use('/api/auth', authRoutes);
+app.use('/api/auth', passwordResetRoutes);
 app.use('/api/predictions', predictionsRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/doctors', doctorsRoutes);

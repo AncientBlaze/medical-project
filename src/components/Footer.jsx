@@ -182,21 +182,6 @@ const Footer = () => {
                   <span className="text-sm text-[#2d409c] dark:text-slate-400">India</span>
                 </li>
               </ul>
-
-              <SectionHeading>Official Sites</SectionHeading>
-              <ul>
-                {OFFICIAL_LINKS.map(({ label, href }) => (
-                  <li key={href}>
-                    <button
-                      onClick={() => openExternal(href)}
-                      className={btnLinkClass}
-                    >
-                      <ExternalLink className="w-3.5 h-3.5 shrink-0 mr-2" />
-                      {label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
 

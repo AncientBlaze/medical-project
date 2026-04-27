@@ -207,7 +207,7 @@ const PackagesGrid = () => {
               ))}
             </ul>
           </div>
-          <div className="flex-1 w-full max-w-xs md:max-w-sm h-64 md:h-80 bg-[url('https://res.cloudinary.com/ddbeb8j3c/image/upload/v1776250792/light_d5kr34.svg')] dark:bg-[url('https://res.cloudinary.com/ddbeb8j3c/image/upload/v1776250792/dark_ijst7m.svg')] bg-contain bg-center bg-no-repeat" />
+          <div className="flex-1 w-full max-w-xs md:max-w-sm h-64 md:h-80 bg-[url('https://res.cloudinary.com/ddbeb8j3c/image/upload/v1776944340/counselling.jpg_av7ze1.png')] dark:bg-[url('https://res.cloudinary.com/ddbeb8j3c/image/upload/v1776944756/liggt-counselling.jpg_vga93z.png')] bg-contain bg-center bg-no-repeat" />
         </div>
       </section>
 

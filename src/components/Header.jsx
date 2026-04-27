@@ -54,7 +54,18 @@ const Header = ({ user, onLogout }) => {
 
           {/* Logo */}
           <NavLink to="/" className="flex items-center">
-            <img src="/logo.png" className="h-12 w-auto dark:bg-white rounded-2xl" alt="Logo" />
+            {/* Light mode image */}
+            <img
+              src="/logo.png"
+              className="h-12 w-auto block dark:hidden"
+              alt="Logo"
+            />
+            {/* Dark mode image */}
+            <img
+              src="https://res.cloudinary.com/ddbeb8j3c/image/upload/v1776944531/medsankalp_logo_transparent_kads1e.png"
+              className="h-12 w-auto hidden dark:block"
+              alt="Logo"
+            />
           </NavLink>
 
           {/* Desktop Nav */}

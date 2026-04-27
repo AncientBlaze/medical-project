@@ -102,7 +102,7 @@ const stateData = (() => {
         stateMax: state_.length ? Math.max(...state_) : null,
       };
     })
-    .sort((a, b) => b.count - a.count);
+    .sort((a, b) => b.count - a.count).sort((a, b) => a.name.localeCompare(b.name));
 })();
 
 const PRIVATE_FAQS = [
